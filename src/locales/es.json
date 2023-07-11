@@ -1,0 +1,27 @@
+{
+  "balance": {
+    "show": "Mostrar saldos",
+    "hide": "Ocultar saldos"
+  },
+  "my-products": "Mis productos",
+  "total": "Total",
+  "minimum-payment": "Pago mínimo",
+  "pending-balance": "Saldo en canje",
+  "available-quota": "Cupo disponible",
+  "next-payment": "Siguiente pago",
+  "total-due": "Deuda total",
+  "amount-available": "Saldo disponible",
+  "transfer": {
+    "title": "Transferencia rápida",
+    "change": "Cambiar",
+    "from": "Origen",
+    "total": "Monto",
+    "target": "Destino",
+    "actionWithAmount": "Transferir {amount}",
+    "actionSingle": "Transferir"
+  },
+  "hint": {
+    "noAmount": "Ingrese el monto a pagar",
+    "withAmount": "{amount} después de la transferencia"
+  }
+}

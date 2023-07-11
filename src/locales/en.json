@@ -1,0 +1,27 @@
+{
+  "balance": {
+    "show": "Show amounts",
+    "hide": "Hide amounts"
+  },
+  "my-products": "My products",
+  "total": "Total",
+  "minimum-payment": "Minimum payment",
+  "pending-balance": "Funds on hold",
+  "available-quota": "Available balance",
+  "next-payment": "Next Payment",
+  "total-due": "Total Due",
+  "amount-available": "Total available funds",
+  "transfer": {
+    "title": "Quick Transfer",
+    "change": "Change",
+    "from": "From",
+    "total": "Amount",
+    "target": "Target",
+    "actionWithAmount": "Transfer {amount}",
+    "actionSingle": "Transfer"
+  },
+  "hint": {
+    "noAmount": "Enter an amount to pay",
+    "withAmount": "{amount} remaining after transfer"
+  }
+}
