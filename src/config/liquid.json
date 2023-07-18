@@ -16,12 +16,6 @@
 
     "transfers-path": "transfers",
 
-    "api-user-id": "8a44df697ba7e4b3017ba9d3796315b5",
-    "api-path": "https://stoplight.io/mocks/modyo/dynamic/204091081",
-    "use-authentication": false,
-
-    "mock-contacts": true,
-    "mock-products": true,
-    "mock-categories": false
+    "api-path": "https://stoplight.io/mocks/modyo/dynamic/204091081"
   }
 }
