@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MInputCurrency, useFormatCurrency } from '@modyo-dynamic/modyo-design-system-react';
+import { MInputCurrency, useFormatCurrency } from '@dynamic-framework/ui-react';
 
 import type { Dispatch, SetStateAction } from 'react';
 

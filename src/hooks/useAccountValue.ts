@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useFormatCurrency } from '@modyo-dynamic/modyo-design-system-react';
+import { useFormatCurrency } from '@dynamic-framework/ui-react';
 
 import getAccountValue from '../services/utils/getAccountValue';
 import { useAppSelector } from '../store/hooks';

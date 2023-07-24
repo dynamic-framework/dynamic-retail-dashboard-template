@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { MInputSelect } from '@modyo-dynamic/modyo-design-system-react';
+import { MInputSelect } from '@dynamic-framework/ui-react';
 
 import type { Dispatch, SetStateAction } from 'react';
 

@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios';
-import { liquidParser } from '@modyo-dynamic/modyo-design-system';
+import { liquidParser } from '@dynamic-framework/ui';
 
 import ApiError from './utils/ApiError';
 

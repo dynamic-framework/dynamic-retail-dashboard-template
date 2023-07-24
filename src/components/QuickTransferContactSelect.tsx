@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { MQuickActionButton } from '@modyo-dynamic/modyo-design-system-react';
+import { MQuickActionButton } from '@dynamic-framework/ui-react';
 
 import { TRANSFER_URL } from '../config/widgetConfig';
 

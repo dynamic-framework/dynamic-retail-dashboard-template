@@ -1,4 +1,4 @@
-import { ControlledRequest } from '@modyo-dynamic/modyo-design-system/src';
+import { ControlledRequest } from '@dynamic-framework/ui/src';
 
 import ApiClient from '../ApiClient';
 import contactMapper from '../mappers/contactMapper';

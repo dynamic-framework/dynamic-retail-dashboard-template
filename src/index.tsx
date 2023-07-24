@@ -1,10 +1,10 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { LiquidContextProvider } from '@modyo-dynamic/modyo-design-system-react';
+import { LiquidContextProvider } from '@dynamic-framework/ui-react';
 
-import '@modyo-dynamic/modyo-design-system/dist/css/design-system.css';
-import '@modyo-dynamic/modyo-design-system-react/dist/css/design-system-react.css';
+import '@dynamic-framework/ui/dist/css/design-system.css';
+import '@dynamic-framework/ui-react/dist/css/design-system-react.css';
 
 import './config/liquidConfig';
 import './config/i18nConfig';

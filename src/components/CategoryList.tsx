@@ -1,11 +1,11 @@
 import CategoryListLoader from './loaders/CategoryListLoader';
 import CategoryItem from './CategoryItem';
 import { useAppSelector } from '../store/hooks';
-import useProducts from '../services/hooks/useAccounts';
+import useAccounts from '../services/hooks/useAccounts';
 import { getAccountsByCategory } from '../store/selectors';
 
 export default function CategoryList() {
-  const { loading } = useProducts();
+  const { loading } = useAccounts();
   const categories = useAppSelector(getAccountsByCategory);
 
   if (loading) {

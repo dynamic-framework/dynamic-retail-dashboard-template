@@ -9,10 +9,10 @@
     "currency-separator": ".",
     "currency-decimal": ",",
 
-    "product-path-saving": "savings",
-    "product-path-checking": "checkings",
-    "product-path-credit-card": "credit-cards",
-    "product-path-loans": "loans",
+    "account-path-saving": "savings",
+    "account-path-checking": "checkings",
+    "account-path-credit-card": "credit-cards",
+    "account-path-loans": "loans",
 
     "transfers-path": "transfers",
 

@@ -1,4 +1,4 @@
-import { liquidParser } from '@modyo-dynamic/modyo-design-system';
+import { liquidParser } from '@dynamic-framework/ui';
 
 import { AccountType } from '../services/config';
 

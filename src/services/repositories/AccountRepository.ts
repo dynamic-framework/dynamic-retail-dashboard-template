@@ -1,4 +1,4 @@
-import type { ControlledRequest } from '@modyo-dynamic/modyo-design-system';
+import type { ControlledRequest } from '@dynamic-framework/ui';
 
 import ApiClient from '../ApiClient';
 import { ApiAccountTypeConfig } from '../config';

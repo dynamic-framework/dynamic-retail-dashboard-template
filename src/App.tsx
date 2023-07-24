@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { MButton } from '@modyo-dynamic/modyo-design-system-react';
+import { MButton } from '@dynamic-framework/ui-react';
 
 import CategoryList from './components/CategoryList';
 import QuickTransfer from './components/QuickTransfer';
@@ -9,7 +9,7 @@ import useToggleBalances from './hooks/useToggleBalances';
 
 export default function App() {
   const { t } = useTranslation();
-  const products = useAppSelector(getAccounts);
+  const accounts = useAppSelector(getAccounts);
   const { data, callback } = useToggleBalances();
 
   return (
@@ -17,8 +17,8 @@ export default function App() {
       <div className="row">
         <div className="col-12 col-lg-8">
           <div className="d-flex justify-content-between align-items-center mb-3">
-            <h1 className="fs-4 fw-bold">{t('my-products')}</h1>
-            {products.length > 0 && (
+            <h1 className="fs-4 fw-bold">{t('my-accounts')}</h1>
+            {accounts.length > 0 && (
               <MButton
                 iconStart={data.icon}
                 text={data.label}

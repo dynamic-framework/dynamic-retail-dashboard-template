@@ -6,7 +6,7 @@ import { getAccounts } from '../../store/selectors';
 import { setAccounts } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
 
-export default function useProducts() {
+export default function useAccounts() {
   const [loading, setLoading] = useState(false);
   const data = useAppSelector(getAccounts);
   const dispatch = useAppDispatch();

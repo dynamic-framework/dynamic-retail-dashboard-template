@@ -34,8 +34,8 @@ export const AccountTypeConfig = {
 };
 
 export const ApiAccountTypeConfig = {
-  REGULAR_SAVINGS: 'saving',
-  CURRENT_ACCOUNT: 'checking',
-  LOAN: 'loan',
-  CREDIT_CARD: 'credit-card',
+  REGULAR_SAVINGS: AccountType.Saving,
+  CURRENT_ACCOUNT: AccountType.Checking,
+  LOAN: AccountType.Loan,
+  CREDIT_CARD: AccountType.CreditCard,
 };

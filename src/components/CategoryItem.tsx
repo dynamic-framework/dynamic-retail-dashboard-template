@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MCollapse, MIcon, useFormatCurrency } from '@modyo-dynamic/modyo-design-system-react';
+import { MCollapse, MIcon, useFormatCurrency } from '@dynamic-framework/ui-react';
 
 import AccountItem from './AccountItem';
 import { useAppSelector } from '../store/hooks';
@@ -31,6 +31,10 @@ export default function CategoryItem(
     (sum, account: Account) => (sum + getAccountValue(account)),
     0,
   ), [accounts]);
+
+  if (!total) {
+    return null;
+  }
 
   return (
     <MCollapse

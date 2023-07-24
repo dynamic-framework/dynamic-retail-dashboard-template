@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MButton } from '@modyo-dynamic/modyo-design-system-react';
+import { MButton } from '@dynamic-framework/ui-react';
 
 import QuickTransferLoader from './loaders/QuickTransferLoader';
 import QuickTransferDepositAccountSelect from './QuickTransferDepositAccountSelect';
