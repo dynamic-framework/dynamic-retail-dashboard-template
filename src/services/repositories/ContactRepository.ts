@@ -1,4 +1,4 @@
-import { ControlledRequest } from '@dynamic-framework/ui/src';
+import { ControlledRequest } from '@dynamic-framework/ui';
 
 import ApiClient from '../ApiClient';
 import contactMapper from '../mappers/contactMapper';
