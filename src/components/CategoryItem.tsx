@@ -1,41 +1,50 @@
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MCollapse, MIcon, useFormatCurrency } from '@modyo-dynamic/modyo-design-system-react';
-import type { Product, ProductType } from '@modyo-dynamic/modyo-service-retail';
-import { ProductTypeConfig } from '@modyo-dynamic/modyo-service-retail';
+import { MCollapse, MIcon, useFormatCurrency } from '@dynamic-framework/ui-react';
 
 import AccountItem from './AccountItem';
 import { useAppSelector } from '../store/hooks';
 import { getShowBalances } from '../store/selectors';
+import { AccountType, AccountTypeConfig } from '../services/config';
+import getAccountValue from '../services/utils/getAccountValue';
 
-interface Props {
+import type { Account } from '../services/interface';
+
+type Props = {
   name: string;
-  total: number;
-  type: ProductType;
-  products: Array<Product>;
-}
+  type: AccountType;
+  accounts: Array<Account>;
+};
 
-export default function AccountCategory(
+export default function CategoryItem(
   {
     name,
-    total,
     type,
-    products,
+    accounts,
   }: Props,
 ) {
   const { format } = useFormatCurrency();
   const { t } = useTranslation();
-
   const showBalances = useAppSelector(getShowBalances);
+
+  const total = useMemo(() => accounts.reduce<number>(
+    (sum, account: Account) => (sum + getAccountValue(account)),
+    0,
+  ), [accounts]);
+
+  if (!total) {
+    return null;
+  }
 
   return (
     <MCollapse
-      defaultCollapsed={!!products.length}
+      defaultCollapsed={accounts.length > 0}
       className="rounded shadow-sm"
       Component={(
         <div className="d-flex align-items-center gap-3">
           <MIcon
-            icon={ProductTypeConfig[type].icon}
-            theme={ProductTypeConfig[type].theme}
+            icon={AccountTypeConfig[type].icon}
+            theme={AccountTypeConfig[type].theme}
             hasCircle
           />
           <h2 className="fs-6 flex-fill text-light-emphasis fw-bold text-truncate">{name}</h2>
@@ -45,8 +54,8 @@ export default function AccountCategory(
       )}
     >
       <div className="d-flex flex-column gap-3">
-        {products.map((product) => (
-          <AccountItem key={product.id} product={product} />
+        {accounts.map((account) => (
+          <AccountItem key={account.id} account={account} />
         ))}
       </div>
     </MCollapse>

@@ -1,17 +1,14 @@
 import { useEffect, useState } from 'react';
 
-import { ContactRepository } from '@modyo-dynamic/modyo-service-retail';
-
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-
-import { getSelectedContact } from '../store/selectors';
-
-import errorHandler from '../utils/errorHandler';
-import { setSelectedContact } from '../store/slice';
+import { ContactRepository } from '../repositories';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { getContacts } from '../../store/selectors';
+import { setContacts } from '../../store/slice';
+import errorHandler from '../../utils/errorHandler';
 
 export default function useContacts() {
   const [loading, setLoading] = useState(false);
-  const selectedContact = useAppSelector(getSelectedContact);
+  const data = useAppSelector(getContacts);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -19,13 +16,13 @@ export default function useContacts() {
       perform,
       abort,
     } = ContactRepository.list();
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+
     (async () => {
       setLoading(true);
       try {
-        const data = await perform();
-        dispatch(setSelectedContact(data[2]));
+        const response = await perform();
         setLoading(false);
+        dispatch(setContacts(response));
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
         errorHandler(error);
@@ -38,6 +35,6 @@ export default function useContacts() {
 
   return {
     loading,
-    selectedContact,
+    data,
   };
 }

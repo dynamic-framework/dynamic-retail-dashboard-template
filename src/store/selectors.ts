@@ -1,58 +1,62 @@
 import { createDraftSafeSelector } from '@reduxjs/toolkit';
-import {
-  CategoriesConfig,
-} from '@modyo-dynamic/modyo-service-retail';
-import type {
-  Product,
-  ProductCategory,
-} from '@modyo-dynamic/modyo-service-retail';
 
-import { RootState } from './store';
+import { AccountTypeConfig } from '../services/config';
+
+import type { RootState } from './store';
+import type { Account, Category } from '../services/interface';
 
 const getState = (state: RootState) => state.widget;
 
-export const getProducts = createDraftSafeSelector(
+export const getAccounts = createDraftSafeSelector(
   getState,
-  (widget) => widget.products,
+  (widget) => widget.accounts,
 );
 
-export const getDepositProducts = createDraftSafeSelector(
-  getProducts,
-  (products) => products.filter((product) => product.queryType === 'deposit'),
+export const getContacts = createDraftSafeSelector(
+  getState,
+  (widget) => widget.contacts,
 );
 
-export const getProductsByCategory = createDraftSafeSelector(
-  getProducts,
+export const getFirstAccount = createDraftSafeSelector(
+  getAccounts,
+  ([first]) => first,
+);
+
+export const getFirstContact = createDraftSafeSelector(
+  getContacts,
+  ([first]) => first,
+);
+
+export const getDepositAccounts = createDraftSafeSelector(
+  getAccounts,
+  (accounts) => accounts.filter((account) => account.baseType === 'deposit'),
+);
+
+export const getAccountsByCategory = createDraftSafeSelector(
+  getAccounts,
   (data) => Object.values(
-    data.reduce((categorized, product: Product) => {
-      const category = categorized[product.type];
-      const { products = [] } = category;
+    data.reduce<Record<string, Category>>((categorized, account: Account) => {
+      const {
+        accounts = [],
+        id = account.type,
+        type = account.type,
+        name = AccountTypeConfig[account.type].name,
+      } = categorized[account.type] || {};
+
       return {
         ...categorized,
-        [product.type]: {
-          ...category,
-          products: [
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            ...products,
-            product,
-          ],
+        [account.type]: {
+          id,
+          type,
+          name,
+          accounts: [...accounts, account],
         },
       };
-    }, CategoriesConfig),
-  ) as Array<ProductCategory>,
-);
-
-export const getSelectedProduct = createDraftSafeSelector(
-  getState,
-  (widget) => widget.selectedProduct,
+    }, {}),
+  ),
 );
 
 export const getShowBalances = createDraftSafeSelector(
   getState,
   (widget) => widget.showBalances,
-);
-
-export const getSelectedContact = createDraftSafeSelector(
-  getState,
-  (widget) => widget.selectedContact,
 );

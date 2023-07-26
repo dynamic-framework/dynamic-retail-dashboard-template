@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import type { Contact, Product } from '@modyo-dynamic/modyo-service-retail';
+import type { Account, Contact } from '../services/interface';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 export type WidgetState = {
-  products: Array<Product>;
+  accounts: Array<Account>;
+  contacts: Array<Contact>;
   showBalances: boolean;
-  selectedProduct?: Product;
-  selectedContact?: Contact;
 };
 
 const initialState = {
-  products: [],
+  accounts: [],
+  contacts: [],
   showBalances: true,
 } as WidgetState;
 
@@ -20,27 +20,22 @@ const slice = createSlice({
   name: 'widget',
   initialState,
   reducers: {
-    setProducts(state, action: PayloadAction<Array<Product>>) {
-      state.products = action.payload;
+    setAccounts(state, action: PayloadAction<Array<Account>>) {
+      state.accounts = action.payload;
+    },
+    setContacts(state, action: PayloadAction<Array<Contact>>) {
+      state.contacts = action.payload;
     },
     setShowBalances(state, action: PayloadAction<boolean>) {
       state.showBalances = action.payload;
     },
-    setSelectedProduct(state, action: PayloadAction<Product>) {
-      state.selectedProduct = action.payload;
-    },
-    setSelectedContact(state, action: PayloadAction<Contact>) {
-      state.selectedContact = action.payload;
-    },
   },
 });
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 export const {
-  setProducts,
+  setAccounts,
+  setContacts,
   setShowBalances,
-  setSelectedProduct,
-  setSelectedContact,
 } = slice.actions;
 
 export default slice.reducer;

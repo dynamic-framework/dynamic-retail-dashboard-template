@@ -1,49 +1,30 @@
-import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MButton } from '@modyo-dynamic/modyo-design-system-react';
+import { MButton } from '@dynamic-framework/ui-react';
 
 import CategoryList from './components/CategoryList';
 import QuickTransfer from './components/QuickTransfer';
-import { useAppDispatch, useAppSelector } from './store/hooks';
-import { getProducts, getShowBalances } from './store/selectors';
-import { setShowBalances } from './store/slice';
+import { useAppSelector } from './store/hooks';
+import { getAccounts } from './store/selectors';
+import useToggleBalances from './hooks/useToggleBalances';
 
 export default function App() {
-  const dispatch = useAppDispatch();
   const { t } = useTranslation();
-  const products = useAppSelector(getProducts);
-
-  const showBalances = useAppSelector(getShowBalances);
-  const handleShowBalances = () => {
-    dispatch(setShowBalances(!showBalances));
-  };
-
-  const toggleBalance = useMemo(() => {
-    if (showBalances) {
-      return {
-        label: t('balance.hide'),
-        icon: 'eye-slash',
-      };
-    }
-    return {
-      label: t('balance.show'),
-      icon: 'eye',
-    };
-  }, [showBalances, t]);
+  const accounts = useAppSelector(getAccounts);
+  const { data, callback } = useToggleBalances();
 
   return (
     <div className="container justify-content-center py-3">
       <div className="row">
         <div className="col-12 col-lg-8">
           <div className="d-flex justify-content-between align-items-center mb-3">
-            <h1 className="fs-4 fw-bold">{t('my-products')}</h1>
-            {!!products.length && (
+            <h1 className="fs-4 fw-bold">{t('my-accounts')}</h1>
+            {accounts.length > 0 && (
               <MButton
-                iconStart={toggleBalance.icon}
-                text={toggleBalance.label}
+                iconStart={data.icon}
+                text={data.label}
                 variant="link"
                 theme="secondary"
-                onMClick={handleShowBalances}
+                onMClick={callback}
               />
             )}
           </div>

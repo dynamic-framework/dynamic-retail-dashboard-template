@@ -1,11 +1,10 @@
 {
-  "name": "@modyo-dynamic/modyo-widget-retail-dashboard",
-  "version": "0.3.0",
+  "name": "@modyo-dynamic/modyo-widget-template-retail-dashboard",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@modyo-dynamic/modyo-design-system": "workspace:*",
-    "@modyo-dynamic/modyo-design-system-react": "workspace:*",
-    "@modyo-dynamic/modyo-service-retail": "workspace:*",
+    "@dynamic-framework/ui": "^1.1.0",
+    "@dynamic-framework/ui-react": "^1.1.0",
     "@reduxjs/toolkit": "^1.8.4",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
