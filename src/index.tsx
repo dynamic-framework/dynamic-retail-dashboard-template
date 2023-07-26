@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { LiquidContextProvider } from '@dynamic-framework/ui-react';
 
-import '@dynamic-framework/ui/dist/css/design-system.css';
-import '@dynamic-framework/ui-react/dist/css/design-system-react.css';
+import '@dynamic-framework/ui/dist/css/dynamic-ui.css';
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui-react.css';
 
 import './config/liquidConfig';
 import './config/i18nConfig';
