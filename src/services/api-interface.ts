@@ -25,8 +25,8 @@ export type ApiAccount = {
   created: string;
   modified: string;
   status: string;
-  depositDetails: ApiDepositDetails | null;
-  loanDetails: ApiLoanDetails | null;
+  depositDetails?: ApiDepositDetails;
+  loanDetails?: ApiLoanDetails;
 };
 
 export type ApiDepositDetails = {
@@ -35,23 +35,23 @@ export type ApiDepositDetails = {
     available: number;
     unavailable: number;
   }
-  overdraft: {
+  overdraft?: {
     limit: number;
     total: number;
     available: number;
     expiryDate: string; // ISO8601
-  } | null;
-  maturityDate: string | null; // ISO8601
+  };
+  maturityDate?: string; // ISO8601
   interest: {
     accrued: number;
     accruedNegative: number;
-    settings: {
-      rateSettings: {
-        rate: number | null;
-        tiers: number | null;
-        terms: string | null;
-        source: string | null;
-      },
+    settings?: {
+      rateSettings?: {
+        rate?: number;
+        tiers?: number;
+        terms?: string;
+        source?: string;
+      };
       paymentPoint: string;
       paymentDates: Array<Record<string, unknown>>;
     }

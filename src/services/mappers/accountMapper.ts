@@ -1,5 +1,4 @@
 import {
-  AccountType,
   AccountBaseType,
   ApiAccountTypeConfig,
 } from '../config';
@@ -15,7 +14,7 @@ export default function accountMapper(apiAccount: ApiAccount): Account {
     name: apiAccount.nickName,
     alias: apiAccount.nickName,
     accountNumber: apiAccount.accountNumber,
-    type: ApiAccountTypeConfig[apiAccount.accountType] as AccountType,
+    type: ApiAccountTypeConfig[apiAccount.accountType],
   };
 
   if (baseType === AccountBaseType.Loan) {

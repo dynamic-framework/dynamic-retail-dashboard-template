@@ -12,24 +12,21 @@ export default function useContacts() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const {
-      perform,
-      abort,
-    } = ContactRepository.list();
+    const abortController = new AbortController();
 
     (async () => {
       setLoading(true);
       try {
-        const response = await perform();
+        const response = await ContactRepository.list({ abortSignal: abortController.signal });
         setLoading(false);
         dispatch(setContacts(response));
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } catch (error: any) {
+      } catch (error) {
         errorHandler(error);
       }
     })();
+
     return () => {
-      abort();
+      abortController.abort();
     };
   }, [dispatch]);
 
