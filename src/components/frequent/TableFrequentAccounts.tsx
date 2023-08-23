@@ -36,23 +36,21 @@ export default function TableMain() {
   }
 
   return (
-    <div className="mt-4">
-      <table
-        {...getTableProps()}
-        className="w-100"
-      >
-        <TableHeader
-          headerGroups={headerGroups}
-        />
-        <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
-            prepareRow(row);
-            return (
-              <TableRow row={row} key={row.id} />
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+    <table
+      {...getTableProps()}
+      className="w-100"
+    >
+      <TableHeader
+        headerGroups={headerGroups}
+      />
+      <tbody {...getTableBodyProps()}>
+        {rows.map((row) => {
+          prepareRow(row);
+          return (
+            <TableRow row={row} key={row.id} />
+          );
+        })}
+      </tbody>
+    </table>
   );
 }

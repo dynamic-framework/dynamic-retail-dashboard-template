@@ -15,10 +15,7 @@ export default function PopoverFrequentAccounts() {
   }
 
   return (
-    <div className="mt-4">
-      <h5 className="fw-bold py-3">
-        {t('frequent-transactions')}
-      </h5>
+    <>
       {data.map((activity, index) => (
         <div
           key={activity.id}
@@ -62,6 +59,6 @@ export default function PopoverFrequentAccounts() {
           </MCollapse>
         </div>
       ))}
-    </div>
+    </>
   );
 }

@@ -88,6 +88,9 @@ export default function App() {
         <div className="col-12 col-lg-8">
           <CurrentView />
           <div className="row">
+            <h5 className="fw-bold py-3">
+              {t('frequent-transactions')}
+            </h5>
             <div className="d-none d-md-block col">
               <TableFrequentAccounts />
             </div>
