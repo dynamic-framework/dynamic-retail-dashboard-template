@@ -16,6 +16,9 @@
 
     "transfers-path": "transfers",
 
-    "api-path": "https://stoplight.io/mocks/modyo/dynamic/204091081"
+    "api-path": "https://stoplight.io/mocks/modyo/dynamic/204091081",
+
+    "format-date": "dd/MM/yyyy",
+    "format-date-full": "dd/MM/yyyy hh:mm a"
   }
 }
