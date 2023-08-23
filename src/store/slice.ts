@@ -2,18 +2,22 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import type { Account, Contact } from '../services/interface';
+import type { Account, Contact, FrequentActivity } from '../services/interface';
 
 export type WidgetState = {
   accounts: Array<Account>;
   contacts: Array<Contact>;
+  frequentActivities: Array<FrequentActivity>;
   showBalances: boolean;
+  currentView: string;
 };
 
 const initialState = {
   accounts: [],
   contacts: [],
+  frequentActivities: [],
   showBalances: true,
+  currentView: 'list',
 } as WidgetState;
 
 const slice = createSlice({
@@ -26,8 +30,14 @@ const slice = createSlice({
     setContacts(state, action: PayloadAction<Array<Contact>>) {
       state.contacts = action.payload;
     },
+    setFrequentActivities(state, action: PayloadAction<Array<FrequentActivity>>) {
+      state.frequentActivities = action.payload;
+    },
     setShowBalances(state, action: PayloadAction<boolean>) {
       state.showBalances = action.payload;
+    },
+    setCurrentView(state, action: PayloadAction<string>) {
+      state.currentView = action.payload;
     },
   },
 });
@@ -36,6 +46,8 @@ export const {
   setAccounts,
   setContacts,
   setShowBalances,
+  setCurrentView,
+  setFrequentActivities,
 } = slice.actions;
 
 export default slice.reducer;
