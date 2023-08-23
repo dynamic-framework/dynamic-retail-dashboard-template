@@ -28,6 +28,7 @@ export default function QuickTransferContactSelect({ selected } : Props) {
         line2={`${selected.bank} ${selected.accountNumber.slice(-3)}`}
         representativeImage={selected.image}
         onMClick={goToTransfer}
+        actionIcon="chevron-right"
       />
     </div>
   );
