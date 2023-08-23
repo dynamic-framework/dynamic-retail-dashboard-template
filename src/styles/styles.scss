@@ -1,0 +1,34 @@
+.actions-btn {
+  .btn {
+    margin: auto;
+  }
+}
+
+.m-card-account .card-body > :first-child {
+  height: 100%;
+}
+
+.frequent-collapse {
+  .collapse-body {
+    padding-bottom: 0px;
+  }
+
+  .frequent-collapse-actions {
+    .btn {
+      padding-block: 0px;
+    }
+  }
+}
+
+.collapse-button-activity {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(var(--bs-secondary-rgb), .1);
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+
+.quick-transfer {
+  position: sticky;
+  top: var(--bs-ref-spacer-3);
+}
