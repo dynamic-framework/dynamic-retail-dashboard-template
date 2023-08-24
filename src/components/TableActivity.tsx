@@ -5,9 +5,9 @@ import {
   useTable,
 } from 'react-table';
 import { useTranslation } from 'react-i18next';
-import TableHeader from './TableHeader';
-import TableRow from './TableRow';
-import useFrequentActivities from '../../services/hooks/useFrequentActivities';
+import TableActivityHeader from './TableActivityHeader';
+import TableActivityRow from './TableActivityRow';
+import useFrequentActivities from '../services/hooks/useFrequentActivities';
 
 export default function TableMain() {
   const { loading, data } = useFrequentActivities();
@@ -40,14 +40,14 @@ export default function TableMain() {
       {...getTableProps()}
       className="w-100"
     >
-      <TableHeader
+      <TableActivityHeader
         headerGroups={headerGroups}
       />
       <tbody {...getTableBodyProps()}>
         {rows.map((row) => {
           prepareRow(row);
           return (
-            <TableRow row={row} key={row.id} />
+            <TableActivityRow row={row} key={row.id} />
           );
         })}
       </tbody>

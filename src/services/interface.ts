@@ -8,7 +8,7 @@ export type Contact = {
   image: string;
 };
 
-export type FrequentActivity = {
+export type Activity = {
   id: string;
   name: string;
   bank: string;

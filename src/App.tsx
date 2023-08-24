@@ -9,8 +9,8 @@ import { getAccounts, getCurrentView } from './store/selectors';
 import useToggleBalances from './hooks/useToggleBalances';
 import AccountSlides from './components/AccountSlides';
 import { setCurrentView } from './store/slice';
-import TableFrequentAccounts from './components/frequent/TableFrequentAccounts';
-import CollapseFrequentAccounts from './components/CollapseList';
+import TableActivity from './components/TableActivity';
+import CollapseFrequent from './components/CollapseList';
 
 const VIEWS = {
   list: CategoryList,
@@ -92,10 +92,10 @@ export default function App() {
               {t('frequent-transactions')}
             </h5>
             <div className="d-none d-md-block col">
-              <TableFrequentAccounts />
+              <TableActivity />
             </div>
             <div className="d-block d-md-none col">
-              <CollapseFrequentAccounts />
+              <CollapseFrequent />
             </div>
           </div>
         </div>

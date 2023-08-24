@@ -1,8 +1,8 @@
-import { FrequentActivity } from '../services/interface';
+import { Activity } from '../services/interface';
 import getInitials from '../utils/getInitials';
 
 type Props = {
-  activity: FrequentActivity;
+  activity: Activity;
 };
 
 export default function CollapseButton({ activity }: Props) {
