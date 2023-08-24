@@ -39,8 +39,6 @@ export default function QuickTransferAmountInput({ value, onChange, account }: P
       onChange={(newValue) => onChange(newValue)}
       value={value}
       placeholder="0,00"
-      onBlur={() => {}}
-      onFocus={() => {}}
     />
   );
 }
