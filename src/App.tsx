@@ -10,7 +10,7 @@ import useToggleBalances from './hooks/useToggleBalances';
 import AccountSlides from './components/AccountSlides';
 import { setCurrentView } from './store/slice';
 import TableActivity from './components/TableActivity';
-import CollapseFrequent from './components/CollapseList';
+import CollapseActivity from './components/CollapseActivity';
 
 const VIEWS = {
   list: CategoryList,
@@ -95,7 +95,7 @@ export default function App() {
               <TableActivity />
             </div>
             <div className="d-block d-md-none col">
-              <CollapseFrequent />
+              <CollapseActivity />
             </div>
           </div>
         </div>

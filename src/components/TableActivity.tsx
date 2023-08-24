@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import TableActivityHeader from './TableActivityHeader';
 import TableActivityRow from './TableActivityRow';
 import useFrequentActivities from '../services/hooks/useFrequentActivities';
+import TableActivityLoader from './loaders/TableActivityLoader';
 
 export default function TableMain() {
   const { loading, data } = useFrequentActivities();
@@ -32,7 +33,7 @@ export default function TableMain() {
   );
 
   if (loading) {
-    return null;
+    return <TableActivityLoader />;
   }
 
   return (

@@ -2,16 +2,17 @@ import { MButton, MCollapse } from '@dynamic-framework/ui-react';
 import { DateTime } from 'luxon';
 import { useTranslation } from 'react-i18next';
 import useFrequentActivities from '../services/hooks/useFrequentActivities';
-import CollapseButton from './CollapseButton';
-import CollapseItemDetail from './CollapseItemDetail';
+import CollapseActivityButton from './CollapseActivityButton';
+import CollapseActivityDetail from './CollapseActivityDetail';
 import { FORMAT_DATE } from '../config/widgetConfig';
+import TableActivityLoader from './loaders/TableActivityLoader';
 
 export default function PopoverFrequentAccounts() {
   const { loading, data } = useFrequentActivities();
   const { t } = useTranslation();
 
   if (loading) {
-    return null;
+    return <TableActivityLoader />;
   }
 
   return (
@@ -25,24 +26,24 @@ export default function PopoverFrequentAccounts() {
             className="shadow-none bg-transparent border-bottom frequent-collapse"
             defaultCollapsed={index === 0}
             Component={(
-              <CollapseButton activity={activity} />
+              <CollapseActivityButton activity={activity} />
             )}
           >
             <div className="row">
-              <CollapseItemDetail
+              <CollapseActivityDetail
                 className="border-top border-gray-200"
                 label={t('frequent.date')}
                 value={DateTime.fromISO(activity.effectiveDate).toFormat(FORMAT_DATE)}
               />
-              <CollapseItemDetail
+              <CollapseActivityDetail
                 label={t('frequent.accountNumber')}
                 value={activity.accountNumber}
               />
-              <CollapseItemDetail
+              <CollapseActivityDetail
                 label={t('frequent.bank')}
                 value={activity.bank}
               />
-              <CollapseItemDetail
+              <CollapseActivityDetail
                 label={t('frequent.actions')}
                 value={(
                   <div className="d-flex justify-content-center">
