@@ -20,3 +20,5 @@ export const ACCOUNT_PATHS = {
 
 export const FORMAT_DATE = liquidParser.parse('{{vars.format-date}}');
 export const FORMAT_DATE_FULL = liquidParser.parse('{{vars.format-date-full}}');
+
+export type View = 'list' | 'slides';

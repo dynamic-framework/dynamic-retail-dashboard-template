@@ -3,13 +3,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 import type { Account, Contact, Activity } from '../services/interface';
+import { View } from '../config/widgetConfig';
 
 export type WidgetState = {
   accounts: Array<Account>;
   contacts: Array<Contact>;
   frequentActivities: Array<Activity>;
   showBalances: boolean;
-  currentView: string;
+  currentView: View;
 };
 
 const initialState = {
@@ -36,7 +37,7 @@ const slice = createSlice({
     setShowBalances(state, action: PayloadAction<boolean>) {
       state.showBalances = action.payload;
     },
-    setCurrentView(state, action: PayloadAction<string>) {
+    setCurrentView(state, action: PayloadAction<View>) {
       state.currentView = action.payload;
     },
   },

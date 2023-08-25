@@ -11,6 +11,7 @@ import AccountSlides from './components/AccountSlides';
 import { setCurrentView } from './store/slice';
 import TableActivity from './components/TableActivity';
 import CollapseActivity from './components/CollapseActivity';
+import { View } from './config/widgetConfig';
 
 const VIEWS = {
   list: CategoryList,
@@ -25,7 +26,7 @@ export default function App() {
 
   const { data, callback } = useToggleBalances();
 
-  const handlerView = (view: string) => {
+  const handlerView = (view: View) => {
     dispatch(setCurrentView(view));
   };
 
