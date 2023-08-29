@@ -23,5 +23,16 @@
   "hint": {
     "noAmount": "Ingrese el monto a pagar",
     "withAmount": "{amount} después de la transferencia"
-  }
+  },
+  "frequent-transactions": "Transacciones frecuentes",
+  "details": "Detalles",
+  "frequent": {
+    "date": "Fecha",
+    "accountNumber": "Número de cuenta",
+    "for": "Para",
+    "bank": "Banco",
+    "actions": "Acciones"
+  },
+  "list": "Lista",
+  "slides": "Carrusel"
 }

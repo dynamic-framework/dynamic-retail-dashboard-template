@@ -8,6 +8,14 @@ export type Contact = {
   image: string;
 };
 
+export type Activity = {
+  id: string;
+  name: string;
+  bank: string;
+  accountNumber: string;
+  effectiveDate: string;
+};
+
 export type Category = {
   id: string;
   name: string;

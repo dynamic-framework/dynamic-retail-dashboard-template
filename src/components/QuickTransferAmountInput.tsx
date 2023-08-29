@@ -38,9 +38,7 @@ export default function QuickTransferAmountInput({ value, onChange, account }: P
       hint={hintCurrency.message}
       onChange={(newValue) => onChange(newValue)}
       value={value}
-      placeholder="$0,00"
-      onBlur={console.log}
-      onFocus={console.log}
+      placeholder="0,00"
     />
   );
 }

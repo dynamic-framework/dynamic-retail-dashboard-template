@@ -17,6 +17,11 @@ export const getContacts = createDraftSafeSelector(
   (widget) => widget.contacts,
 );
 
+export const getFrequentActivities = createDraftSafeSelector(
+  getState,
+  (widget) => widget.frequentActivities,
+);
+
 export const getFirstAccount = createDraftSafeSelector(
   getAccounts,
   ([first]) => first,
@@ -59,4 +64,9 @@ export const getAccountsByCategory = createDraftSafeSelector(
 export const getShowBalances = createDraftSafeSelector(
   getState,
   (widget) => widget.showBalances,
+);
+
+export const getCurrentView = createDraftSafeSelector(
+  getState,
+  (widget) => widget.currentView,
 );

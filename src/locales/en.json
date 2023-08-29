@@ -23,5 +23,16 @@
   "hint": {
     "noAmount": "Enter an amount to pay",
     "withAmount": "{amount} remaining after transfer"
-  }
+  },
+  "frequent-transactions": "Frequent transactions",
+  "details": "Details",
+  "frequent": {
+    "date": "Date",
+    "accountNumber": "Account number",
+    "name": "Name",
+    "bank": "Bank",
+    "actions": "Actions"
+  },
+  "list": "List",
+  "slides": "Slides"
 }

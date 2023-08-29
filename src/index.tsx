@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { LiquidContextProvider } from '@dynamic-framework/ui-react';
 
-import '@dynamic-framework/ui-react/dist/css/dynamic-ui-all.css';
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui-react.css';
 
 import './config/liquidConfig';
 import './config/i18nConfig';
+import './styles/styles.scss';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
