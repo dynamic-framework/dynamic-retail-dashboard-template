@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { MQuickActionButton } from '@dynamic-framework/ui-react';
+import { DQuickActionButton } from '@dynamic-framework/ui-react';
 
 import { TRANSFER_URL } from '../config/widgetConfig';
 
@@ -23,11 +23,11 @@ export default function QuickTransferContactSelect({ selected } : Props) {
   return (
     <div className="d-flex flex-column gap-2">
       <h6 className="fw-bold px-2 sp">{t('transfer.target')}</h6>
-      <MQuickActionButton
+      <DQuickActionButton
         line1={selected.name}
         line2={`${selected.bank} ${selected.accountNumber.slice(-3)}`}
         representativeImage={selected.image}
-        onMClick={goToTransfer}
+        onEventClick={goToTransfer}
         actionIcon="chevron-right"
       />
     </div>

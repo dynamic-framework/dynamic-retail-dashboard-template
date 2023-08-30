@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MCollapse, MIcon, useFormatCurrency } from '@dynamic-framework/ui-react';
+import { DCollapse, DIcon, useFormatCurrency } from '@dynamic-framework/ui-react';
 
 import AccountItem from './AccountItem';
 import { useAppSelector } from '../store/hooks';
@@ -37,12 +37,12 @@ export default function CategoryItem(
   }
 
   return (
-    <MCollapse
+    <DCollapse
       defaultCollapsed={accounts.length > 0}
       className="rounded shadow-sm"
       Component={(
         <div className="d-flex align-items-center gap-3">
-          <MIcon
+          <DIcon
             icon={AccountTypeConfig[type].icon}
             theme={AccountTypeConfig[type].theme}
             hasCircle
@@ -58,6 +58,6 @@ export default function CategoryItem(
           <AccountItem key={account.id} account={account} />
         ))}
       </div>
-    </MCollapse>
+    </DCollapse>
   );
 }

@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MButton } from '@dynamic-framework/ui-react';
+import { DButton } from '@dynamic-framework/ui-react';
 
 import QuickTransferLoader from './loaders/QuickTransferLoader';
 import QuickTransferDepositAccountSelect from './QuickTransferDepositAccountSelect';
@@ -41,13 +41,13 @@ export default function QuickTransfer() {
       <QuickTransferDepositAccountSelect selected={account} onSelect={setAccount} />
       <QuickTransferAmountInput value={amount} onChange={setAmount} account={account} />
       <QuickTransferContactSelect selected={firstContact} />
-      <MButton
+      <DButton
         text={t('transfer.actionSingle')}
         className="d-grid pt-2"
         isPill
         theme="primary"
         iconEnd="send"
-        onMClick={sendTransfer}
+        onEventClick={sendTransfer}
         isDisabled={!amount || amount <= 0 || !account}
       />
     </div>

@@ -1,6 +1,6 @@
 import {
-  MCarousel,
-  MCarouselSlide,
+  DCarousel,
+  DCarouselSlide,
 } from '@dynamic-framework/ui-react';
 import { useAppSelector } from '../store/hooks';
 import { getAccounts } from '../store/selectors';
@@ -22,7 +22,7 @@ export default function CategorySlides() {
 
   return (
     <div className="pb-4">
-      <MCarousel
+      <DCarousel
         options={{
           pagination: true,
           paginationKeyboard: false,
@@ -47,14 +47,14 @@ export default function CategorySlides() {
         }}
       >
         {accounts.map((account) => (
-          <MCarouselSlide
+          <DCarouselSlide
             key={account.id}
             className="d-flex align-items-stretch py-3"
           >
             <AccountSlide account={account} />
-          </MCarouselSlide>
+          </DCarouselSlide>
         ))}
-      </MCarousel>
+      </DCarousel>
     </div>
   );
 }

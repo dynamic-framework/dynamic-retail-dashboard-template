@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MInputCurrency, useFormatCurrency } from '@dynamic-framework/ui-react';
+import { DInputCurrency, useFormatCurrency } from '@dynamic-framework/ui-react';
 
 import type { Dispatch, SetStateAction } from 'react';
 
@@ -32,11 +32,11 @@ export default function QuickTransferAmountInput({ value, onChange, account }: P
   }, [value, format, account, t]);
 
   return (
-    <MInputCurrency
+    <DInputCurrency
       label={t('transfer.total')}
-      mId="amountToTransfer"
+      innerId="amountToTransfer"
       hint={hintCurrency.message}
-      onChange={(newValue) => onChange(newValue)}
+      onEventChange={(newValue) => onChange(newValue)}
       value={value}
       placeholder="0,00"
     />

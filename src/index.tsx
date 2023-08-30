@@ -7,7 +7,7 @@ import '@dynamic-framework/ui-react/dist/css/dynamic-ui-react.css';
 
 import './config/liquidConfig';
 import './config/i18nConfig';
-import './styles/styles.scss';
+import './styles/base.scss';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
