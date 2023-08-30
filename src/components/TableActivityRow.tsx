@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Cell, Row } from 'react-table';
-import { MButton } from '@dynamic-framework/ui-react';
+import { DButton } from '@dynamic-framework/ui-react';
 import { DateTime } from 'luxon';
 import { FORMAT_DATE } from '../config/widgetConfig';
 
@@ -19,7 +19,7 @@ export default function TableRow({ row }: Props) {
     }
     if (cell.column.id === 'actions') {
       return (
-        <MButton
+        <DButton
           className="actions-btn"
           iconStart="three-dots-vertical"
           variant="link"

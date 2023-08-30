@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { MButton } from '@dynamic-framework/ui-react';
+import { DButton } from '@dynamic-framework/ui-react';
 
 import { useMemo } from 'react';
 import CategoryList from './components/CategoryList';
@@ -43,43 +43,43 @@ export default function App() {
             <h1 className="fs-4 fw-bold w-100">{t('my-accounts')}</h1>
             {accounts.length > 0 && (
               <div className="d-flex flex-grow-1 w-100 justify-content-end">
-                <MButton
+                <DButton
                   iconStart={data.icon}
                   text={data.label}
                   variant="link"
                   theme="secondary"
-                  onMClick={callback}
+                  onEventClick={callback}
                 />
                 {/* For Mobile */}
-                <MButton
+                <DButton
                   iconStart="view-list"
                   variant="link"
                   theme="secondary"
-                  onMClick={() => handlerView('list')}
+                  onEventClick={() => handlerView('list')}
                   className="d-block d-lg-none"
                 />
-                <MButton
+                <DButton
                   iconStart="grid"
                   variant="link"
                   theme="secondary"
-                  onMClick={() => handlerView('slides')}
+                  onEventClick={() => handlerView('slides')}
                   className="d-block d-lg-none"
                 />
                 {/* For Desktop */}
-                <MButton
+                <DButton
                   iconStart="view-list"
                   text={t('list')}
                   variant="link"
                   theme="secondary"
-                  onMClick={() => handlerView('list')}
+                  onEventClick={() => handlerView('list')}
                   className="d-none d-lg-block"
                 />
-                <MButton
+                <DButton
                   iconStart="grid"
                   text={t('slides')}
                   variant="link"
                   theme="secondary"
-                  onMClick={() => handlerView('slides')}
+                  onEventClick={() => handlerView('slides')}
                   className="d-none d-lg-block"
                 />
               </div>

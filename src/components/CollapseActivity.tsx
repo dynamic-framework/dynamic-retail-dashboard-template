@@ -1,4 +1,4 @@
-import { MButton, MCollapse } from '@dynamic-framework/ui-react';
+import { DButton, DCollapse } from '@dynamic-framework/ui-react';
 import { DateTime } from 'luxon';
 import { useTranslation } from 'react-i18next';
 import useFrequentActivities from '../services/hooks/useFrequentActivities';
@@ -22,7 +22,7 @@ export default function PopoverFrequentAccounts() {
           key={activity.id}
           className="d-block"
         >
-          <MCollapse
+          <DCollapse
             className="shadow-none bg-transparent border-bottom frequent-collapse"
             defaultCollapsed={index === 0}
             Component={(
@@ -47,7 +47,7 @@ export default function PopoverFrequentAccounts() {
                 label={t('frequent.actions')}
                 value={(
                   <div className="d-flex justify-content-center">
-                    <MButton
+                    <DButton
                       iconStart="three-dots-vertical"
                       variant="link"
                       theme="secondary"
@@ -57,7 +57,7 @@ export default function PopoverFrequentAccounts() {
                 )}
               />
             </div>
-          </MCollapse>
+          </DCollapse>
         </div>
       ))}
     </>

@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import {
-  MCardAccount,
+  DCardAccount,
 } from '@dynamic-framework/ui-react';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -23,8 +23,7 @@ export default function AccountSlide({ account }: Props) {
   const { label, value } = useAccountValue(account);
 
   return (
-
-    <MCardAccount
+    <DCardAccount
       className="flex-grow-1"
       icon={AccountTypeConfig[account.type].icon}
       theme={AccountTypeConfig[account.type].theme}
@@ -32,8 +31,8 @@ export default function AccountSlide({ account }: Props) {
       number={account.accountNumber}
       balance={value}
       balanceText={label}
-      onClickText={t('details')}
-      onClick={accountPath}
+      actionText={t('details')}
+      onEventClick={accountPath}
     />
   );
 }

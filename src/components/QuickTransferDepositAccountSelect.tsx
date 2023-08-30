@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { MInputSelect } from '@dynamic-framework/ui-react';
+import { DInputSelect } from '@dynamic-framework/ui-react';
 
 import type { Dispatch, SetStateAction } from 'react';
 
@@ -18,14 +18,14 @@ export default function QuickTransferDepositAccountSelect({ selected, onSelect }
   const depositAccounts = useAppSelector(getDepositAccounts);
 
   return (
-    <MInputSelect
-      mId="selectAccountFrom"
+    <DInputSelect
+      innerId="selectAccountFrom"
       label={t('transfer.from')}
       valueExtractor={({ accountNumber }: Account) => accountNumber}
       labelExtractor={({ name, accountNumber }: Account) => `${name} ••• ${accountNumber}`}
       options={depositAccounts}
       selectedOption={selected}
-      onMChange={({ detail: account }: CustomEvent<Account>) => onSelect(account)}
+      onEventChange={({ detail: account }: CustomEvent<Account>) => onSelect(account)}
     />
   );
 }
