@@ -8,5 +8,6 @@ export default function latestActivitiesMapper(apiActivity: ApiActivity): Activi
     effectiveDate: apiActivity.effectiveDate,
     amount: apiActivity.amount,
     name: apiActivity.contact.name,
+    description: apiActivity.description,
   };
 }

@@ -20,7 +20,7 @@ export default function LatestActivitiesList() {
           className="py-3 d-flex align-items-center border-bottom"
         >
           <div className="d-flex flex-column flex-grow-1">
-            <p className="h6">{transaction.name}</p>
+            <p className="h6">{transaction.description}</p>
             <small className="text-light-emphasis">
               {DateTime.fromISO(transaction.effectiveDate).toFormat('dd/MM/yyyy')}
             </small>

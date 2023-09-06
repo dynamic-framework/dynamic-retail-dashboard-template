@@ -14,6 +14,7 @@ export type Activity = {
   accountNumber: string;
   effectiveDate: string;
   amount: number;
+  description: string;
 };
 
 export type Category = {
