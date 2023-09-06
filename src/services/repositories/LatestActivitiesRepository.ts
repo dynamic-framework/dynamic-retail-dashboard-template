@@ -2,7 +2,7 @@ import type { GenericAbortSignal } from 'axios';
 
 import ApiClient from '../ApiClient';
 
-import frequentActivityMapper from '../mappers/frequentActivityMapper';
+import latestActivitiesMapper from '../mappers/latestActivitiesMapper';
 import { ApiActivity } from '../api-interface';
 
 export async function list(config: { abortSignal: GenericAbortSignal }) {
@@ -15,5 +15,5 @@ export async function list(config: { abortSignal: GenericAbortSignal }) {
     },
   });
 
-  return data.map((apiActivity) => frequentActivityMapper(apiActivity));
+  return data.map((apiActivity) => latestActivitiesMapper(apiActivity));
 }

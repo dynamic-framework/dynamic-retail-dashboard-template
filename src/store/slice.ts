@@ -8,7 +8,7 @@ import { View } from '../config/widgetConfig';
 export type WidgetState = {
   accounts: Array<Account>;
   contacts: Array<Contact>;
-  frequentActivities: Array<Activity>;
+  latestActivities: Array<Activity>;
   showBalances: boolean;
   currentView: View;
 };
@@ -16,7 +16,7 @@ export type WidgetState = {
 const initialState = {
   accounts: [],
   contacts: [],
-  frequentActivities: [],
+  latestActivities: [],
   showBalances: true,
   currentView: 'list',
 } as WidgetState;
@@ -31,8 +31,8 @@ const slice = createSlice({
     setContacts(state, action: PayloadAction<Array<Contact>>) {
       state.contacts = action.payload;
     },
-    setFrequentActivities(state, action: PayloadAction<Array<Activity>>) {
-      state.frequentActivities = action.payload;
+    setLatestActivities(state, action: PayloadAction<Array<Activity>>) {
+      state.latestActivities = action.payload;
     },
     setShowBalances(state, action: PayloadAction<boolean>) {
       state.showBalances = action.payload;
@@ -48,7 +48,7 @@ export const {
   setContacts,
   setShowBalances,
   setCurrentView,
-  setFrequentActivities,
+  setLatestActivities,
 } = slice.actions;
 
 export default slice.reducer;

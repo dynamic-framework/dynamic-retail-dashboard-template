@@ -24,7 +24,7 @@
     "noAmount": "Enter an amount to pay",
     "withAmount": "{amount} remaining after transfer"
   },
-  "frequent-transactions": "Frequent transactions",
+  "transactions": "Transactions",
   "details": "Details",
   "frequent": {
     "date": "Date",

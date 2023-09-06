@@ -1,6 +1,6 @@
 import { DSkeleton } from '@dynamic-framework/ui-react';
 
-export default function TableActivityLoader() {
+export default function ActivityListLoader() {
   return (
     <>
       <div className="d-block d-xl-none">

@@ -1,25 +1,25 @@
 /* eslint-disable max-len */
 import { useEffect, useState } from 'react';
 
-import { FrequentActivitiesRepository } from '../repositories';
+import { LatestActivitiesRepository } from '../repositories';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { getFrequentActivities } from '../../store/selectors';
-import { setFrequentActivities } from '../../store/slice';
+import { getLatestActivities } from '../../store/selectors';
+import { setLatestActivities } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
 
-export default function useFrequentActivities() {
+export default function useLatestActivities() {
   const [loading, setLoading] = useState(false);
   const dispatch = useAppDispatch();
-  const data = useAppSelector(getFrequentActivities);
+  const data = useAppSelector(getLatestActivities);
 
   useEffect(() => {
     const abortController = new AbortController();
 
     (async () => {
-      setLoading(true);
       try {
-        const response = await FrequentActivitiesRepository.list({ abortSignal: abortController.signal });
-        dispatch(setFrequentActivities(response));
+        setLoading(true);
+        const response = await LatestActivitiesRepository.list({ abortSignal: abortController.signal });
+        dispatch(setLatestActivities(response));
         setLoading(false);
       } catch (error) {
         errorHandler(error);
