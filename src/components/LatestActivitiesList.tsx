@@ -1,4 +1,5 @@
 import { DList, DListItemMovement } from '@dynamic-framework/ui-react';
+import { DateTime } from 'luxon';
 import ActivityListLoader from './loaders/ActivityListLoader';
 import useTransactions from '../services/hooks/useLatestActivities';
 
@@ -22,7 +23,7 @@ export default function LatestActivitiesList() {
             key={id}
             amount={amount}
             description={description}
-            date={effectiveDate}
+            date={DateTime.fromISO(effectiveDate).toFormat('dd/MM/yyyy')}
           />
         ))}
       </DList>
