@@ -37,7 +37,7 @@ export default function App() {
   );
 
   return (
-    <div className="container justify-content-center py-3">
+    <div>
       <div className="row">
         <div className="col-12 col-lg-8">
           <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-3">
