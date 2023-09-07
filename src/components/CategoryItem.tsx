@@ -47,9 +47,9 @@ export default function CategoryItem(
             theme={AccountTypeConfig[type].theme}
             hasCircle
           />
-          <h2 className="fs-6 flex-fill text-light-emphasis fw-bold text-truncate">{name}</h2>
-          <small className="text-light-emphasis">{t('total')}</small>
-          <p className="fw-bold text-dark">{showBalances ? format(total) : '$ ***'}</p>
+          <h2 className="fs-6 flex-fill text-truncate">{name}</h2>
+          <small className="text-gray-500">{t('total')}</small>
+          <p className="fs-6 fw-bold text-dark">{showBalances ? format(total) : '$ ***'}</p>
         </div>
       )}
     >
