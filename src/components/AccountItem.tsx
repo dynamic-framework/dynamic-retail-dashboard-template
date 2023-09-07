@@ -33,16 +33,16 @@ export default function AccountItem(
     >
       <div className="d-flex gap-3 align-items-center">
         <div className="d-flex flex-column flex-grow-1">
-          <p>{account.alias}</p>
-          <small className="text-light-emphasis">{account.accountNumber}</small>
+          <small>{account.alias}</small>
+          <p className="text-gray-500">{account.accountNumber}</p>
         </div>
       </div>
       <div className="d-flex gap-3 align-items-center justify-content-between">
         <div className="text-start text-lg-end">
-          <div className="sp text-light-emphasis">{label}</div>
+          <div className="small text-gray-500">{label}</div>
         </div>
         <div className="d-flex flex-column text-end">
-          <div className="sp">{value}</div>
+          <div className="fw-bold">{value}</div>
         </div>
       </div>
     </a>

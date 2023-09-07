@@ -13,22 +13,22 @@ export enum AccountType {
 export const AccountTypeConfig = {
   [AccountType.Checking]: {
     name: 'Checking',
-    theme: 'orange',
+    theme: 'danger',
     icon: 'cash-coin',
   },
   [AccountType.Saving]: {
     name: 'Savings',
-    theme: 'blue',
+    theme: 'info',
     icon: 'piggy-bank',
   },
   [AccountType.CreditCard]: {
     name: 'Credit Cards',
-    theme: 'indigo',
+    theme: 'secondary',
     icon: 'credit-card',
   },
   [AccountType.Loan]: {
     name: 'Loans',
-    theme: 'yellow',
+    theme: 'warning',
     icon: 'cash-stack',
   },
 };
