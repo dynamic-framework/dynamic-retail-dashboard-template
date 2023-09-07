@@ -2,15 +2,16 @@ import { useTranslation } from 'react-i18next';
 import { DButton } from '@dynamic-framework/ui-react';
 
 import { useMemo } from 'react';
-import CategoryList from './components/CategoryList';
-import QuickTransfer from './components/QuickTransfer';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { getAccounts, getCurrentView } from './store/selectors';
+
+import CategoryList from './components/CategoryList';
+import QuickTransfer from './components/QuickTransfer';
 import useToggleBalances from './hooks/useToggleBalances';
 import AccountSlides from './components/AccountSlides';
+import LatestActivitiesList from './components/LatestActivitiesList';
+
 import { setCurrentView } from './store/slice';
-import TableActivity from './components/TableActivity';
-import CollapseActivity from './components/CollapseActivity';
 import { View } from './config/widgetConfig';
 
 const VIEWS = {
@@ -90,13 +91,10 @@ export default function App() {
           <CurrentView />
           <div className="row">
             <h5 className="fw-bold py-3">
-              {t('frequent-transactions')}
+              {t('transactions')}
             </h5>
-            <div className="d-none d-md-block col">
-              <TableActivity />
-            </div>
-            <div className="d-block d-md-none col">
-              <CollapseActivity />
+            <div className="d-block col">
+              <LatestActivitiesList />
             </div>
           </div>
         </div>

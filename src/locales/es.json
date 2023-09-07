@@ -24,7 +24,7 @@
     "noAmount": "Ingrese el monto a pagar",
     "withAmount": "{amount} después de la transferencia"
   },
-  "frequent-transactions": "Transacciones frecuentes",
+  "transactions": "Transacciones",
   "details": "Detalles",
   "frequent": {
     "date": "Fecha",

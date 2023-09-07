@@ -17,9 +17,9 @@ export const getContacts = createDraftSafeSelector(
   (widget) => widget.contacts,
 );
 
-export const getFrequentActivities = createDraftSafeSelector(
+export const getLatestActivities = createDraftSafeSelector(
   getState,
-  (widget) => widget.frequentActivities,
+  (widget) => widget.latestActivities,
 );
 
 export const getFirstAccount = createDraftSafeSelector(

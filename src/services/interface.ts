@@ -11,9 +11,10 @@ export type Contact = {
 export type Activity = {
   id: string;
   name: string;
-  bank: string;
   accountNumber: string;
   effectiveDate: string;
+  amount: number;
+  description: string;
 };
 
 export type Category = {
