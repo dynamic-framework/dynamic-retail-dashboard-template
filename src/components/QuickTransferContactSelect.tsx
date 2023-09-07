@@ -22,7 +22,7 @@ export default function QuickTransferContactSelect({ selected } : Props) {
 
   return (
     <div className="d-flex flex-column gap-2">
-      <h6 className="fw-bold px-2 sp">{t('transfer.target')}</h6>
+      <h6 className="fw-bold px-2 small">{t('transfer.target')}</h6>
       <DQuickActionButton
         line1={selected.name}
         line2={`${selected.bank} ${selected.accountNumber.slice(-3)}`}
