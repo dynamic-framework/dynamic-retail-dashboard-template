@@ -35,7 +35,7 @@ export default function CategorySlides() {
           mediaQuery: 'min',
           arrows: false,
           breakpoints: {
-            1200: {
+            [1400 + 252]: {
               perPage: 3,
             },
             576: {
