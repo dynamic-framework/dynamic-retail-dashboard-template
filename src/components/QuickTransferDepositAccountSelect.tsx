@@ -18,14 +18,14 @@ export default function QuickTransferDepositAccountSelect({ selected, onSelect }
   const depositAccounts = useAppSelector(getDepositAccounts);
 
   return (
-    <DInputSelect
-      innerId="selectAccountFrom"
+    <DInputSelect<Account>
+      id="selectAccountFrom"
       label={t('transfer.from')}
       valueExtractor={({ accountNumber }: Account) => accountNumber}
       labelExtractor={({ name, accountNumber }: Account) => `${name} ••• ${accountNumber}`}
       options={depositAccounts}
       selectedOption={selected}
-      onEventChange={({ detail: account }: CustomEvent<Account>) => onSelect(account)}
+      onChange={(account) => (account ? onSelect(account) : undefined)}
     />
   );
 }

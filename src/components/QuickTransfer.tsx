@@ -43,11 +43,10 @@ export default function QuickTransfer() {
       <QuickTransferContactSelect selected={firstContact} />
       <DButton
         text={t('transfer.actionSingle')}
-        className="d-grid pt-2"
         isPill
         theme="primary"
         iconEnd="send"
-        onEventClick={sendTransfer}
+        onClick={sendTransfer}
         isDisabled={!amount || amount <= 0 || !account}
       />
     </div>

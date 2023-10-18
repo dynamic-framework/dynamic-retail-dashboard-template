@@ -34,9 +34,9 @@ export default function QuickTransferAmountInput({ value, onChange, account }: P
   return (
     <DInputCurrency
       label={t('transfer.total')}
-      innerId="amountToTransfer"
+      id="amountToTransfer"
       hint={hintCurrency.message}
-      onEventChange={(newValue) => onChange(newValue)}
+      onChange={(newValue) => onChange(newValue)}
       value={value}
       placeholder="0,00"
     />

@@ -32,7 +32,7 @@ export default function AccountSlide({ account }: Props) {
       balance={value}
       balanceText={label}
       actionText={t('details')}
-      onEventClick={accountPath}
+      onClick={accountPath}
     />
   );
 }

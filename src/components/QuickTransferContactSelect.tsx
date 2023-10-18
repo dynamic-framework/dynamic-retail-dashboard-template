@@ -27,7 +27,7 @@ export default function QuickTransferContactSelect({ selected } : Props) {
         line1={selected.name}
         line2={`${selected.bank} ${selected.accountNumber.slice(-3)}`}
         representativeImage={selected.image}
-        onEventClick={goToTransfer}
+        onClick={goToTransfer}
         actionIcon="chevron-right"
       />
     </div>
