@@ -34,3 +34,7 @@
   position: sticky;
   top: var(--#{$prefix}ref-spacer-3);
 }
+
+.d-carousel .splide__track .splide__list {
+  height: auto;
+}
