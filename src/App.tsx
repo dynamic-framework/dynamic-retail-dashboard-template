@@ -48,22 +48,22 @@ export default function App() {
                 text={data.label}
                 variant="link"
                 theme="secondary"
-                onEventClick={callback}
+                onClick={callback}
               />
               {/* For Mobile */}
               <DButton
                 iconStart="view-list"
                 variant="link"
                 theme="secondary"
-                onEventClick={() => handlerView('list')}
-                className="d-block d-lg-none"
+                onClick={() => handlerView('list')}
+                className="d-flex d-lg-none"
               />
               <DButton
                 iconStart="grid"
                 variant="link"
                 theme="secondary"
-                onEventClick={() => handlerView('slides')}
-                className="d-block d-lg-none"
+                onClick={() => handlerView('slides')}
+                className="d-flex d-lg-none"
               />
               {/* For Desktop */}
               <DButton
@@ -71,16 +71,16 @@ export default function App() {
                 text={t('list')}
                 variant="link"
                 theme="secondary"
-                onEventClick={() => handlerView('list')}
-                className="d-none d-lg-block"
+                onClick={() => handlerView('list')}
+                className="d-none d-lg-flex"
               />
               <DButton
                 iconStart="grid"
                 text={t('slides')}
                 variant="link"
                 theme="secondary"
-                onEventClick={() => handlerView('slides')}
-                className="d-none d-lg-block"
+                onClick={() => handlerView('slides')}
+                className="d-none d-lg-flex"
               />
             </div>
           )}

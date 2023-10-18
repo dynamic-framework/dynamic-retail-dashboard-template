@@ -47,7 +47,7 @@ export default function QuickTransfer() {
         isPill
         theme="primary"
         iconEnd="send"
-        onEventClick={sendTransfer}
+        onClick={sendTransfer}
         isDisabled={!amount || amount <= 0 || !account}
       />
     </div>
