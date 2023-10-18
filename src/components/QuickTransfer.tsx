@@ -43,7 +43,6 @@ export default function QuickTransfer() {
       <QuickTransferContactSelect selected={firstContact} />
       <DButton
         text={t('transfer.actionSingle')}
-        className="pt-2"
         isPill
         theme="primary"
         iconEnd="send"
