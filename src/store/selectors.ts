@@ -22,9 +22,9 @@ export const getLatestActivities = createDraftSafeSelector(
   (widget) => widget.latestActivities,
 );
 
-export const getFirstAccount = createDraftSafeSelector(
+export const getDepositAccounts = createDraftSafeSelector(
   getAccounts,
-  ([first]) => first,
+  (accounts) => accounts.filter((account) => account.baseType === 'deposit'),
 );
 
 export const getFirstContact = createDraftSafeSelector(
@@ -32,9 +32,9 @@ export const getFirstContact = createDraftSafeSelector(
   ([first]) => first,
 );
 
-export const getDepositAccounts = createDraftSafeSelector(
-  getAccounts,
-  (accounts) => accounts.filter((account) => account.baseType === 'deposit'),
+export const getFirstAccount = createDraftSafeSelector(
+  getDepositAccounts,
+  ([first]) => first,
 );
 
 export const getAccountsByCategory = createDraftSafeSelector(
