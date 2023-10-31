@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { LiquidContextProvider } from '@dynamic-framework/ui-react';
+import { DContextProvider } from '@dynamic-framework/ui-react';
 
 import './config/liquidConfig';
 import './config/i18nConfig';
@@ -10,20 +10,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store/store';
 
-if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line global-require
-  require('@dynamic-framework/ui-react/dist/css/dynamic-ui.css');
-}
-require('./styles/base.scss');
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
+import './styles/base.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('dashboard') as Element);
 root.render(
   <StrictMode>
-    <LiquidContextProvider>
+    <DContextProvider>
       <Provider store={store}>
         <App />
       </Provider>
-    </LiquidContextProvider>
+    </DContextProvider>
   </StrictMode>,
 );
 

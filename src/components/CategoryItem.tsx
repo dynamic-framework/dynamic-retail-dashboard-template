@@ -48,7 +48,7 @@ export default function CategoryItem(
             hasCircle
           />
           <h2 className="fs-6 flex-fill text-truncate">{name}</h2>
-          <small className="text-gray-500">{t('total')}</small>
+          <small className="text-gray-500 d-none d-md-block">{t('total')}</small>
           <p className="fs-6 fw-bold text-dark">{showBalances ? format(total) : '$ ***'}</p>
         </div>
       )}
