@@ -7,6 +7,7 @@ import { useAppSelector } from '../store/hooks';
 import { getShowBalances } from '../store/selectors';
 
 import type { Account } from '../services/interface';
+import { AccountType } from '../services/config';
 
 export default function useAccountValue(account: Account) {
   const { t } = useTranslation();
@@ -19,10 +20,10 @@ export default function useAccountValue(account: Account) {
   ), [account, format, showBalances]);
 
   const label = useMemo(() => {
-    if (account.type === 'credit-card') {
+    if (account.type === AccountType.CreditCard) {
       return t('available-quota');
     }
-    if (account.type === 'loan') {
+    if (account.type === AccountType.Loan) {
       return t('total-due');
     }
     return t('amount-available');
