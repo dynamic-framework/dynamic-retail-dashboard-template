@@ -9,25 +9,22 @@ import QuickTransferAmountInput from './QuickTransferAmountInput';
 import useContacts from '../services/hooks/useContacts';
 import { TRANSFER_URL } from '../config/widgetConfig';
 import { useAppSelector } from '../store/hooks';
-import { getFirstAccount, getFirstContact } from '../store/selectors';
-
-import type { Account } from '../services/interface';
+import { getTransferFromAccount, getSelectedContact } from '../store/selectors';
 
 export default function QuickTransfer() {
   const { t } = useTranslation();
-  const firstAccount = useAppSelector(getFirstAccount);
-  const firstContact = useAppSelector(getFirstContact);
+  const { loading } = useContacts();
+
+  const transferFromAccount = useAppSelector(getTransferFromAccount);
+  const selectedContact = useAppSelector(getSelectedContact);
 
   const [amount, setAmount] = useState<number>();
-  const [account, setAccount] = useState<Account>(firstAccount);
-
-  const { loading } = useContacts();
 
   const sendTransfer = useCallback(() => {
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    const queryParams = `?contact_id=${firstContact?.id}&from_account=${account?.id}&amount=${amount}`;
+    const queryParams = `?contact_id=${selectedContact?.id}&from_account=${transferFromAccount?.id}&amount=${amount}`;
     window.location.href = `${TRANSFER_URL}${queryParams}`;
-  }, [amount, firstContact?.id, account?.id]);
+  }, [selectedContact?.id, transferFromAccount?.id, amount]);
 
   if (loading) {
     return <QuickTransferLoader />;
@@ -38,16 +35,16 @@ export default function QuickTransfer() {
       <h3 className="fs-5 fw-bold mx-2">
         {t('transfer.title')}
       </h3>
-      <QuickTransferDepositAccountSelect selected={account} onSelect={setAccount} />
-      <QuickTransferAmountInput value={amount} onChange={setAmount} account={account} />
-      <QuickTransferContactSelect selected={firstContact} />
+      <QuickTransferDepositAccountSelect />
+      <QuickTransferAmountInput value={amount} onChange={setAmount} />
+      <QuickTransferContactSelect />
       <DButton
         text={t('transfer.actionSingle')}
         isPill
         theme="primary"
         iconEnd="send"
         onClick={sendTransfer}
-        isDisabled={!amount || amount <= 0 || !account}
+        isDisabled={!amount || amount <= 0 || !transferFromAccount}
       />
     </div>
   );
