@@ -1,35 +1,60 @@
 import { useTranslation } from 'react-i18next';
-import { DQuickActionButton } from '@dynamic-framework/ui-react';
+import { DPopover, DQuickActionButton } from '@dynamic-framework/ui-react';
 
-import { TRANSFER_URL } from '../config/widgetConfig';
+import { useState } from 'react';
 
 import type { Contact } from '../services/interface';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { getContacts, getSelectedContact } from '../store/selectors';
+import { setSelectedContact } from '../store/slice';
 
-type Props = {
-  selected: Contact;
-};
-
-export default function QuickTransferContactSelect({ selected } : Props) {
+export default function QuickTransferContactSelect() {
   const { t } = useTranslation();
+  const [toggle, setToggle] = useState(false);
+  const contacts = useAppSelector(getContacts);
+  const selectedContact = useAppSelector(getSelectedContact);
+  const dispatch = useAppDispatch();
 
-  if (!selected) {
+  const handleSelect = (contact: Contact) => {
+    setToggle(false);
+    dispatch(setSelectedContact(contact));
+  };
+
+  if (!selectedContact) {
     return null;
   }
-
-  const goToTransfer = () => {
-    window.location.href = TRANSFER_URL;
-  };
 
   return (
     <div className="d-flex flex-column gap-2">
       <small className="fw-bold text-gray-500 px-2 d-inline-flex">{t('transfer.target')}</small>
-      <DQuickActionButton
-        line1={selected.name}
-        line2={`${selected.bank} ${selected.accountNumber.slice(-3)}`}
-        representativeImage={selected.image}
-        onClick={goToTransfer}
-        actionIcon="chevron-right"
-      />
+      <div className="contact-selector">
+        <DPopover
+          isOpen={toggle}
+          setEventIsOpen={setToggle}
+          adjustContentToRender
+          renderComponent={() => (
+            <DQuickActionButton
+              line1={selectedContact.name}
+              line2={`${selectedContact.bank} ${selectedContact.accountNumber.slice(-3)}`}
+              representativeImage={selectedContact.image}
+              actionIcon={toggle ? 'chevron-up' : 'chevron-down'}
+            />
+          )}
+        >
+          <div className="rounded overflow-hidden drop-contact">
+            {contacts.map((contact: Contact) => (
+              <DQuickActionButton
+                key={contact.id}
+                line1={contact.name}
+                line2={`${contact.bank} ${contact.accountNumber.slice(-3)}`}
+                className={selectedContact?.id === contact.id ? 'selected' : undefined}
+                representativeImage={contact.image}
+                onClick={() => handleSelect(contact)}
+              />
+            ))}
+          </div>
+        </DPopover>
+      </div>
     </div>
   );
 }

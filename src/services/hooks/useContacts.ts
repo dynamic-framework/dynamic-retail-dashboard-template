@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { ContactRepository } from '../repositories';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getContacts } from '../../store/selectors';
-import { setContacts } from '../../store/slice';
+import { setContacts, setSelectedContact } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
 
 export default function useContacts() {
@@ -20,6 +20,7 @@ export default function useContacts() {
         const response = await ContactRepository.list({ abortSignal: abortController.signal });
         setLoading(false);
         dispatch(setContacts(response));
+        dispatch(setSelectedContact(response[0]));
       } catch (error) {
         errorHandler(error);
       }

@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { AccountRepository } from '../repositories';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getAccounts } from '../../store/selectors';
-import { setAccounts } from '../../store/slice';
+import { setAccounts, setDepositAccounts, setTransferFrom } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
+import { AccountBaseType } from '../config';
 
 export default function useAccounts() {
   const [loading, setLoading] = useState(false);
@@ -20,6 +21,11 @@ export default function useAccounts() {
         const response = await AccountRepository.list({ abortSignal: abortController.signal });
         setLoading(false);
         dispatch(setAccounts(response));
+        const depositAccounts = response.filter(
+          (account) => account.baseType === AccountBaseType.Deposit,
+        );
+        dispatch(setDepositAccounts(depositAccounts));
+        dispatch(setTransferFrom(depositAccounts[0]));
       } catch (error) {
         errorHandler(error);
       }
