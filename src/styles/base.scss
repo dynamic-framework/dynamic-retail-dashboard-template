@@ -38,3 +38,36 @@
 .d-carousel .splide__track .splide__list {
   height: auto;
 }
+
+.contact-selector {
+  .d-popover-content {
+    z-index: 10;
+  }
+}
+
+.drop-contact {
+  background-color: var(--#{$prefix}white);
+  border: 1px solid var(--#{$prefix}gray-300);
+
+  .d-quick-action-button {
+    --#{$prefix}quick-action-button-component-border-radius: 0;
+    --#{$prefix}quick-action-button-border: 0;
+    --#{$prefix}quick-action-button-box-shadow: 0;
+
+    position: relative;
+    overflow: hidden;
+  }
+
+  d-quick-action-button:not(:last-child) .d-quick-action-button {
+    --#{$prefix}quick-action-button-border-bottom: 1px solid var(--#{$prefix}gray-300);
+
+    &:active {
+      border-color: var(--#{$prefix}gray-300);
+    }
+  }
+
+  .selected {
+    position: relative;
+    background-color: rgba(var(--#{$prefix}gray-200-rgb), 0.5);
+  }
+}

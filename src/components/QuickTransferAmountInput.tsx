@@ -5,31 +5,31 @@ import { DInputCurrency, useFormatCurrency } from '@dynamic-framework/ui-react';
 import type { Dispatch, SetStateAction } from 'react';
 
 import getAccountValue from '../services/utils/getAccountValue';
-
-import type { Account } from '../services/interface';
+import { useAppSelector } from '../store/hooks';
+import { getTransferFromAccount } from '../store/selectors';
 
 type Props = {
   value?: number;
   onChange: Dispatch<SetStateAction<number | undefined>>;
-  account: Account;
 };
 
-export default function QuickTransferAmountInput({ value, onChange, account }: Props) {
+export default function QuickTransferAmountInput({ value, onChange }: Props) {
   const { t } = useTranslation();
   const { format } = useFormatCurrency();
+  const transferFromAccount = useAppSelector(getTransferFromAccount);
 
   const hintCurrency = useMemo(() => {
-    if (value === 0 || !account) {
+    if (value === 0 || !transferFromAccount) {
       return {
         message: t('hint.noAmount'),
         icon: 'info-circle',
       };
     }
     return {
-      message: t('hint.withAmount', { amount: format(getAccountValue(account)) }),
+      message: t('hint.withAmount', { amount: format(getAccountValue(transferFromAccount)) }),
       icon: 'info-circle',
     };
-  }, [value, format, account, t]);
+  }, [value, format, transferFromAccount, t]);
 
   return (
     <DInputCurrency

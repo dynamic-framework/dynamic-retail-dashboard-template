@@ -1,6 +1,6 @@
 import { createDraftSafeSelector } from '@reduxjs/toolkit';
 
-import { AccountBaseType, AccountTypeConfig } from '../services/config';
+import { AccountTypeConfig } from '../services/config';
 
 import type { RootState } from './store';
 import type { Account, Category } from '../services/interface';
@@ -23,18 +23,18 @@ export const getLatestActivities = createDraftSafeSelector(
 );
 
 export const getDepositAccounts = createDraftSafeSelector(
-  getAccounts,
-  (accounts) => accounts.filter((account) => account.baseType === AccountBaseType.Deposit),
+  getState,
+  (widget) => widget.depositAccounts,
 );
 
-export const getFirstContact = createDraftSafeSelector(
-  getContacts,
-  ([first]) => first,
+export const getSelectedContact = createDraftSafeSelector(
+  getState,
+  (widget) => widget.selectedContact,
 );
 
-export const getFirstAccount = createDraftSafeSelector(
-  getDepositAccounts,
-  ([first]) => first,
+export const getTransferFromAccount = createDraftSafeSelector(
+  getState,
+  (widget) => widget.transferFrom,
 );
 
 export const getAccountsByCategory = createDraftSafeSelector(

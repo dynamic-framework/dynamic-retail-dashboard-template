@@ -11,11 +11,15 @@ export type WidgetState = {
   latestActivities: Array<Activity>;
   showBalances: boolean;
   currentView: View;
+  selectedContact?: Contact;
+  transferFrom?: Account;
+  depositAccounts: Array<Account>;
 };
 
 const initialState = {
   accounts: [],
   contacts: [],
+  depositAccounts: [],
   latestActivities: [],
   showBalances: true,
   currentView: 'list',
@@ -40,6 +44,15 @@ const slice = createSlice({
     setCurrentView(state, action: PayloadAction<View>) {
       state.currentView = action.payload;
     },
+    setSelectedContact(state, action: PayloadAction<Contact>) {
+      state.selectedContact = action.payload;
+    },
+    setTransferFrom(state, action: PayloadAction<Account>) {
+      state.transferFrom = action.payload;
+    },
+    setDepositAccounts(state, action: PayloadAction<Array<Account>>) {
+      state.depositAccounts = action.payload;
+    },
   },
 });
 
@@ -49,6 +62,9 @@ export const {
   setShowBalances,
   setCurrentView,
   setLatestActivities,
+  setSelectedContact,
+  setTransferFrom,
+  setDepositAccounts,
 } = slice.actions;
 
 export default slice.reducer;
