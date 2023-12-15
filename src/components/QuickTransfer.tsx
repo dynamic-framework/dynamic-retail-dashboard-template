@@ -40,11 +40,11 @@ export default function QuickTransfer() {
       <QuickTransferContactSelect />
       <DButton
         text={t('transfer.actionSingle')}
-        isPill
+        pill
         theme="primary"
         iconEnd="send"
         onClick={sendTransfer}
-        isDisabled={!amount || amount <= 0 || !transferFromAccount}
+        disabled={!amount || amount <= 0 || !transferFromAccount}
       />
     </div>
   );

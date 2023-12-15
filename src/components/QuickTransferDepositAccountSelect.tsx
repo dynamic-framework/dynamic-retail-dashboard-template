@@ -20,8 +20,8 @@ export default function QuickTransferDepositAccountSelect() {
       valueExtractor={({ accountNumber }: Account) => accountNumber}
       labelExtractor={({ name, accountNumber }: Account) => `${name} ••• ${accountNumber}`}
       options={depositAccounts}
-      selectedOption={transferFromAccount}
-      onChange={(account) => dispatch(setTransferFrom(account as Account))}
+      value={transferFromAccount?.accountNumber}
+      onChange={(account) => dispatch(setTransferFrom(account))}
     />
   );
 }

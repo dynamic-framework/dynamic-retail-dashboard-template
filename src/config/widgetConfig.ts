@@ -3,8 +3,14 @@ import liquidParser from '../utils/liquidParser';
 import { AccountType } from '../services/config';
 
 export const SITE_LANG = liquidParser.parse('{{site.language}}');
-
 export const SITE_URL = liquidParser.parse('{{site.url}}');
+export const VARS_CURRENCY = {
+  symbol: liquidParser.parse('{{vars.currency-symbol}}'),
+  precision: Number(liquidParser.parse('{{vars.currency-precision}}')),
+  separator: liquidParser.parse('{{vars.currency-separator}}'),
+  decimal: liquidParser.parse('{{vars.currency-decimal}}'),
+};
+
 export const TRANSFER_PATH = liquidParser.parse('{{vars.transfers-path}}');
 export const TRANSFER_URL = `${SITE_URL}/${TRANSFER_PATH}`;
 
