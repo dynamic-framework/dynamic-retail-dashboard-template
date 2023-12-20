@@ -29,8 +29,8 @@ export default function QuickTransferContactSelect() {
       <small className="fw-bold text-gray-500 px-2 d-inline-flex">{t('transfer.target')}</small>
       <div className="contact-selector">
         <DPopover
-          isOpen={toggle}
-          setEventIsOpen={setToggle}
+          open={toggle}
+          setOpen={setToggle}
           adjustContentToRender
           renderComponent={() => (
             <DQuickActionButton

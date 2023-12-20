@@ -12,7 +12,7 @@ export default function LatestActivitiesList() {
 
   return (
     <div className="bg-white rounded shadow-sm overflow-hidden">
-      <DList isFlush>
+      <DList flush>
         {data.map(({
           id,
           amount,
