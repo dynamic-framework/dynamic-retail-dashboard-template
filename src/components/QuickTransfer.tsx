@@ -22,7 +22,12 @@ export default function QuickTransfer() {
 
   const sendTransfer = useCallback(() => {
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    const queryParams = `?contact_id=${selectedContact?.id}&from_account=${transferFromAccount?.id}&amount=${amount}`;
+    const queryParams = new URLSearchParams({
+      contact_id: selectedContact?.id || '',
+      from_account: transferFromAccount?.id || '',
+      amount: amount?.toString() || '',
+    }).toString();
+
     window.location.href = `${TRANSFER_URL}${queryParams}`;
   }, [selectedContact?.id, transferFromAccount?.id, amount]);
 
