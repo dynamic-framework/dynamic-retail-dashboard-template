@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { DButton } from '@dynamic-framework/ui-react';
+import { DButton, useDContext } from '@dynamic-framework/ui-react';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { getAccounts, getCurrentView } from './store/selectors';
 
@@ -12,7 +12,7 @@ import AccountSlides from './components/AccountSlides';
 import LatestActivitiesList from './components/LatestActivitiesList';
 
 import { setCurrentView } from './store/slice';
-import { View } from './config/widgetConfig';
+import { SITE_LANG, VARS_CURRENCY, View } from './config/widgetConfig';
 
 const VIEWS = {
   list: CategoryList,
@@ -20,6 +20,15 @@ const VIEWS = {
 };
 
 export default function App() {
+  const { setContext } = useDContext();
+
+  useEffect(() => {
+    setContext({
+      language: SITE_LANG,
+      currency: VARS_CURRENCY,
+    });
+  }, [setContext]);
+
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const accounts = useAppSelector(getAccounts);
