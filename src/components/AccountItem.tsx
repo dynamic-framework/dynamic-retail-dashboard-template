@@ -28,16 +28,16 @@ export default function AccountItem(
         'cursor-pointer text-decoration-none text-body',
         'border-top',
         'pt-3',
-        'd-flex flex-column flex-lg-row gap-3 justify-content-between',
+        'd-flex flex-column flex-lg-row gap-4 justify-content-between',
       )}
     >
-      <div className="d-flex gap-3 align-items-center">
+      <div className="d-flex gap-4 align-items-center">
         <div className="d-flex flex-column flex-grow-1">
           <small>{account.alias}</small>
           <p className="text-gray-500">{account.accountNumber}</p>
         </div>
       </div>
-      <div className="d-flex gap-3 align-items-center justify-content-between">
+      <div className="d-flex gap-4 align-items-center justify-content-between">
         <div className="text-start text-lg-end">
           <div className="small text-gray-500">{label}</div>
         </div>

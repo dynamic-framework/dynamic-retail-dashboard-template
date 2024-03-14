@@ -41,7 +41,7 @@ export default function CategoryItem(
       defaultCollapsed={accounts.length > 0}
       className="rounded shadow-sm"
       Component={(
-        <div className="d-flex align-items-center gap-3">
+        <div className="d-flex align-items-center gap-4">
           <DIcon
             icon={AccountTypeConfig[type].icon}
             theme={AccountTypeConfig[type].theme}
@@ -53,7 +53,7 @@ export default function CategoryItem(
         </div>
       )}
     >
-      <div className="d-flex flex-column gap-3">
+      <div className="d-flex flex-column gap-4">
         {accounts.map((account) => (
           <AccountItem key={account.id} account={account} />
         ))}
