@@ -12,7 +12,7 @@ import AccountSlides from './components/AccountSlides';
 import LatestActivitiesList from './components/LatestActivitiesList';
 
 import { setCurrentView } from './store/slice';
-import { SITE_LANG, VARS_CURRENCY, View } from './config/widgetConfig';
+import { CONTEXT_CONFIG, View } from './config/widgetConfig';
 
 const VIEWS = {
   list: CategoryList,
@@ -23,10 +23,7 @@ export default function App() {
   const { setContext } = useDContext();
 
   useEffect(() => {
-    setContext({
-      language: SITE_LANG,
-      currency: VARS_CURRENCY,
-    });
+    setContext(CONTEXT_CONFIG);
   }, [setContext]);
 
   const { t } = useTranslation();
