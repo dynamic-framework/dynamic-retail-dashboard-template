@@ -27,7 +27,7 @@ export default function AccountItem(
       className={classnames(
         'cursor-pointer text-decoration-none text-body',
         'border-top',
-        'pt-3',
+        'pt-4',
         'd-flex flex-column flex-lg-row gap-4 justify-content-between',
       )}
     >

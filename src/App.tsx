@@ -45,7 +45,7 @@ export default function App() {
   return (
     <div className="row">
       <div className="col-12 col-lg-8">
-        <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-3">
+        <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4">
           {/* <h1 className="fs-4 fw-bold w-100">{t('my-accounts')}</h1> */}
           {accounts.length > 0 && (
             <div className="d-flex flex-grow-1 w-100 justify-content-end">
@@ -95,7 +95,7 @@ export default function App() {
       <div className="col-12 col-lg-8">
         <CurrentView />
         <div className="row">
-          <h5 className="fw-bold py-3">
+          <h5 className="fw-bold py-4">
             {t('transactions')}
           </h5>
           <div className="d-block col">
