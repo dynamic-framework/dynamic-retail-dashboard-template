@@ -34,7 +34,7 @@ export default function AccountItem(
       <div className="d-flex gap-4 align-items-center">
         <div className="d-flex flex-column flex-grow-1">
           <small>{account.alias}</small>
-          <p className="text-gray-500">{account.accountNumber}</p>
+          <p className="text-gray-500 mb-0">{account.accountNumber}</p>
         </div>
       </div>
       <div className="d-flex gap-4 align-items-center justify-content-between">

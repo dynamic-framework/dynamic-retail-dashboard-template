@@ -43,7 +43,7 @@ export default function CardAccount(
             size="1.5rem"
           />
           <div className="d-block flex-grow-1">
-            <p className="text-gray-700">
+            <p className="text-gray-700 mb-0">
               {name}
             </p>
             <small className="text-gray-500">
@@ -52,7 +52,7 @@ export default function CardAccount(
           </div>
         </div>
         <div className="d-block">
-          <p className="fw-bold fs-6 text-body">
+          <p className="fw-bold fs-6 text-body mb-0">
             {balance}
           </p>
           <small className="text-gray-700">
