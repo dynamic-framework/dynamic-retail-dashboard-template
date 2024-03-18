@@ -48,7 +48,7 @@ export default function App() {
         <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4">
           {/* <h1 className="fs-4 fw-bold w-100">{t('my-accounts')}</h1> */}
           {accounts.length > 0 && (
-            <div className="d-flex flex-grow-1 w-100 justify-content-end">
+            <div className="d-flex flex-grow-1 w-100 justify-content-end views-btn">
               <DButton
                 iconStart={data.icon}
                 text={data.label}

@@ -1,5 +1,12 @@
 @import "@dynamic-framework/ui-react/src/style/abstracts/+import";
 
+.views-btn {
+  .btn {
+    --#{$prefix}btn-padding-x: var(--#{$prefix}ref-spacer-2);
+    --#{$prefix}btn-padding-y: var(--#{$prefix}ref-spacer-2);
+  }
+}
+
 .d-card-account .card-body > :first-child {
   height: 100%;
 }
