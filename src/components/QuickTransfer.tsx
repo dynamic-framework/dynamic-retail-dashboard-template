@@ -45,7 +45,6 @@ export default function QuickTransfer() {
       <QuickTransferContactSelect />
       <DButton
         text={t('transfer.actionSingle')}
-        pill
         theme="primary"
         iconEnd="send"
         onClick={sendTransfer}
