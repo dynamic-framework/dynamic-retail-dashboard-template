@@ -22,7 +22,12 @@ export default function QuickTransfer() {
 
   const sendTransfer = useCallback(() => {
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    const queryParams = `?contact_id=${selectedContact?.id}&from_account=${transferFromAccount?.id}&amount=${amount}`;
+    const queryParams = new URLSearchParams({
+      contact_id: selectedContact?.id || '',
+      from_account: transferFromAccount?.id || '',
+      amount: amount?.toString() || '',
+    }).toString();
+
     window.location.href = `${TRANSFER_URL}${queryParams}`;
   }, [selectedContact?.id, transferFromAccount?.id, amount]);
 
@@ -31,7 +36,7 @@ export default function QuickTransfer() {
   }
 
   return (
-    <div className="bg-light d-flex flex-column p-3 rounded gap-3 quick-transfer">
+    <div className="bg-light d-flex flex-column p-4 rounded gap-4 quick-transfer">
       <h3 className="fs-5 fw-bold mx-2">
         {t('transfer.title')}
       </h3>
@@ -40,7 +45,6 @@ export default function QuickTransfer() {
       <QuickTransferContactSelect />
       <DButton
         text={t('transfer.actionSingle')}
-        pill
         theme="primary"
         iconEnd="send"
         onClick={sendTransfer}

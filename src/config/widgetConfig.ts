@@ -30,3 +30,8 @@ export const FORMAT_DATE = liquidParser.parse('{{vars.format-date}}');
 export const FORMAT_DATE_FULL = liquidParser.parse('{{vars.format-date-full}}');
 
 export type View = 'list' | 'slides';
+
+export const CONTEXT_CONFIG = {
+  language: SITE_LANG,
+  currency: VARS_CURRENCY,
+};

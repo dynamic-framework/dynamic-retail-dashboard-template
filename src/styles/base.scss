@@ -1,8 +1,9 @@
 @import "@dynamic-framework/ui-react/src/style/abstracts/+import";
 
-.actions-btn {
+.views-btn {
   .btn {
-    margin: auto;
+    --#{$prefix}btn-padding-x: var(--#{$prefix}ref-spacer-2);
+    --#{$prefix}btn-padding-y: var(--#{$prefix}ref-spacer-2);
   }
 }
 

@@ -41,7 +41,7 @@ export default function CategoryItem(
       defaultCollapsed={accounts.length > 0}
       className="rounded shadow-sm"
       Component={(
-        <div className="d-flex align-items-center gap-3">
+        <div className="d-flex align-items-center gap-4">
           <DIcon
             icon={AccountTypeConfig[type].icon}
             theme={AccountTypeConfig[type].theme}
@@ -49,11 +49,11 @@ export default function CategoryItem(
           />
           <h2 className="fs-6 flex-fill text-truncate">{name}</h2>
           <small className="text-gray-500 d-none d-md-block">{t('total')}</small>
-          <p className="fs-6 fw-bold text-dark">{showBalances ? format(total) : '$ ***'}</p>
+          <p className="fs-6 fw-bold text-dark mb-0">{showBalances ? format(total) : '$ ***'}</p>
         </div>
       )}
     >
-      <div className="d-flex flex-column gap-3">
+      <div className="d-flex flex-column gap-4">
         {accounts.map((account) => (
           <AccountItem key={account.id} account={account} />
         ))}

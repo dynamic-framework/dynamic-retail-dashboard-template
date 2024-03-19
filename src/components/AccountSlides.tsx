@@ -21,7 +21,7 @@ export default function CategorySlides() {
   }
 
   return (
-    <div className="pb-4">
+    <div className="pb-6">
       <DCarousel
         options={{
           pagination: true,
@@ -49,7 +49,7 @@ export default function CategorySlides() {
         {accounts.map((account) => (
           <DCarouselSlide
             key={account.id}
-            className="d-flex align-items-stretch py-3"
+            className="d-flex align-items-stretch py-4"
           >
             <AccountSlide account={account} />
           </DCarouselSlide>
