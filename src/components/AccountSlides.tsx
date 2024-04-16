@@ -34,6 +34,8 @@ export default function CategorySlides() {
           trimSpace: false,
           mediaQuery: 'min',
           arrows: false,
+          type: 'loop',
+          focus: 0,
           breakpoints: {
             [1400 + 252]: {
               perPage: 3,
