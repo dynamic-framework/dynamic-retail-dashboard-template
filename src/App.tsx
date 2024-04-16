@@ -52,7 +52,8 @@ export default function App() {
               <DButton
                 iconStart={data.icon}
                 text={data.label}
-                theme="light"
+                variant="link"
+                theme="secondary"
                 onClick={callback}
               />
               {/* For Mobile */}
@@ -83,7 +84,7 @@ export default function App() {
                 iconStart="grid"
                 text={t('slides')}
                 variant="link"
-                theme="dark"
+                theme="secondary"
                 onClick={() => handlerView('slides')}
                 className="d-none d-lg-flex"
               />

@@ -16,11 +16,11 @@ import './styles/base.scss';
 const root = ReactDOM.createRoot(document.getElementById('dashboard') as Element);
 root.render(
   <StrictMode>
-    <DContextProvider>
-      <Provider store={store}>
+    <Provider store={store}>
+      <DContextProvider>
         <App />
-      </Provider>
-    </DContextProvider>
+      </DContextProvider>
+    </Provider>
   </StrictMode>,
 );
 
