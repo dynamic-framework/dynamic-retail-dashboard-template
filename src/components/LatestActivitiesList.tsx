@@ -1,7 +1,8 @@
-import { DList, DListItemMovement } from '@dynamic-framework/ui-react';
+import { DList } from '@dynamic-framework/ui-react';
 import { DateTime } from 'luxon';
 import ActivityListLoader from './loaders/ActivityListLoader';
 import useTransactions from '../services/hooks/useLatestActivities';
+import ListItemMovement from './ListItemMovement';
 
 export default function LatestActivitiesList() {
   const { data, loading } = useTransactions();
@@ -12,14 +13,14 @@ export default function LatestActivitiesList() {
 
   return (
     <div className="bg-white rounded shadow-sm overflow-hidden">
-      <DList isFlush>
+      <DList flush>
         {data.map(({
           id,
           amount,
           description,
           effectiveDate,
         }) => (
-          <DListItemMovement
+          <ListItemMovement
             key={id}
             amount={amount}
             description={description}

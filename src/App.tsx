@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { DButton } from '@dynamic-framework/ui-react';
+import { DButton, useDContext } from '@dynamic-framework/ui-react';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { getAccounts, getCurrentView } from './store/selectors';
 
@@ -12,7 +12,7 @@ import AccountSlides from './components/AccountSlides';
 import LatestActivitiesList from './components/LatestActivitiesList';
 
 import { setCurrentView } from './store/slice';
-import { View } from './config/widgetConfig';
+import { CONTEXT_CONFIG, View } from './config/widgetConfig';
 
 const VIEWS = {
   list: CategoryList,
@@ -20,6 +20,12 @@ const VIEWS = {
 };
 
 export default function App() {
+  const { setContext } = useDContext();
+
+  useEffect(() => {
+    setContext(CONTEXT_CONFIG);
+  }, [setContext]);
+
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const accounts = useAppSelector(getAccounts);
@@ -39,10 +45,10 @@ export default function App() {
   return (
     <div className="row">
       <div className="col-12 col-lg-8">
-        <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-3">
+        <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4">
           {/* <h1 className="fs-4 fw-bold w-100">{t('my-accounts')}</h1> */}
           {accounts.length > 0 && (
-            <div className="d-flex flex-grow-1 w-100 justify-content-end">
+            <div className="d-flex flex-grow-1 w-100 justify-content-end views-btn">
               <DButton
                 iconStart={data.icon}
                 text={data.label}
@@ -89,7 +95,7 @@ export default function App() {
       <div className="col-12 col-lg-8">
         <CurrentView />
         <div className="row">
-          <h5 className="fw-bold py-3">
+          <h5 className="fw-bold py-4">
             {t('transactions')}
           </h5>
           <div className="d-block col">

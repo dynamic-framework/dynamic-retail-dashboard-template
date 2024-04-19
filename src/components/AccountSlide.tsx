@@ -1,13 +1,10 @@
-/* eslint-disable react/destructuring-assignment */
-import {
-  DCardAccount,
-} from '@dynamic-framework/ui-react';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ACCOUNT_PATHS, SITE_URL } from '../config/widgetConfig';
 import type { Account } from '../services/interface';
 import { AccountTypeConfig } from '../services/config';
 import useAccountValue from '../hooks/useAccountValue';
+import CardAccount from './CardAccount';
 
 type Props = {
   account: Account;
@@ -23,7 +20,7 @@ export default function AccountSlide({ account }: Props) {
   const { label, value } = useAccountValue(account);
 
   return (
-    <DCardAccount
+    <CardAccount
       className="flex-grow-1"
       icon={AccountTypeConfig[account.type].icon}
       theme={AccountTypeConfig[account.type].theme}

@@ -17,7 +17,7 @@ export default function CategoryList() {
   }
 
   return (
-    <div className="d-flex flex-column gap-5">
+    <div className="d-flex flex-column gap-8">
       {categories.map((category) => (
         <CategoryItem
           key={category.id}

@@ -1,4 +1,4 @@
-import { createDraftSafeSelector } from '@reduxjs/toolkit';
+import { createSelector } from '@reduxjs/toolkit';
 
 import { AccountTypeConfig } from '../services/config';
 
@@ -7,37 +7,37 @@ import type { Account, Category } from '../services/interface';
 
 const getState = (state: RootState) => state.widget;
 
-export const getAccounts = createDraftSafeSelector(
+export const getAccounts = createSelector(
   getState,
   (widget) => widget.accounts,
 );
 
-export const getContacts = createDraftSafeSelector(
+export const getContacts = createSelector(
   getState,
   (widget) => widget.contacts,
 );
 
-export const getLatestActivities = createDraftSafeSelector(
+export const getLatestActivities = createSelector(
   getState,
   (widget) => widget.latestActivities,
 );
 
-export const getDepositAccounts = createDraftSafeSelector(
+export const getDepositAccounts = createSelector(
   getState,
   (widget) => widget.depositAccounts,
 );
 
-export const getSelectedContact = createDraftSafeSelector(
+export const getSelectedContact = createSelector(
   getState,
   (widget) => widget.selectedContact,
 );
 
-export const getTransferFromAccount = createDraftSafeSelector(
+export const getTransferFromAccount = createSelector(
   getState,
   (widget) => widget.transferFrom,
 );
 
-export const getAccountsByCategory = createDraftSafeSelector(
+export const getAccountsByCategory = createSelector(
   getAccounts,
   (data) => Object.values(
     data.reduce<Record<string, Category>>((categorized, account: Account) => {
@@ -61,12 +61,12 @@ export const getAccountsByCategory = createDraftSafeSelector(
   ),
 );
 
-export const getShowBalances = createDraftSafeSelector(
+export const getShowBalances = createSelector(
   getState,
   (widget) => widget.showBalances,
 );
 
-export const getCurrentView = createDraftSafeSelector(
+export const getCurrentView = createSelector(
   getState,
   (widget) => widget.currentView,
 );

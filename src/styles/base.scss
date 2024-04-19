@@ -1,8 +1,9 @@
 @import "@dynamic-framework/ui-react/src/style/abstracts/+import";
 
-.actions-btn {
+.views-btn {
   .btn {
-    margin: auto;
+    --#{$prefix}btn-padding-x: var(--#{$prefix}ref-spacer-2);
+    --#{$prefix}btn-padding-y: var(--#{$prefix}ref-spacer-2);
   }
 }
 
@@ -10,31 +11,12 @@
   height: 100%;
 }
 
-.frequent-collapse {
-  .collapse-body {
-    padding-bottom: 0;
-  }
-
-  .frequent-collapse-actions {
-    .btn {
-      padding-block: 0;
-    }
-  }
-}
-
-.collapse-button-activity {
-  width: var(--#{$prefix}ref-spacer-6);
-  height: var(--#{$prefix}ref-spacer-6);
-  aspect-ratio: 1/1;
-  background: rgba(var(--#{$prefix}secondary-rgb), .1);
-  border-radius: 50%;
-}
-
 .quick-transfer {
   position: sticky;
   top: var(--#{$prefix}ref-spacer-3);
 }
 
+// stylelint-disable-next-line selector-class-pattern
 .d-carousel .splide__track .splide__list {
   height: auto;
 }
@@ -58,7 +40,7 @@
     overflow: hidden;
   }
 
-  d-quick-action-button:not(:last-child) .d-quick-action-button {
+  .d-quick-action-button:not(:last-child) .d-quick-action-button {
     --#{$prefix}quick-action-button-border-bottom: 1px solid var(--#{$prefix}gray-300);
 
     &:active {
@@ -68,6 +50,6 @@
 
   .selected {
     position: relative;
-    background-color: rgba(var(--#{$prefix}gray-200-rgb), 0.5);
+    background-color: rgba(var(--#{$prefix}gray-200-rgb), .5);
   }
 }
