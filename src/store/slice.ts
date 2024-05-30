@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 import type { Account, Contact, Activity } from '../services/interface';
-import { View } from '../config/widgetConfig';
+import { View, SCREENS } from '../config/widgetConfig';
 
 export type WidgetState = {
   accounts: Array<Account>;
@@ -13,7 +13,9 @@ export type WidgetState = {
   currentView: View;
   selectedContact?: Contact;
   transferFrom?: Account;
+  pinActivateAccount?: string;
   depositAccounts: Array<Account>;
+  activateView: string;
 };
 
 const initialState = {
@@ -23,6 +25,7 @@ const initialState = {
   latestActivities: [],
   showBalances: true,
   currentView: 'list',
+  activateView: SCREENS.start,
 } as WidgetState;
 
 const slice = createSlice({
@@ -44,6 +47,9 @@ const slice = createSlice({
     setCurrentView(state, action: PayloadAction<View>) {
       state.currentView = action.payload;
     },
+    setActivateView(state, action: PayloadAction<string>) {
+      state.activateView = action.payload;
+    },
     setSelectedContact(state, action: PayloadAction<Contact>) {
       state.selectedContact = action.payload;
     },
@@ -53,12 +59,17 @@ const slice = createSlice({
     setDepositAccounts(state, action: PayloadAction<Array<Account>>) {
       state.depositAccounts = action.payload;
     },
+    setPinActivateAccount(state, action: PayloadAction<string>) {
+      state.pinActivateAccount = action.payload;
+    },
   },
 });
 
 export const {
   setAccounts,
   setContacts,
+  setActivateView,
+  setPinActivateAccount,
   setShowBalances,
   setCurrentView,
   setLatestActivities,

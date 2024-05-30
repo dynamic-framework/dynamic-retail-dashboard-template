@@ -70,3 +70,13 @@ export const getCurrentView = createSelector(
   getState,
   (widget) => widget.currentView,
 );
+
+export const getPinActivateAccount = createSelector(
+  getState,
+  (widget) => widget.pinActivateAccount,
+);
+
+export const getActivationView = createSelector(
+  getState,
+  (widget) => widget.activateView,
+);

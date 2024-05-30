@@ -1,7 +1,25 @@
 {
+  "activate": "Activate",
+  "continue": "Continue",
   "balance": {
     "show": "Show amounts",
     "hide": "Hide amounts"
+  },
+  "cardStatus": {
+    "activateTitle": "¡Your card is on the way!",
+    "activateDescription": "Good news, Mathew! Your credit card is in the process of being shipped and will arrive at your destination within 5 business days.",
+    "steps": {
+      "order": "Order",
+      "shipped": "Shipped",
+      "delivered": "Delivered (Check your mailbox)"
+    },
+    "activationStartDescription": "It should be with you by",
+    "activationCode": "Enter your activation code",
+    "activationCodeDescription": "Enter the last 4 digits of the number on your credit card.",
+    "createPin": "Create PIN",
+    "createPinDescription": "Assign a key of 4 digits to your card for ATM withdrawals.",
+    "confirmPin": "Confirm PIN",
+    "errorPin": "Incorrect PIN, try again!"
   },
   "my-accounts": "My products",
   "total": "Total",
