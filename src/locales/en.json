@@ -24,8 +24,7 @@
   "myAccounts": "My products",
   "total": "Total",
   "availableQuota": "Available balance",
-  "next-payment": "Next Payment",
-  "total-due": "Total Due",
+  "totalDue": "Total Due",
   "amountAvailable": "Total available funds",
   "transfer": {
     "title": "Quick Transfer",

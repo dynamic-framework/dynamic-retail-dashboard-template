@@ -24,7 +24,7 @@ export default function useAccountValue(account: Account) {
       return t('availableQuota');
     }
     if (account.type === AccountType.Loan) {
-      return t('total-due');
+      return t('totalDue');
     }
     return t('amountAvailable');
   }, [account, t]);
