@@ -21,14 +21,12 @@
     "confirmPin": "Confirm PIN",
     "errorPin": "Incorrect PIN, try again!"
   },
-  "my-accounts": "My products",
+  "myAccounts": "My products",
   "total": "Total",
-  "minimum-payment": "Minimum payment",
-  "pending-balance": "Funds on hold",
-  "available-quota": "Available balance",
+  "availableQuota": "Available balance",
   "next-payment": "Next Payment",
   "total-due": "Total Due",
-  "amount-available": "Total available funds",
+  "amountAvailable": "Total available funds",
   "transfer": {
     "title": "Quick Transfer",
     "change": "Change",

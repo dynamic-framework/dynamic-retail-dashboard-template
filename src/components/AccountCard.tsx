@@ -1,29 +1,32 @@
+import { useMemo } from 'react';
 import classNames from 'classnames';
-import { DepositAccount, LoanAccount } from '../services/interface';
+
+import { Account } from '../services/interface';
 import { API_ACCOUNT_LIST_FILTER } from '../config/widgetConfig';
 
 type Props = {
-  account?: LoanAccount | DepositAccount;
+  account?: Account;
   size?: 'sm';
   className?: string;
   type?: string;
 };
 
-export default function AccountCard({
-  account,
-  size,
-  type,
-  className,
-}: Props) {
-  const typeCard = type || API_ACCOUNT_LIST_FILTER;
+export default function AccountCard(
+  {
+    account,
+    size,
+    type,
+    className,
+  }: Props,
+) {
+  const typeCard = useMemo(() => type || API_ACCOUNT_LIST_FILTER, [type]);
 
   return (
     <div
       className={classNames(
         'account-card overflow-hidden bg-gray text-white',
         'position-relative rounded-1 d-flex flex-column',
-        size === 'sm' && 'p-2 card-sm',
-        size !== 'sm' && 'p-8',
+        size === 'sm' ? 'p-2 card-sm' : 'p-8',
         typeCard,
         className,
       )}

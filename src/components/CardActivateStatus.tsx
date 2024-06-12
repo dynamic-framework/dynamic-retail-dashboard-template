@@ -2,10 +2,16 @@ import { DButton, useDPortalContext } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 import Stepper from './Stepper';
 import AccountCard from './AccountCard';
-import { DepositAccount, LoanAccount } from '../services/interface';
+import { Account } from '../services/interface';
+
+type Props = {
+  account: Account
+};
 
 export default function CardActivateStatus(
-  { account }: { account: LoanAccount | DepositAccount },
+  {
+    account,
+  }: Props,
 ) {
   const { openPortal } = useDPortalContext();
   const { t } = useTranslation();

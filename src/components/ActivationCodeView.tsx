@@ -1,13 +1,20 @@
 import { useState } from 'react';
 import { DButton, DInputPin } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
+
 import useWidgetUtils from '../hooks/useWidgetUtils';
 import { SCREENS } from '../config/widgetConfig';
-import { DepositAccount, LoanAccount } from '../services/interface';
+import { Account } from '../services/interface';
 import AccountCard from './AccountCard';
 
+type Props = {
+  account: Account
+};
+
 export default function ActivationCodeView(
-  { account }: { account: LoanAccount | DepositAccount },
+  {
+    account,
+  }: Props,
 ) {
   const { t } = useTranslation();
   const [pin, setPin] = useState<string>('');

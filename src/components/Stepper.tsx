@@ -1,5 +1,11 @@
+type Props = {
+  width?: string
+};
+
 export default function Stepper(
-  { width }: { width?: string },
+  {
+    width,
+  }: Props,
 ) {
   return (
     <div
