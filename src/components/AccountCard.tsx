@@ -6,7 +6,7 @@ import { API_ACCOUNT_LIST_FILTER } from '../config/widgetConfig';
 
 type Props = {
   account?: Account;
-  size?: 'sm';
+  size?: 'sm' | 'md' | 'lg';
   className?: string;
   type?: string;
 };
@@ -14,7 +14,7 @@ type Props = {
 export default function AccountCard(
   {
     account,
-    size,
+    size = 'md',
     type,
     className,
   }: Props,
