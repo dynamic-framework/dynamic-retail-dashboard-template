@@ -1,55 +1,115 @@
 @import "@dynamic-framework/ui-react/src/style/abstracts/+import";
 
-.views-btn {
-  .btn {
-    --#{$prefix}btn-padding-x: var(--#{$prefix}ref-spacer-2);
-    --#{$prefix}btn-padding-y: var(--#{$prefix}ref-spacer-2);
-  }
-}
+.dashboard-template {
 
-.d-card-account .card-body > :first-child {
-  height: 100%;
-}
-
-.quick-transfer {
-  position: sticky;
-  top: var(--#{$prefix}ref-spacer-3);
-}
-
-// stylelint-disable-next-line selector-class-pattern
-.d-carousel .splide__track .splide__list {
-  height: auto;
-}
-
-.contact-selector {
-  .d-popover-content {
-    z-index: 10;
-  }
-}
-
-.drop-contact {
-  background-color: var(--#{$prefix}white);
-  border: 1px solid var(--#{$prefix}gray-300);
-
-  .d-quick-action-button {
-    --#{$prefix}quick-action-button-component-border-radius: 0;
-    --#{$prefix}quick-action-button-border: 0;
-    --#{$prefix}quick-action-button-box-shadow: 0;
-
-    position: relative;
-    overflow: hidden;
-  }
-
-  .d-quick-action-button:not(:last-child) .d-quick-action-button {
-    --#{$prefix}quick-action-button-border-bottom: 1px solid var(--#{$prefix}gray-300);
-
-    &:active {
-      border-color: var(--#{$prefix}gray-300);
+  .views-btn {
+    .btn {
+      --#{$prefix}btn-padding-x: var(--#{$prefix}ref-spacer-2);
+      --#{$prefix}btn-padding-y: var(--#{$prefix}ref-spacer-2);
     }
   }
 
-  .selected {
-    position: relative;
-    background-color: rgba(var(--#{$prefix}gray-200-rgb), .5);
+  .d-card-account .card-body > :first-child {
+    height: 100%;
+  }
+
+  .quick-transfer {
+    position: sticky;
+    top: var(--#{$prefix}ref-spacer-3);
+  }
+
+  // stylelint-disable-next-line selector-class-pattern
+  .d-carousel .splide__track .splide__list {
+    height: auto;
+  }
+
+  .contact-selector {
+    .d-popover-content {
+      z-index: 10;
+    }
+  }
+
+  .drop-contact {
+    background-color: var(--#{$prefix}white);
+    border: 1px solid var(--#{$prefix}gray-300);
+
+    .d-quick-action-button {
+      --#{$prefix}quick-action-button-component-border-radius: 0;
+      --#{$prefix}quick-action-button-border: 0;
+      --#{$prefix}quick-action-button-box-shadow: 0;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .d-quick-action-button:not(:last-child) .d-quick-action-button {
+      --#{$prefix}quick-action-button-border-bottom: 1px solid var(--#{$prefix}gray-300);
+
+      &:active {
+        border-color: var(--#{$prefix}gray-300);
+      }
+    }
+
+    .selected {
+      position: relative;
+      background-color: rgba(var(--#{$prefix}gray-200-rgb), .5);
+    }
+  }
+
+  .gradient-card-activate {
+    background: linear-gradient(to right, #161723, #6d6d82);
+  }
+
+  // Theme colors for credit-card slides
+
+  .account-card.credit-card {
+    background: linear-gradient(90deg, rgba(205, 18, 37, 1) 0%, rgba(136, 93, 245, 1) 100%);
+  }
+
+  .account-card.saving {
+    background: linear-gradient(90deg, rgba(66, 133, 244, 1) 0%, rgba(52, 168, 83, 1) 100%);
+  }
+
+  .activate-card-section {
+    &.account-card {
+      width: 300px;
+      aspect-ratio: 16/9;
+      padding: 1rem !important; /* stylelint-disable declaration-no-important */
+      margin-right: -5rem;
+      zoom: .8;
+    }
+    &.rotate {
+      top: 20%;
+      right: -20px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  // stepper
+
+  .stepper {
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      z-index: 0;
+      width: calc(100% - 10px);
+      height: 1px;
+      content: "";
+      background-color: #fff;
+    }
+    > .dot {
+      position: relative;
+      z-index: 1;
+      width: 1rem;
+      height: 1rem;
+      background: #161723;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      &.active {
+        background-color: #fff;
+        border-color: #fff;
+      }
+    }
   }
 }

@@ -21,12 +21,12 @@ export default function useAccountValue(account: Account) {
 
   const label = useMemo(() => {
     if (account.type === AccountType.CreditCard) {
-      return t('available-quota');
+      return t('availableQuota');
     }
     if (account.type === AccountType.Loan) {
-      return t('total-due');
+      return t('totalDue');
     }
-    return t('amount-available');
+    return t('amountAvailable');
   }, [account, t]);
 
   return {

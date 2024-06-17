@@ -12,6 +12,7 @@
     "account-path-saving": "savings",
     "account-path-checking": "checkings",
     "account-path-credit-card": "credit-cards",
+    "account-list-filter": "credit-card",
     "account-path-loans": "loans",
 
     "transfers-path": "transfers",

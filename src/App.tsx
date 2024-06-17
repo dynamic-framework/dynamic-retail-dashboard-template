@@ -13,6 +13,7 @@ import LatestActivitiesList from './components/LatestActivitiesList';
 
 import { setCurrentView } from './store/slice';
 import { CONTEXT_CONFIG, View } from './config/widgetConfig';
+import CardActivateStatus from './components/CardActivateStatus';
 
 const VIEWS = {
   list: CategoryList,
@@ -46,7 +47,7 @@ export default function App() {
     <div className="row">
       <div className="col-12 col-lg-8">
         <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4">
-          {/* <h1 className="fs-4 fw-bold w-100">{t('my-accounts')}</h1> */}
+          <h1 className="fs-4 fw-bold w-100">{t('myAccounts')}</h1>
           {accounts.length > 0 && (
             <div className="d-flex flex-grow-1 w-100 justify-content-end views-btn">
               <DButton
@@ -93,6 +94,9 @@ export default function App() {
         </div>
       </div>
       <div className="col-12 col-lg-8">
+
+        <CardActivateStatus account={accounts[0]} />
+
         <CurrentView />
         <div className="row">
           <h5 className="fw-bold py-4">

@@ -11,6 +11,7 @@ export const VARS_CURRENCY = {
   decimal: liquidParser.parse('{{vars.currency-decimal}}'),
 };
 
+export const API_ACCOUNT_LIST_FILTER = liquidParser.parse('{{vars.account-list-filter}}');
 export const TRANSFER_PATH = liquidParser.parse('{{vars.transfers-path}}');
 export const TRANSFER_URL = `${SITE_URL}/${TRANSFER_PATH}`;
 
@@ -24,6 +25,13 @@ export const ACCOUNT_PATHS = {
   [AccountType.Checking]: ACCOUNT_PATH_CHECKING,
   [AccountType.CreditCard]: ACCOUNT_PATH_CREDIT_CARD,
   [AccountType.Loan]: ACCOUNT_PATH_LOAN,
+};
+
+export const SCREENS = {
+  start: 'start',
+  activation: 'activation',
+  createPin: 'createPin',
+  confirmPin: 'confirmPin',
 };
 
 export type View = 'list' | 'slides';

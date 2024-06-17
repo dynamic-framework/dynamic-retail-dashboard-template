@@ -12,12 +12,17 @@ import store from './store/store';
 
 import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
 import './styles/base.scss';
+import ModalActivate from './components/modals/ModalActivate';
 
 const root = ReactDOM.createRoot(document.getElementById('dashboard') as Element);
 root.render(
   <StrictMode>
     <Provider store={store}>
-      <DContextProvider>
+      <DContextProvider
+        availablePortals={{
+          modalActivate: ModalActivate,
+        }}
+      >
         <App />
       </DContextProvider>
     </Provider>

@@ -1,38 +1,53 @@
 {
+  "activate": "Activate",
+  "continue": "Continue",
   "balance": {
-    "show": "Mostrar saldos",
-    "hide": "Ocultar saldos"
+    "show": "Show amounts",
+    "hide": "Hide amounts"
   },
-  "my-accounts": "Mis productos",
+  "cardStatus": {
+    "activateTitle": "¡Your card is on the way!",
+    "activateDescription": "Good news, Mathew! Your credit card is in the process of being shipped and will arrive at your destination within 5 business days.",
+    "steps": {
+      "order": "Order",
+      "shipped": "Shipped",
+      "delivered": "Delivered (Check your mailbox)"
+    },
+    "activationStartDescription": "It should be with you by",
+    "activationCode": "Enter your activation code",
+    "activationCodeDescription": "Enter the last 4 digits of the number on your credit card.",
+    "createPin": "Create PIN",
+    "createPinDescription": "Assign a key of 4 digits to your card for ATM withdrawals.",
+    "confirmPin": "Confirm PIN",
+    "errorPin": "Incorrect PIN, try again!"
+  },
+  "myAccounts": "My products",
   "total": "Total",
-  "minimum-payment": "Pago mínimo",
-  "pending-balance": "Saldo en canje",
-  "available-quota": "Cupo disponible",
-  "next-payment": "Siguiente pago",
-  "total-due": "Deuda total",
-  "amount-available": "Saldo disponible",
+  "availableQuota": "Available balance",
+  "totalDue": "Total Due",
+  "amountAvailable": "Total available funds",
   "transfer": {
-    "title": "Transferencia rápida",
-    "change": "Cambiar",
-    "from": "Origen",
-    "total": "Monto",
-    "target": "Destino",
-    "actionWithAmount": "Transferir {amount}",
-    "actionSingle": "Transferir"
+    "title": "Quick Transfer",
+    "change": "Change",
+    "from": "From",
+    "total": "Amount",
+    "target": "Target",
+    "actionWithAmount": "Transfer {amount}",
+    "actionSingle": "Transfer"
   },
   "hint": {
-    "noAmount": "Ingrese el monto a pagar",
-    "withAmount": "{amount} después de la transferencia"
+    "noAmount": "Enter an amount to pay",
+    "withAmount": "{amount} remaining after transfer"
   },
-  "transactions": "Transacciones",
-  "details": "Detalles",
+  "transactions": "Transactions",
+  "details": "Details",
   "frequent": {
-    "date": "Fecha",
-    "accountNumber": "Número de cuenta",
-    "for": "Para",
-    "bank": "Banco",
-    "actions": "Acciones"
+    "date": "Date",
+    "accountNumber": "Account number",
+    "name": "Name",
+    "bank": "Bank",
+    "actions": "Actions"
   },
-  "list": "Lista",
-  "slides": "Carrusel"
+  "list": "List",
+  "slides": "Slides"
 }
