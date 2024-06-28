@@ -6,7 +6,7 @@
     "hide": "Hide amounts"
   },
   "cardStatus": {
-    "activateTitle": "¡Your card is on the way!",
+    "activateTitle": "Your card is on the way!",
     "activateDescription": "Good news, Mathew! Your credit card is in the process of being shipped and will arrive at your destination within 5 business days.",
     "steps": {
       "order": "Order",
