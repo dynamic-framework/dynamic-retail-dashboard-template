@@ -1,14 +1,14 @@
+import { DCollapse, DIcon, useFormatCurrency } from '@dynamic-framework/ui-react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { DCollapse, DIcon, useFormatCurrency } from '@dynamic-framework/ui-react';
 
-import AccountItem from './AccountItem';
+import { AccountType, AccountTypeConfig } from '../services/config';
+import type { Account } from '../services/interface';
+import getAccountValue from '../services/utils/getAccountValue';
 import { useAppSelector } from '../store/hooks';
 import { getShowBalances } from '../store/selectors';
-import { AccountType, AccountTypeConfig } from '../services/config';
-import getAccountValue from '../services/utils/getAccountValue';
 
-import type { Account } from '../services/interface';
+import AccountItem from './AccountItem';
 
 type Props = {
   name: string;

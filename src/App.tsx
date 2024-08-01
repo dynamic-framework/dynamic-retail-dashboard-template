@@ -1,19 +1,17 @@
-import { useTranslation } from 'react-i18next';
 import { DButton, useDContext } from '@dynamic-framework/ui-react';
-
 import { useEffect, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import AccountSlides from './components/AccountSlides';
+import CardActivateStatus from './components/CardActivateStatus';
+import CategoryList from './components/CategoryList';
+import LatestActivitiesList from './components/LatestActivitiesList';
+import QuickTransfer from './components/QuickTransfer';
+import { CONTEXT_CONFIG, View } from './config/widgetConfig';
+import useToggleBalances from './hooks/useToggleBalances';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { getAccounts, getCurrentView } from './store/selectors';
-
-import CategoryList from './components/CategoryList';
-import QuickTransfer from './components/QuickTransfer';
-import useToggleBalances from './hooks/useToggleBalances';
-import AccountSlides from './components/AccountSlides';
-import LatestActivitiesList from './components/LatestActivitiesList';
-
 import { setCurrentView } from './store/slice';
-import { CONTEXT_CONFIG, View } from './config/widgetConfig';
-import CardActivateStatus from './components/CardActivateStatus';
 
 const VIEWS = {
   list: CategoryList,

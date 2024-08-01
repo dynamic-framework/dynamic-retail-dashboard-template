@@ -1,8 +1,7 @@
-import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { DInputCurrency, useFormatCurrency } from '@dynamic-framework/ui-react';
-
+import { useMemo } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import getAccountValue from '../services/utils/getAccountValue';
 import { useAppSelector } from '../store/hooks';

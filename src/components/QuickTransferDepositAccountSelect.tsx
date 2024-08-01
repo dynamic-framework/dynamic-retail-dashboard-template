@@ -1,10 +1,9 @@
-import { useTranslation } from 'react-i18next';
 import { DInputSelect } from '@dynamic-framework/ui-react';
-
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { getDepositAccounts, getTransferFromAccount } from '../store/selectors';
+import { useTranslation } from 'react-i18next';
 
 import type { Account } from '../services/interface';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { getDepositAccounts, getTransferFromAccount } from '../store/selectors';
 import { setTransferFrom } from '../store/slice';
 
 export default function QuickTransferDepositAccountSelect() {

@@ -1,6 +1,5 @@
-import liquidParser from '../utils/liquidParser';
-
 import { AccountType } from '../services/config';
+import liquidParser from '../utils/liquidParser';
 
 export const SITE_LANG = liquidParser.parse('{{site.language}}');
 export const SITE_URL = liquidParser.parse('{{site.url}}');

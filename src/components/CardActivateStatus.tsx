@@ -1,8 +1,10 @@
 import { DButton, useDPortalContext } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
-import Stepper from './Stepper';
-import AccountCard from './AccountCard';
+
 import { Account } from '../services/interface';
+
+import AccountCard from './AccountCard';
+import Stepper from './Stepper';
 
 type Props = {
   account: Account

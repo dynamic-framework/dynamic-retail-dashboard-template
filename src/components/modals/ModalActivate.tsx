@@ -1,13 +1,14 @@
 import { DModal, useDPortalContext } from '@dynamic-framework/ui-react';
 import { useCallback, useMemo } from 'react';
+
 import { SCREENS } from '../../config/widgetConfig';
-import ActivationCodeView from '../ActivationCodeView';
-import CreatePin from '../CreatePin';
-import ConfirmPin from '../ConfirmPin';
+import useWidgetUtils from '../../hooks/useWidgetUtils';
 import { useAppSelector } from '../../store/hooks';
 import { getAccounts, getActivationView } from '../../store/selectors';
+import ActivationCodeView from '../ActivationCodeView';
 import ActivationStart from '../ActivationStart';
-import useWidgetUtils from '../../hooks/useWidgetUtils';
+import ConfirmPin from '../ConfirmPin';
+import CreatePin from '../CreatePin';
 
 export default function ModalActivate() {
   const view = useAppSelector(getActivationView);

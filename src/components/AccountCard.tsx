@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
 import classNames from 'classnames';
+import { useMemo } from 'react';
 
-import { Account } from '../services/interface';
 import { API_ACCOUNT_LIST_FILTER } from '../config/widgetConfig';
+import { Account } from '../services/interface';
 
 type Props = {
   account?: Account;

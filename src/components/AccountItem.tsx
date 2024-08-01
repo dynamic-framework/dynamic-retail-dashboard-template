@@ -1,9 +1,8 @@
-import { useMemo } from 'react';
 import classnames from 'classnames';
+import { useMemo } from 'react';
 
-import useAccountValue from '../hooks/useAccountValue';
 import { SITE_URL, ACCOUNT_PATHS } from '../config/widgetConfig';
-
+import useAccountValue from '../hooks/useAccountValue';
 import type { Account } from '../services/interface';
 
 type Props = {

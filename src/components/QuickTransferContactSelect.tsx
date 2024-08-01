@@ -1,7 +1,6 @@
-import { useTranslation } from 'react-i18next';
 import { DPopover, DQuickActionButton } from '@dynamic-framework/ui-react';
-
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import type { Contact } from '../services/interface';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
