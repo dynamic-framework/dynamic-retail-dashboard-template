@@ -37,7 +37,7 @@ export default function QuickTransfer() {
   }
 
   return (
-    <div className="bg-light d-flex flex-column p-4 rounded gap-4 quick-transfer">
+    <div className="bg-surface-secondary d-flex flex-column p-4 rounded gap-4 quick-transfer">
       <h3 className="fs-5 fw-bold mx-2">
         {t('transfer.title')}
       </h3>
