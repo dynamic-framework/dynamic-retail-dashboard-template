@@ -6,6 +6,7 @@ import { setAccounts, setDepositAccounts, setTransferFrom } from '../../store/sl
 import errorHandler from '../../utils/errorHandler';
 import { AccountBaseType } from '../config';
 import { AccountRepository } from '../repositories';
+import ApiError from '../utils/ApiError';
 
 export default function useAccounts() {
   const [loading, setLoading] = useState(false);
@@ -27,6 +28,8 @@ export default function useAccounts() {
         dispatch(setDepositAccounts(depositAccounts));
         dispatch(setTransferFrom(depositAccounts[0]));
       } catch (error) {
+        if ((error as ApiError).name === 'CanceledError') return;
+
         errorHandler(error);
       }
     })();

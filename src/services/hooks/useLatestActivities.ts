@@ -6,6 +6,7 @@ import { getLatestActivities } from '../../store/selectors';
 import { setLatestActivities } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
 import { LatestActivitiesRepository } from '../repositories';
+import ApiError from '../utils/ApiError';
 
 export default function useLatestActivities() {
   const [loading, setLoading] = useState(false);
@@ -22,6 +23,8 @@ export default function useLatestActivities() {
         dispatch(setLatestActivities(response));
         setLoading(false);
       } catch (error) {
+        if ((error as ApiError).name === 'CanceledError') return;
+
         errorHandler(error);
       }
     })();
