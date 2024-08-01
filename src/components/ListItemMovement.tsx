@@ -36,7 +36,7 @@ export default function ListItemMovement(
   }, [format, amount]);
 
   return (
-    <DListItem {...props}>
+    <DListItem {...props} className="border-gray-100">
       <div className="d-flex justify-content-between align-items-center px-1 py-2 gap-4">
         <div className="d-flex flex-column gap-1">
           <span className="fs-6">

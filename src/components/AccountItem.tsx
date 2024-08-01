@@ -25,7 +25,7 @@ export default function AccountItem(
       href={accountPath}
       className={classnames(
         'cursor-pointer text-decoration-none text-body',
-        'border-top',
+        'border-top border-gray-100',
         'pt-4',
         'd-flex flex-column flex-lg-row gap-4 justify-content-between',
       )}
