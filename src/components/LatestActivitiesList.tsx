@@ -27,6 +27,7 @@ export default function LatestActivitiesList() {
             amount={amount}
             description={description}
             date={DateTime.fromISO(effectiveDate).toFormat('dd/MM/yyyy')}
+            className="border-light"
           />
         ))}
       </DList>
