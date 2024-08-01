@@ -1,13 +1,12 @@
+import { useFormatCurrency } from '@dynamic-framework/ui-react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useFormatCurrency } from '@dynamic-framework/ui-react';
 
+import { AccountType } from '../services/config';
+import type { Account } from '../services/interface';
 import getAccountValue from '../services/utils/getAccountValue';
 import { useAppSelector } from '../store/hooks';
 import { getShowBalances } from '../store/selectors';
-
-import type { Account } from '../services/interface';
-import { AccountType } from '../services/config';
 
 export default function useAccountValue(account: Account) {
   const { t } = useTranslation();

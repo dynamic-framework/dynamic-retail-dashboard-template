@@ -1,9 +1,11 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { ACCOUNT_PATHS, SITE_URL } from '../config/widgetConfig';
-import type { Account } from '../services/interface';
-import { AccountTypeConfig } from '../services/config';
 import useAccountValue from '../hooks/useAccountValue';
+import { AccountTypeConfig } from '../services/config';
+import type { Account } from '../services/interface';
+
 import CardAccount from './CardAccount';
 
 type Props = {

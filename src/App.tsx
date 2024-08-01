@@ -1,47 +1,55 @@
-import { useTranslation } from 'react-i18next';
+/* eslint-disable react/jsx-props-no-spreading */
 import { DButton, useDContext } from '@dynamic-framework/ui-react';
-
 import { useEffect, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import AccountSlides from './components/AccountSlides';
+import CardActivateStatus from './components/CardActivateStatus';
+import CategoryList from './components/CategoryList';
+import LatestActivitiesList from './components/LatestActivitiesList';
+import QuickTransfer from './components/QuickTransfer';
+import { CONTEXT_CONFIG, View } from './config/widgetConfig';
+import useToggleBalances from './hooks/useToggleBalances';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { getAccounts, getCurrentView } from './store/selectors';
-
-import CategoryList from './components/CategoryList';
-import QuickTransfer from './components/QuickTransfer';
-import useToggleBalances from './hooks/useToggleBalances';
-import AccountSlides from './components/AccountSlides';
-import LatestActivitiesList from './components/LatestActivitiesList';
-
 import { setCurrentView } from './store/slice';
-import { CONTEXT_CONFIG, View } from './config/widgetConfig';
-import CardActivateStatus from './components/CardActivateStatus';
 
 const VIEWS = {
   list: CategoryList,
   slides: AccountSlides,
 };
 
+const VIEW_OPTIONS = [
+  {
+    icon: 'view-list',
+    view: 'list',
+  },
+  {
+    icon: 'grid',
+    view: 'slides',
+  },
+];
+
 export default function App() {
-  const { setContext } = useDContext();
-
-  useEffect(() => {
-    setContext(CONTEXT_CONFIG);
-  }, [setContext]);
-
-  const { t } = useTranslation();
-  const dispatch = useAppDispatch();
-  const accounts = useAppSelector(getAccounts);
-  const currentStep = useAppSelector(getCurrentView) as keyof typeof VIEWS;
-
   const { data, callback } = useToggleBalances();
+  const { setContext } = useDContext();
+  const { t } = useTranslation();
+  const accounts = useAppSelector(getAccounts);
+  const currentView = useAppSelector(getCurrentView) as View;
+  const dispatch = useAppDispatch();
 
   const handlerView = (view: View) => {
     dispatch(setCurrentView(view));
   };
 
-  const CurrentView = useMemo(
-    () => VIEWS[currentStep],
-    [currentStep],
+  const CurrentViewCmp = useMemo(
+    () => VIEWS[currentView],
+    [currentView],
   );
+
+  useEffect(() => {
+    setContext(CONTEXT_CONFIG);
+  }, [setContext]);
 
   return (
     <div className="row">
@@ -49,7 +57,7 @@ export default function App() {
         <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4">
           <h1 className="fs-4 fw-bold w-100">{t('myAccounts')}</h1>
           {accounts.length > 0 && (
-            <div className="d-flex flex-grow-1 w-100 justify-content-end views-btn">
+            <div className="d-flex flex-grow-1 gap-1 w-100 justify-content-end views-btn">
               <DButton
                 iconStart={data.icon}
                 text={data.label}
@@ -58,46 +66,37 @@ export default function App() {
                 onClick={callback}
               />
               {/* For Mobile */}
-              <DButton
-                iconStart="view-list"
-                variant="link"
-                theme="secondary"
-                onClick={() => handlerView('list')}
-                className="d-flex d-lg-none"
-              />
-              <DButton
-                iconStart="grid"
-                variant="link"
-                theme="secondary"
-                onClick={() => handlerView('slides')}
-                className="d-flex d-lg-none"
-              />
+              {VIEW_OPTIONS.map(({ icon, view }) => (
+                <DButton
+                  key={`${view}-mobile`}
+                  iconStart={icon}
+                  variant="outline"
+                  theme="secondary"
+                  onClick={() => handlerView(view as View)}
+                  className="d-flex d-lg-none"
+                  {...currentView === view && { state: 'active' }}
+                />
+              ))}
               {/* For Desktop */}
-              <DButton
-                iconStart="view-list"
-                text={t('list')}
-                variant="link"
-                theme="secondary"
-                onClick={() => handlerView('list')}
-                className="d-none d-lg-flex"
-              />
-              <DButton
-                iconStart="grid"
-                text={t('slides')}
-                variant="link"
-                theme="secondary"
-                onClick={() => handlerView('slides')}
-                className="d-none d-lg-flex"
-              />
+              {VIEW_OPTIONS.map(({ icon, view }) => (
+                <DButton
+                  key={`${view}-desktop`}
+                  iconStart={icon}
+                  text={t(view)}
+                  variant="outline"
+                  theme="secondary"
+                  onClick={() => handlerView(view as View)}
+                  className="d-none d-lg-flex px-4"
+                  {...currentView === view && { state: 'active' }}
+                />
+              ))}
             </div>
           )}
         </div>
       </div>
       <div className="col-12 col-lg-8">
-
         <CardActivateStatus account={accounts[0]} />
-
-        <CurrentView />
+        <CurrentViewCmp />
         <div className="row">
           <h5 className="fw-bold py-4">
             {t('transactions')}

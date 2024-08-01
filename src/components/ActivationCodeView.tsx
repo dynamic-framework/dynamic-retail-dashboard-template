@@ -1,10 +1,11 @@
-import { useState } from 'react';
 import { DButton, DInputPin } from '@dynamic-framework/ui-react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import useWidgetUtils from '../hooks/useWidgetUtils';
 import { SCREENS } from '../config/widgetConfig';
+import useWidgetUtils from '../hooks/useWidgetUtils';
 import { Account } from '../services/interface';
+
 import AccountCard from './AccountCard';
 
 type Props = {

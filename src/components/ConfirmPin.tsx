@@ -1,6 +1,7 @@
-import { useState } from 'react';
 import { DButton, DInputPin, DAlert } from '@dynamic-framework/ui-react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { useAppSelector } from '../store/hooks';
 import { getPinActivateAccount } from '../store/selectors';
 

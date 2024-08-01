@@ -1,10 +1,11 @@
 import { DButton, DInputPin } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { setPinActivateAccount } from '../store/slice';
-import { getPinActivateAccount } from '../store/selectors';
-import useWidgetUtils from '../hooks/useWidgetUtils';
+
 import { SCREENS } from '../config/widgetConfig';
+import useWidgetUtils from '../hooks/useWidgetUtils';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { getPinActivateAccount } from '../store/selectors';
+import { setPinActivateAccount } from '../store/slice';
 
 export default function CreatePin() {
   const { t } = useTranslation();

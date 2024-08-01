@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import type { Account, Contact, Activity } from '../services/interface';
 import { View, SCREENS } from '../config/widgetConfig';
+import type { Account, Contact, Activity } from '../services/interface';
 
 export type WidgetState = {
   accounts: Array<Account>;

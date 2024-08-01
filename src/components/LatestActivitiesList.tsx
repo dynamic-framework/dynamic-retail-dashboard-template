@@ -1,8 +1,10 @@
 import { DList } from '@dynamic-framework/ui-react';
 import { DateTime } from 'luxon';
-import ActivityListLoader from './loaders/ActivityListLoader';
+
 import useTransactions from '../services/hooks/useLatestActivities';
+
 import ListItemMovement from './ListItemMovement';
+import ActivityListLoader from './loaders/ActivityListLoader';
 
 export default function LatestActivitiesList() {
   const { data, loading } = useTransactions();
@@ -25,6 +27,7 @@ export default function LatestActivitiesList() {
             amount={amount}
             description={description}
             date={DateTime.fromISO(effectiveDate).toFormat('dd/MM/yyyy')}
+            className="border-light"
           />
         ))}
       </DList>

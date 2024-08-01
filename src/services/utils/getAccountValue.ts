@@ -1,5 +1,4 @@
 import { AccountBaseType, AccountType } from '../config';
-
 import type { Account } from '../interface';
 
 export default function getAccountValue(account: Account): number {

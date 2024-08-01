@@ -2,9 +2,11 @@ import {
   DCarousel,
   DCarouselSlide,
 } from '@dynamic-framework/ui-react';
+
+import useAccounts from '../services/hooks/useAccounts';
 import { useAppSelector } from '../store/hooks';
 import { getAccounts } from '../store/selectors';
-import useAccounts from '../services/hooks/useAccounts';
+
 import AccountSlide from './AccountSlide';
 import AccountSlidesLoader from './loaders/AccountSlidesLoader';
 
