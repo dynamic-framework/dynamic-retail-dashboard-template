@@ -1,9 +1,8 @@
-import { useMemo } from 'react';
 import classnames from 'classnames';
+import { useMemo } from 'react';
 
-import useAccountValue from '../hooks/useAccountValue';
 import { SITE_URL, ACCOUNT_PATHS } from '../config/widgetConfig';
-
+import useAccountValue from '../hooks/useAccountValue';
 import type { Account } from '../services/interface';
 
 type Props = {
@@ -26,7 +25,7 @@ export default function AccountItem(
       href={accountPath}
       className={classnames(
         'cursor-pointer text-decoration-none text-body',
-        'border-top',
+        'border-top border-gray-100',
         'pt-4',
         'd-flex flex-column flex-lg-row gap-4 justify-content-between',
       )}

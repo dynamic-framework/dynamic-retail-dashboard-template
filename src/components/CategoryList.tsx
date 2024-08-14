@@ -1,8 +1,9 @@
-import CategoryListLoader from './loaders/CategoryListLoader';
-import CategoryItem from './CategoryItem';
-import { useAppSelector } from '../store/hooks';
 import useAccounts from '../services/hooks/useAccounts';
+import { useAppSelector } from '../store/hooks';
 import { getAccountsByCategory } from '../store/selectors';
+
+import CategoryItem from './CategoryItem';
+import CategoryListLoader from './loaders/CategoryListLoader';
 
 export default function CategoryList() {
   const { loading } = useAccounts();

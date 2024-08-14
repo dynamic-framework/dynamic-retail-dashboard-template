@@ -1,15 +1,16 @@
+import { DButton } from '@dynamic-framework/ui-react';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { DButton } from '@dynamic-framework/ui-react';
 
-import QuickTransferLoader from './loaders/QuickTransferLoader';
-import QuickTransferDepositAccountSelect from './QuickTransferDepositAccountSelect';
-import QuickTransferContactSelect from './QuickTransferContactSelect';
-import QuickTransferAmountInput from './QuickTransferAmountInput';
-import useContacts from '../services/hooks/useContacts';
 import { TRANSFER_URL } from '../config/widgetConfig';
+import useContacts from '../services/hooks/useContacts';
 import { useAppSelector } from '../store/hooks';
 import { getTransferFromAccount, getSelectedContact } from '../store/selectors';
+
+import QuickTransferLoader from './loaders/QuickTransferLoader';
+import QuickTransferAmountInput from './QuickTransferAmountInput';
+import QuickTransferContactSelect from './QuickTransferContactSelect';
+import QuickTransferDepositAccountSelect from './QuickTransferDepositAccountSelect';
 
 export default function QuickTransfer() {
   const { t } = useTranslation();
@@ -36,7 +37,7 @@ export default function QuickTransfer() {
   }
 
   return (
-    <div className="bg-light d-flex flex-column p-4 rounded gap-4 quick-transfer">
+    <div className="bg-surface-secondary d-flex flex-column p-4 rounded gap-4 quick-transfer">
       <h3 className="fs-5 fw-bold mx-2">
         {t('transfer.title')}
       </h3>

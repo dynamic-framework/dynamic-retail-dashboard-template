@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { AccountRepository } from '../repositories';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getAccounts } from '../../store/selectors';
 import { setAccounts, setDepositAccounts, setTransferFrom } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
 import { AccountBaseType } from '../config';
+import { AccountRepository } from '../repositories';
+import ApiError from '../utils/ApiError';
 
 export default function useAccounts() {
   const [loading, setLoading] = useState(false);
@@ -27,6 +28,8 @@ export default function useAccounts() {
         dispatch(setDepositAccounts(depositAccounts));
         dispatch(setTransferFrom(depositAccounts[0]));
       } catch (error) {
+        if ((error as ApiError).name === 'CanceledError') return;
+
         errorHandler(error);
       }
     })();
