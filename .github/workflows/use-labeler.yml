@@ -1,0 +1,15 @@
+name: Use Labeler
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+jobs:
+  use-pr-labeler:
+    uses: dynamic-framework/.github/.github/workflows/labeler.yml@main
