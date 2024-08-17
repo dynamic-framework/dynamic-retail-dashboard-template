@@ -1,0 +1,11 @@
+name: Use Build Catalog
+
+on:
+  push:
+    branches:
+      - build/dynamic-catalog
+
+jobs:
+  use-pr-labeler:
+    uses: dynamic-framework/.github/.github/workflows/build-catalog.yml@main
+    secrets: inherit
