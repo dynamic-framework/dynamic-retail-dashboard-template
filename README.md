@@ -1,4 +1,7 @@
 # Dynamic retail dashboard template - React
+[![Use Build Catalog](https://github.com/dynamic-framework/dynamic-retail-dashboard-template/actions/workflows/use-build-catalog.yml/badge.svg)](https://github.com/dynamic-framework/dynamic-retail-dashboard-template/actions/workflows/use-build-catalog.yml)
+[![Use Build Demo](https://github.com/dynamic-framework/dynamic-retail-dashboard-template/actions/workflows/use-build-demo.yml/badge.svg)](https://github.com/dynamic-framework/dynamic-retail-dashboard-template/actions/workflows/use-build-demo.yml)
+
 ## Requirements:
 - node@20+
 - npm@10+
