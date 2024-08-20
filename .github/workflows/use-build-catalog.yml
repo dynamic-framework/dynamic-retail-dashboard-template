@@ -6,6 +6,6 @@ on:
       - build/dynamic-catalog
 
 jobs:
-  use-pr-labeler:
+  use-build-catalog:
     uses: dynamic-framework/.github/.github/workflows/build-catalog.yml@main
     secrets: inherit

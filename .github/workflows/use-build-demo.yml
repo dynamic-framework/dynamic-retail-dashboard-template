@@ -6,6 +6,6 @@ on:
       - build/dynamic-demo
 
 jobs:
-  use-pr-labeler:
+  use-build-demo:
     uses: dynamic-framework/.github/.github/workflows/build-demo.yml@main
     secrets: inherit
