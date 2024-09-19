@@ -25,7 +25,7 @@ export default function QuickTransferContactSelect() {
 
   return (
     <div className="d-flex flex-column gap-2">
-      <small className="fw-bold text-gray-500 px-2 d-inline-flex">{t('transfer.target')}</small>
+      <small className="fw-bold text-gray-500 d-inline-flex">{t('transfer.target')}</small>
       <div className="contact-selector">
         <DPopover
           open={toggle}
