@@ -39,7 +39,6 @@ export default function ModalActivate() {
       staticBackdrop
     >
       <DModal.Header
-        style={{ marginBottom: '-2rem', zIndex: 2 }}
         onClose={closePortalAndReset}
         showCloseButton
       />
