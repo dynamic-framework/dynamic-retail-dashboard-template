@@ -38,7 +38,7 @@ export default function QuickTransfer() {
 
   return (
     <div className="bg-surface-secondary d-flex flex-column p-4 rounded gap-4 quick-transfer">
-      <h3 className="fs-5 fw-bold mx-2">
+      <h3 className="fs-5 fw-bold">
         {t('transfer.title')}
       </h3>
       <QuickTransferDepositAccountSelect />
