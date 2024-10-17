@@ -7,6 +7,6 @@ export default function contactMapper(apiContact: ApiContact): Contact {
     name: apiContact.name,
     image: apiContact.image,
     bank: apiContact.bank,
-    accountNumber: apiContact.accountNumber,
+    accountNumber: apiContact.account_number,
   };
 }

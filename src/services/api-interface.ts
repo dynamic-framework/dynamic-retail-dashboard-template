@@ -84,7 +84,7 @@ export type ApiLoanDetails = {
 export type ApiContact = {
   id: string;
   name: string;
-  accountNumber: string;
+  account_number: string;
   bank: string;
   image: string;
 };
