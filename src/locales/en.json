@@ -39,7 +39,6 @@
     "noAmount": "Enter an amount to pay",
     "withAmount": "{amount} remaining after transfer"
   },
-  "transactions": "Transactions",
   "details": "Details",
   "frequent": {
     "date": "Date",

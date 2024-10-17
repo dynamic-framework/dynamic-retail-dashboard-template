@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import AccountSlides from './components/AccountSlides';
 import CardActivateStatus from './components/CardActivateStatus';
 import CategoryList from './components/CategoryList';
-import LatestActivitiesList from './components/LatestActivitiesList';
 import QuickTransfer from './components/QuickTransfer';
 import { CONTEXT_CONFIG, View } from './config/widgetConfig';
 import useToggleBalances from './hooks/useToggleBalances';
@@ -52,10 +51,11 @@ export default function App() {
   }, [setContext]);
 
   return (
-    <div className="row">
-      <div className="col-12 col-lg-8">
-        <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4">
-          {accounts.length > 0 && (
+    <div className="container py-4">
+      <div className="row">
+        <div className="col-12 col-lg-8">
+          <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4">
+            {accounts.length > 0 && (
             <div className="d-flex flex-grow-1 gap-1 w-100 justify-content-end views-btn">
               <DButton
                 iconStart={data.icon}
@@ -90,23 +90,16 @@ export default function App() {
                 />
               ))}
             </div>
-          )}
-        </div>
-      </div>
-      <div className="col-12 col-lg-8">
-        <CardActivateStatus account={accounts[0]} />
-        <CurrentViewCmp />
-        <div className="row">
-          <h5 className="fw-bold py-4">
-            {t('transactions')}
-          </h5>
-          <div className="d-block col">
-            <LatestActivitiesList />
+            )}
           </div>
         </div>
-      </div>
-      <div className="d-none d-lg-block col-lg-4">
-        <QuickTransfer />
+        <div className="col-12 col-lg-8">
+          <CardActivateStatus account={accounts[0]} />
+          <CurrentViewCmp />
+        </div>
+        <div className="d-none d-lg-block col-lg-4">
+          <QuickTransfer />
+        </div>
       </div>
     </div>
   );
