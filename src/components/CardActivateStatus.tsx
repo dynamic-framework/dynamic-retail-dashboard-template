@@ -16,6 +16,7 @@ export default function CardActivateStatus() {
       showClose
       theme="info"
       onClose={() => setShowAlert(false)}
+      className="mb-6"
     >
       <h5>{t('cardStatus.activateTitle')}</h5>
       <p className="m-0 mt-1">{t('cardStatus.activateDescription')}</p>
