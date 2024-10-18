@@ -1,4 +1,7 @@
 {
+  "user": {
+    "first_name": "John"
+  },
   "site": {
     "language": "en",
     "url": "http://localhost:3000"

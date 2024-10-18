@@ -10,6 +10,8 @@ export const VARS_CURRENCY = {
   decimal: liquidParser.parse('{{vars.currency-decimal}}'),
 };
 
+export const USER_FIRST_NAME = liquidParser.parse('{{user.first_name}}');
+
 export const API_ACCOUNT_LIST_FILTER = liquidParser.parse('{{vars.account-list-filter}}');
 export const TRANSFER_PATH = liquidParser.parse('{{vars.transfers-path}}');
 export const TRANSFER_URL = `${SITE_URL}/${TRANSFER_PATH}`;

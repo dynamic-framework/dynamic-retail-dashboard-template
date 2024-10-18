@@ -48,5 +48,6 @@
     "actions": "Actions"
   },
   "list": "List",
-  "slides": "Slides"
+  "slides": "Slides",
+  "greeting": "Hi {value}, Welcome!"
 }
