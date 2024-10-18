@@ -28,14 +28,10 @@ export default function Category(
 
   return (
     <DCollapse
-      defaultCollapsed={accounts.length > 0}
-      className="rounded-1"
+      defaultCollapsed
+      className="rounded-1 shadow-none"
       Component={(
-        <div className="d-flex align-items-center gap-4">
-          <h5 className="flex-fill text-truncate">{name}</h5>
-          {/* TODO: remove? <small className="text-gray-500 d-none d-md-block">{t('total')}</small>
-        <p className="fs-6 fw-bold text-dark mb-0">{showBalances ? format(total) : '$ ***'}</p> */}
-        </div>
+        <h5 className="flex-fill text-truncate">{name}</h5>
       )}
     >
       <div className="d-flex flex-column gap-4">
