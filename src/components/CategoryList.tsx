@@ -2,7 +2,7 @@ import useAccounts from '../services/hooks/useAccounts';
 import { useAppSelector } from '../store/hooks';
 import { getAccountsByCategory } from '../store/selectors';
 
-import CategoryItem from './CategoryItem';
+import Category from './Category';
 import CategoryListLoader from './loaders/CategoryListLoader';
 
 export default function CategoryList() {
@@ -20,10 +20,9 @@ export default function CategoryList() {
   return (
     <div className="d-flex flex-column gap-8">
       {categories.map((category) => (
-        <CategoryItem
+        <Category
           key={category.id}
           name={category.name}
-          type={category.type}
           accounts={category.accounts}
         />
       ))}

@@ -1,63 +1,60 @@
-import { DCollapse, DIcon, useFormatCurrency } from '@dynamic-framework/ui-react';
+import { DIcon } from '@dynamic-framework/ui-react';
+import classnames from 'classnames';
 import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 
-import { AccountType, AccountTypeConfig } from '../services/config';
+import { SITE_URL, ACCOUNT_PATHS } from '../config/widgetConfig';
+import useAccountValue from '../hooks/useAccountValue';
+import { AccountTypeConfig } from '../services/config';
 import type { Account } from '../services/interface';
-import getAccountValue from '../services/utils/getAccountValue';
-import { useAppSelector } from '../store/hooks';
-import { getShowBalances } from '../store/selectors';
-
-import AccountItem from './AccountItem';
 
 type Props = {
-  name: string;
-  type: AccountType;
-  accounts: Array<Account>;
+  account: Account;
 };
 
 export default function CategoryItem(
   {
-    name,
-    type,
-    accounts,
+    account,
   }: Props,
 ) {
-  const { format } = useFormatCurrency();
-  const { t } = useTranslation();
-  const showBalances = useAppSelector(getShowBalances);
+  const { value, label } = useAccountValue(account);
 
-  const total = useMemo(() => accounts.reduce<number>(
-    (sum, account: Account) => (sum + getAccountValue(account)),
-    0,
-  ), [accounts]);
-
-  if (!total) {
-    return null;
-  }
+  const accountPath = useMemo(() => (
+    `${SITE_URL}/${ACCOUNT_PATHS[account.type]}?account_id=${account.id}`
+  ), [account.id, account.type]);
 
   return (
-    <DCollapse
-      defaultCollapsed={accounts.length > 0}
-      className="rounded shadow-sm"
-      Component={(
-        <div className="d-flex align-items-center gap-4">
-          <DIcon
-            icon={AccountTypeConfig[type].icon}
-            theme={AccountTypeConfig[type].theme}
-            hasCircle
-          />
-          <h2 className="fs-6 flex-fill text-truncate">{name}</h2>
-          <small className="text-gray-500 d-none d-md-block">{t('total')}</small>
-          <p className="fs-6 fw-bold text-dark mb-0">{showBalances ? format(total) : '$ ***'}</p>
-        </div>
+    <a
+      href={accountPath}
+      className={classnames(
+        'cursor-pointer text-decoration-none text-body',
+        'py-6 px-8 border rounded-1',
+        'd-flex flex-column flex-lg-row gap-4 justify-content-between',
       )}
     >
-      <div className="d-flex flex-column gap-4">
-        {accounts.map((account) => (
-          <AccountItem key={account.id} account={account} />
-        ))}
+      <div className="d-flex gap-4 align-items-center">
+        <DIcon
+          icon={AccountTypeConfig[account.type].icon}
+          theme={AccountTypeConfig[account.type].theme}
+          hasCircle
+        />
+        <div className="flex-grow-1">
+          <p className="h5 fw-bold m-0">{account.alias}</p>
+          <p className="mb-0">{account.accountNumber}</p>
+        </div>
       </div>
-    </DCollapse>
+      <div className="d-flex gap-4 align-items-center justify-content-between">
+        <div className="d-flex flex-column text-start">
+          <p className="fw-bold h3 m-0">{value}</p>
+          <p className="m-0">{label}</p>
+        </div>
+      </div>
+      <span className="d-inline-flex d-lg-none link-primary  align-items-center gap-1">
+        Know more
+        <DIcon
+          icon="arrow-right"
+          size="var(--bs-fs-body-small)"
+        />
+      </span>
+    </a>
   );
 }
