@@ -19,7 +19,8 @@
     "createPin": "Create PIN",
     "createPinDescription": "Assign a key of 4 digits to your card for ATM withdrawals.",
     "confirmPin": "Confirm PIN",
-    "errorPin": "Incorrect PIN, try again!"
+    "errorPin": "Incorrect PIN, try again!",
+    "success": "The card has been successfully activated"
   },
   "myAccounts": "My products",
   "total": "Total",
