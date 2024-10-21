@@ -1,4 +1,4 @@
-import { DButton, DStepper } from '@dynamic-framework/ui-react';
+import { DButton, DStepperDesktop } from '@dynamic-framework/ui-react';
 import { DateTime } from 'luxon';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -45,7 +45,7 @@ export default function ActivationStart(
         <strong>{DateTime.now().toFormat('MMMM dd, yyyy')}</strong>
       </p>
       <div className="mb-8">
-        <DStepper
+        <DStepperDesktop
           currentStep={2}
           options={options}
           vertical
