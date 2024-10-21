@@ -19,6 +19,8 @@
     "account-path-loan": "loans",
 
     "transfers-path": "transfers",
+    "payments-path": "payments",
+    "investment-path": "investment",
 
     "api-path": "https://stoplight.io/mocks/modyo/dynamic/204091081"
   }

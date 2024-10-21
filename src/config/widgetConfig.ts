@@ -15,7 +15,12 @@ export const USER_FIRST_NAME = liquidParser.parse('{{user.first_name}}');
 export const API_ACCOUNT_LIST_FILTER = liquidParser.parse('{{vars.account-list-filter}}');
 
 const TRANSFER_PATH = liquidParser.parse('{{vars.transfers-path}}');
+const PAYMENTS_PATH = liquidParser.parse('{{vars.payments-path}}');
+const INVESTMENT_PATH = liquidParser.parse('{{vars.investment-path}}');
+
 export const TRANSFER_URL = `${SITE_URL}/${TRANSFER_PATH}`;
+export const PAYMENTS_URL = `${SITE_URL}/${PAYMENTS_PATH}`;
+export const INVESTMENT_URL = `${SITE_URL}/${INVESTMENT_PATH}`;
 
 const ACCOUNT_PATH_SAVING = liquidParser.parse('{{vars.account-path-saving}}');
 const ACCOUNT_PATH_CHECKING = liquidParser.parse('{{vars.account-path-checking}}');

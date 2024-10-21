@@ -2,20 +2,26 @@ import { DCard, DCardBody, DIcon } from '@dynamic-framework/ui-react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
+import {
+  INVESTMENT_URL,
+  PAYMENTS_URL,
+  TRANSFER_URL,
+} from '../config/widgetConfig';
+
 const actions = [
   {
     text: 'transfer',
-    path: '',
+    path: TRANSFER_URL,
     icon: 'arrow-left-right',
   },
   {
     text: 'payService',
-    path: '',
+    path: PAYMENTS_URL,
     icon: 'cash-stack',
   },
   {
     text: 'invest',
-    path: '',
+    path: INVESTMENT_URL,
     icon: 'bank2',
   },
 ];
