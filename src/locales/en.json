@@ -39,7 +39,6 @@
     "noAmount": "Enter an amount to pay",
     "withAmount": "{amount} remaining after transfer"
   },
-  "transactions": "Transactions",
   "details": "Details",
   "frequent": {
     "date": "Date",
@@ -49,5 +48,16 @@
     "actions": "Actions"
   },
   "list": "List",
-  "slides": "Slides"
+  "slides": "Slides",
+  "greeting": "Hi {value}, Welcome!",
+  "actions": {
+    "moreInfo": "More Info",
+    "knowMore": "Know More"
+  },
+  "quickActions": {
+    "title": "What would you like to do today?",
+    "transfer": "Transfer",
+    "payService": "Pay Service",
+    "invest": "Invest"
+  }
 }

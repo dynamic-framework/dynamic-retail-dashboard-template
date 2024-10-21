@@ -14,51 +14,44 @@ export default function CategorySlides() {
   const { loading } = useAccounts();
   const accounts = useAppSelector(getAccounts);
 
-  if (loading) {
-    return <AccountSlidesLoader />;
-  }
-
-  if (!Object.keys(accounts).length) {
-    return <>No accounts</>;
-  }
-
   return (
-    <div className="pb-6">
-      <DCarousel
-        options={{
-          pagination: true,
-          paginationKeyboard: false,
-          perMove: 1,
-          perPage: 1,
-          height: 232,
-          gap: 8,
-          padding: 8,
-          trimSpace: false,
-          mediaQuery: 'min',
-          arrows: false,
-          type: 'loop',
-          focus: 0,
-          breakpoints: {
-            [1400 + 252]: {
-              perPage: 3,
+    <div className="pt-6 pb-10 px-6 bg-white rounded">
+      {!Object.keys(accounts).length && <>No accounts</>}
+
+      {loading && <AccountSlidesLoader />}
+
+      {!loading && (
+        <DCarousel
+          options={{
+            pagination: true,
+            paginationKeyboard: false,
+            perMove: 1,
+            perPage: 1,
+            gap: 8,
+            trimSpace: false,
+            mediaQuery: 'min',
+            arrows: false,
+            focus: 0,
+            breakpoints: {
+              768: {
+                perPage: 2,
+                padding: {
+                  right: 24,
+                },
+              },
             },
-            576: {
-              perPage: 2,
-              arrows: true,
-              padding: 16,
-            },
-          },
-        }}
-      >
-        {accounts.map((account) => (
-          <DCarouselSlide
-            key={account.id}
-            className="d-flex align-items-stretch py-4"
-          >
-            <AccountSlide account={account} />
-          </DCarouselSlide>
-        ))}
-      </DCarousel>
+          }}
+        >
+          {accounts.map((account) => (
+            <DCarouselSlide
+              key={account.id}
+              className="d-flex align-items-stretch py-4"
+            >
+              <AccountSlide account={account} />
+            </DCarouselSlide>
+          ))}
+        </DCarousel>
+      )}
     </div>
   );
 }

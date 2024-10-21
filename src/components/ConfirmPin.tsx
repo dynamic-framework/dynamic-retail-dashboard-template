@@ -28,7 +28,7 @@ export default function ConfirmPin() {
       </div>
 
       {Number(pin.length) === 4 && pinBase !== pin && (
-        <DAlert showIcon soft type="primary">
+        <DAlert>
           {t('cardStatus.errorPin')}
         </DAlert>
       )}
