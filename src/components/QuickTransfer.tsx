@@ -29,7 +29,7 @@ export default function QuickTransfer() {
       amount: amount?.toString() || '',
     }).toString();
 
-    window.location.href = `${TRANSFER_URL}${queryParams}`;
+    window.location.href = `${TRANSFER_URL}?${queryParams}`;
   }, [selectedContact?.id, transferFromAccount?.id, amount]);
 
   if (loading) {
