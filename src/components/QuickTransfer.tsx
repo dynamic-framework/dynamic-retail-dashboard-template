@@ -1,5 +1,5 @@
-import { DButton } from '@dynamic-framework/ui-react';
-import { useCallback, useState } from 'react';
+import { DButton, DCard } from '@dynamic-framework/ui-react';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { TRANSFER_URL } from '../config/widgetConfig';
@@ -20,16 +20,16 @@ export default function QuickTransfer() {
   const selectedContact = useAppSelector(getSelectedContact);
 
   const [amount, setAmount] = useState<number>();
+  const [invalid, setInvalid] = useState(false);
 
-  const sendTransfer = useCallback(() => {
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+  const transferWithParamsUrl = useMemo(() => {
     const queryParams = new URLSearchParams({
       contact_id: selectedContact?.id || '',
       from_account: transferFromAccount?.id || '',
       amount: amount?.toString() || '',
     }).toString();
 
-    window.location.href = `${TRANSFER_URL}?${queryParams}`;
+    return `${TRANSFER_URL}?${queryParams}`;
   }, [selectedContact?.id, transferFromAccount?.id, amount]);
 
   if (loading) {
@@ -37,20 +37,34 @@ export default function QuickTransfer() {
   }
 
   return (
-    <div className="bg-surface-secondary d-flex flex-column p-4 rounded gap-4 quick-transfer">
-      <h3 className="fs-5 fw-bold">
-        {t('transfer.title')}
-      </h3>
-      <QuickTransferDepositAccountSelect />
-      <QuickTransferAmountInput value={amount} onChange={setAmount} />
-      <QuickTransferContactSelect />
-      <DButton
-        text={t('transfer.actionSingle')}
-        theme="primary"
-        iconEnd="send"
-        onClick={sendTransfer}
-        disabled={!amount || amount <= 0 || !transferFromAccount}
-      />
-    </div>
+    <DCard className="bg-surface-secondary">
+      <DCard.Body className="d-flex flex-column gap-4">
+        <h4>
+          {t('transfer.title')}
+        </h4>
+        <QuickTransferDepositAccountSelect />
+        <QuickTransferAmountInput
+          value={amount}
+          onChange={setAmount}
+          invalid={invalid}
+        />
+        <QuickTransferContactSelect />
+        {!amount && (
+          <DButton
+            text={t('transfer.actionSingle')}
+            theme="primary"
+            onClick={() => setInvalid(true)}
+          />
+        )}
+        {amount && (
+          <a
+            className="btn btn-primary"
+            href={transferWithParamsUrl}
+          >
+            {t('transfer.actionSingle')}
+          </a>
+        )}
+      </DCard.Body>
+    </DCard>
   );
 }
