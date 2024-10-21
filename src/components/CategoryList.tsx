@@ -13,7 +13,7 @@ export default function CategoryList() {
     <div className="d-flex flex-column gap-8">
       {loading && <CategoryListLoader />}
 
-      {Object.keys(categories).length === 0 && <>No accounts</>}
+      {!loading && Object.keys(categories).length === 0 && <>No accounts</>}
 
       {!loading && categories.map((category) => (
         <Category
