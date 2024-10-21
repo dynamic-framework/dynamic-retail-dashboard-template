@@ -17,9 +17,7 @@ export default function QuickTransferContactSelectValue(props: Props) {
   return (
     <SingleValue {...props}>
       <div className="d-flex gap-2 align-items-center">
-        <DAvatar
-          title={data.name[0]}
-        />
+        <DAvatar name={data.name} />
         <p className="m-0 flex-grow-1">
           <span className="d-block m-0">
             {`${data.name} *** ${data.accountNumber.slice(-3)}`}

@@ -44,10 +44,6 @@ export default function Navs() {
           <button
             className={classNames(
               'nav-link d-inline-flex align-items-center gap-1',
-              // Remove after release - start
-              { 'rounded-1': true },
-              { 'bg-primary': view === currentView },
-              // Remove after release - end
               { 'bg-white': view !== currentView },
               { active: view === currentView },
             )}

@@ -15,10 +15,7 @@ export default function Greeting() {
   const { t } = useTranslation();
   return (
     <h3 className="d-inline-flex align-items-center gap-4">
-      <DAvatar
-        title={name[0]}
-        size="lg"
-      />
+      <DAvatar name={name} />
       {t('greeting', { value: name })}
     </h3>
   );
