@@ -53,8 +53,7 @@ export default function AccountSlide({ account }: Props) {
             className="d-inline-flex align-items-center gap-1 text-nowrap"
             href={accountPath}
           >
-            {/* TODO: Know more */}
-            {t('Know more')}
+            {t('actions.knowMore')}
             <DIcon
               icon="arrow-right"
               size="var(--bs-fs-body-small)"

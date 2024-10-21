@@ -1,6 +1,7 @@
 import { DIcon } from '@dynamic-framework/ui-react';
 import classnames from 'classnames';
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { SITE_URL, ACCOUNT_PATHS } from '../config/widgetConfig';
 import useAccountValue from '../hooks/useAccountValue';
@@ -16,6 +17,7 @@ export default function CategoryItem(
     account,
   }: Props,
 ) {
+  const { t } = useTranslation();
   const { value, label } = useAccountValue(account);
 
   const accountPath = useMemo(() => (
@@ -49,7 +51,7 @@ export default function CategoryItem(
         </div>
       </div>
       <span className="d-inline-flex d-lg-none link-primary  align-items-center gap-1">
-        Know more
+        {t('actions.knowMore')}
         <DIcon
           icon="arrow-right"
           size="var(--bs-fs-body-small)"

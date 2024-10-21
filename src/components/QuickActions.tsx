@@ -1,30 +1,32 @@
 import { DCard, DCardBody, DIcon } from '@dynamic-framework/ui-react';
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 const actions = [
   {
-    text: 'Transfer',
+    text: 'transfer',
     path: '',
     icon: 'arrow-left-right',
   },
   {
-    text: 'Pay Service',
+    text: 'payService',
     path: '',
     icon: 'cash-stack',
   },
   {
-    text: 'Invest',
+    text: 'invest',
     path: '',
     icon: 'bank2',
   },
 ];
 
 export default function QuickActions() {
+  const { t } = useTranslation();
+
   return (
     <DCard className="d-none d-lg-block text-bg-secondary-600">
       <DCardBody className="d-flex flex-column gap-8">
-        {/* TODO: Change this */}
-        <p className="fs-5 m-0">What would you like to do today?</p>
+        <p className="fs-5 m-0">{t('quickActions.title')}</p>
         <div className="d-flex gap-4">
           {actions.map(({ path, text, icon }) => (
             <a
@@ -43,7 +45,7 @@ export default function QuickActions() {
                 circleSize="var(--bs-ref-spacer-5)"
                 hasCircle
               />
-              <p className="m-0">{text}</p>
+              <p className="m-0">{t(`quickActions.${text}`)}</p>
               <DIcon
                 className="ms-auto"
                 icon="chevron-right"

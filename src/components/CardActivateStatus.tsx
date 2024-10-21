@@ -22,7 +22,7 @@ export default function CardActivateStatus() {
       <p className="m-0 mt-1">{t('cardStatus.activateDescription')}</p>
       <DButton
         className="p-0"
-        text="More info" // TODO: Change
+        text={t('actions.moreInfo')}
         iconEnd="arrow-right"
         onClick={() => openPortal('modalActivate', {})}
         variant="link"

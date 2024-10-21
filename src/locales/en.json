@@ -49,5 +49,15 @@
   },
   "list": "List",
   "slides": "Slides",
-  "greeting": "Hi {value}, Welcome!"
+  "greeting": "Hi {value}, Welcome!",
+  "actions": {
+    "moreInfo": "More Info",
+    "knowMore": "Know More"
+  },
+  "quickActions": {
+    "title": "What would you like to do today?",
+    "transfer": "Transfer",
+    "payService": "Pay Service",
+    "invest": "Invest"
+  }
 }
