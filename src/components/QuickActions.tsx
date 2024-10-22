@@ -8,7 +8,7 @@ import {
   TRANSFER_URL,
 } from '../config/widgetConfig';
 
-const actions = [
+const ACTIONS = [
   {
     text: 'transfer',
     path: TRANSFER_URL,
@@ -34,7 +34,7 @@ export default function QuickActions() {
       <DCardBody className="d-flex flex-column gap-8">
         <p className="fs-5 m-0">{t('quickActions.title')}</p>
         <div className="d-flex gap-4">
-          {actions.map(({ path, text, icon }) => (
+          {ACTIONS.map(({ path, text, icon }) => (
             <a
               key={text}
               href={path}
