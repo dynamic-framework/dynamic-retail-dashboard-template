@@ -30,7 +30,7 @@ export default function QuickActions() {
   const { t } = useTranslation();
 
   return (
-    <DCard className="d-none d-lg-block text-bg-secondary-600">
+    <DCard className="d-none d-xl-block text-bg-secondary-600">
       <DCardBody className="d-flex flex-column gap-8">
         <p className="fs-5 m-0">{t('quickActions.title')}</p>
         <div className="d-flex gap-4">

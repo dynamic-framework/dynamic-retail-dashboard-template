@@ -33,7 +33,7 @@ export default function CategorySlides() {
             arrows: false,
             focus: 0,
             breakpoints: {
-              768: {
+              992: {
                 perPage: 2,
                 padding: {
                   right: 24,

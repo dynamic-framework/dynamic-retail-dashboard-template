@@ -37,14 +37,14 @@ export default function App() {
           <CardActivateStatus />
           <Greeting />
         </div>
-        <div className="col-12 col-lg-8">
+        <div className="col-12 col-xl-8">
           <div className="d-flex flex-column gap-6">
             <QuickActions />
             <Navs />
             <CurrentViewCmp />
           </div>
         </div>
-        <div className="col-12 col-lg-4">
+        <div className="col-12 col-xl-4">
           <QuickTransfer />
         </div>
       </div>

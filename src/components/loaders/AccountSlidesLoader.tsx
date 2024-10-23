@@ -8,7 +8,7 @@ export default function AccountSlidesLoader() {
         }}
       />
       <span
-        className="d-none d-lg-block placeholder col rounded-2"
+        className="d-none d-xl-block placeholder col rounded-2"
         style={{
           height: '13rem',
         }}
