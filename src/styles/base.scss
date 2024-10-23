@@ -3,13 +3,6 @@
 .dashboard-template,
 .d-portal {
 
-  .views-btn {
-    .btn {
-      --#{$prefix}btn-padding-x: var(--#{$prefix}ref-spacer-2);
-      --#{$prefix}btn-padding-y: var(--#{$prefix}ref-spacer-2);
-    }
-  }
-
   .d-card-account .card-body > :first-child {
     height: 100%;
   }
@@ -24,53 +17,6 @@
     height: auto;
   }
 
-  .contact-selector {
-    .d-popover-content {
-      z-index: 10;
-    }
-  }
-
-  .drop-contact {
-    background-color: var(--#{$prefix}white);
-    border: 1px solid var(--#{$prefix}gray-300);
-
-    .d-quick-action-button {
-      --#{$prefix}quick-action-button-component-border-radius: 0;
-      --#{$prefix}quick-action-button-border: 0;
-      --#{$prefix}quick-action-button-box-shadow: 0;
-
-      position: relative;
-      overflow: hidden;
-    }
-
-    .d-quick-action-button:not(:last-child) .d-quick-action-button {
-      --#{$prefix}quick-action-button-border-bottom: 1px solid var(--#{$prefix}gray-300);
-
-      &:active {
-        border-color: var(--#{$prefix}gray-300);
-      }
-    }
-
-    .selected {
-      position: relative;
-      background-color: rgba(var(--#{$prefix}gray-200-rgb), .5);
-    }
-  }
-
-  .gradient-card-activate {
-    background: linear-gradient(to right, #161723, #6d6d82);
-  }
-
-  // Theme colors for credit-card slides
-
-  .account-card.credit-card {
-    background: linear-gradient(90deg, rgba(205, 18, 37, 1) 0%, rgba(136, 93, 245, 1) 100%);
-  }
-
-  .account-card.saving {
-    background: linear-gradient(90deg, rgba(66, 133, 244, 1) 0%, rgba(52, 168, 83, 1) 100%);
-  }
-
   .activate-card-section {
     &.account-card {
       width: 300px;
@@ -78,6 +24,7 @@
       padding: 1rem !important; /* stylelint-disable declaration-no-important */
       margin-right: -5rem;
       zoom: .8;
+      background: linear-gradient(90deg, rgba(205, 18, 37, 1) 0%, rgba(136, 93, 245, 1) 100%);
     }
     &.rotate {
       top: 20%;

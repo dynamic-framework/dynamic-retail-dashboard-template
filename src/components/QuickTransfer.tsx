@@ -37,7 +37,7 @@ export default function QuickTransfer() {
   }
 
   return (
-    <DCard className="bg-surface-secondary">
+    <DCard className="quick-transfer bg-surface-secondary">
       <DCard.Body className="d-flex flex-column gap-4">
         <h4>
           {t('transfer.title')}
