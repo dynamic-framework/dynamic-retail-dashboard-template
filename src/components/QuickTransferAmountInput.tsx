@@ -10,9 +10,10 @@ import { getTransferFromAccount } from '../store/selectors';
 type Props = {
   value?: number;
   onChange: Dispatch<SetStateAction<number | undefined>>;
+  invalid: boolean;
 };
 
-export default function QuickTransferAmountInput({ value, onChange }: Props) {
+export default function QuickTransferAmountInput({ value, onChange, invalid }: Props) {
   const { t } = useTranslation();
   const { format } = useFormatCurrency();
   const transferFromAccount = useAppSelector(getTransferFromAccount);
@@ -38,6 +39,7 @@ export default function QuickTransferAmountInput({ value, onChange }: Props) {
       onChange={(newValue) => onChange(newValue)}
       value={value}
       placeholder="0,00"
+      invalid={invalid && (value === undefined || value < 1)}
     />
   );
 }

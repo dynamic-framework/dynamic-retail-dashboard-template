@@ -17,11 +17,6 @@ export const getContacts = createSelector(
   (widget) => widget.contacts,
 );
 
-export const getLatestActivities = createSelector(
-  getState,
-  (widget) => widget.latestActivities,
-);
-
 export const getDepositAccounts = createSelector(
   getState,
   (widget) => widget.depositAccounts,

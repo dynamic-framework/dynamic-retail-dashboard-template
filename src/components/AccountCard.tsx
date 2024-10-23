@@ -25,7 +25,8 @@ export default function AccountCard(
     <div
       className={classNames(
         'account-card overflow-hidden bg-gray text-white',
-        'position-relative rounded-1 d-flex flex-column',
+        'position-relative rounded-1 flex-column',
+        'd-none d-lg-flex',
         size === 'sm' ? 'p-2 card-sm' : 'p-8',
         typeCard,
         className,
