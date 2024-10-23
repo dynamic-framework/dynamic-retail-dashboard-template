@@ -31,6 +31,7 @@ export default function CategoryItem(
         'cursor-pointer text-decoration-none text-body',
         'py-6 px-8 border rounded-1',
         'd-flex flex-column flex-lg-row gap-4 justify-content-between',
+        'category-item',
       )}
     >
       <div className="d-flex gap-4 align-items-center">

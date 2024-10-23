@@ -2,7 +2,6 @@
 
 .dashboard-template,
 .d-portal {
-
   .d-card-account .card-body > :first-child {
     height: 100%;
   }
@@ -26,10 +25,32 @@
       zoom: .8;
       background: linear-gradient(90deg, rgba(205, 18, 37, 1) 0%, rgba(136, 93, 245, 1) 100%);
     }
+
     &.rotate {
       top: 20%;
       right: -20px;
       transform: rotate(-45deg);
+    }
+  }
+
+  .nav-link-custom {
+    &:not(:hover, .active) {
+      background-color: var(--#{$prefix}white);
+    }
+  }
+
+  .quick-action-item {
+    background-color: rgba(var(--#{$prefix}secondary-100-rgb), .25);
+
+    &:hover {
+      background-color: rgba(var(--#{$prefix}secondary-100-rgb), .4);
+    }
+  }
+
+  .category-item {
+    &:hover {
+      background-color: var(--#{$prefix}secondary-soft);
+      box-shadow: var(--#{$prefix}box-shadow-sm);
     }
   }
 }

@@ -43,8 +43,7 @@ export default function Navs() {
         <li className="nav-item" key={view}>
           <button
             className={classNames(
-              'nav-link d-inline-flex align-items-center gap-1',
-              { 'bg-white': view !== currentView },
+              'nav-link nav-link-custom d-inline-flex align-items-center gap-1',
               { active: view === currentView },
             )}
             type="button"

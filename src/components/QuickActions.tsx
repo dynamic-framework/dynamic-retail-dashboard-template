@@ -40,8 +40,9 @@ export default function QuickActions() {
               href={path}
               className={classNames(
                 'd-inline-flex align-items-center',
-                'text-decoration-none bg-secondary-200 text-white bg-opacity-25',
+                'text-decoration-none text-white',
                 'border rounded-1 p-4 gap-2 col fw-bold',
+                'quick-action-item',
               )}
             >
               <DIcon
