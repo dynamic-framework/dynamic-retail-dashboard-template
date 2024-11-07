@@ -9,7 +9,7 @@ import { setTransferFrom } from '../store/slice';
 export default function QuickTransferDepositAccountSelect() {
   const { t } = useTranslation();
   const depositAccounts = useAppSelector(getDepositAccounts);
-  const transferFromAccount = useAppSelector(getTransferFromAccount) || depositAccounts[0];
+  const transferFromAccount = useAppSelector(getTransferFromAccount);
   const dispatch = useAppDispatch();
 
   return (
