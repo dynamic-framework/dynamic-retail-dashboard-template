@@ -11,7 +11,7 @@ export default function Greeting() {
   return (
     <h3 className="d-inline-flex align-items-center gap-4">
       <DAvatar name={NAME} />
-      {t('greeting', { NAME })}
+      {t('greeting', { name: NAME })}
     </h3>
   );
 }
