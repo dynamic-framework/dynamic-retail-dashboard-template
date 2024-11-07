@@ -50,7 +50,7 @@
   },
   "list": "List",
   "slides": "Slides",
-  "greeting": "Hi {value}, Welcome!",
+  "greeting": "Hi {name}, Welcome!",
   "actions": {
     "moreInfo": "More Info",
     "knowMore": "Know More"

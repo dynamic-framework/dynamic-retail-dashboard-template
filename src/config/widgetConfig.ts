@@ -34,6 +34,8 @@ export const ACCOUNT_PATHS = {
   [AccountType.Loan]: ACCOUNT_PATH_LOAN,
 };
 
+export const DEFAULT_NAME = 'John';
+
 export const SCREENS = {
   start: 'start',
   activation: 'activation',
