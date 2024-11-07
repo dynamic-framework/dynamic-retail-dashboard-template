@@ -36,7 +36,10 @@ export default function Category(
     >
       <div className="d-flex flex-column gap-4">
         {accounts.map((account) => (
-          <CategoryItem key={account.id} account={account} />
+          <CategoryItem
+            key={account.id}
+            account={account}
+          />
         ))}
       </div>
     </DCollapse>

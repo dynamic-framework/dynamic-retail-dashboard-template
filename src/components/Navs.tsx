@@ -40,7 +40,10 @@ export default function Navs() {
         onClick={callback}
       />
       {OPTIONS.map(({ icon, view }) => (
-        <li className="nav-item" key={view}>
+        <li
+          className="nav-item"
+          key={view}
+        >
           <button
             className={classNames(
               'nav-link nav-link-custom d-inline-flex align-items-center gap-1',
@@ -49,7 +52,10 @@ export default function Navs() {
             type="button"
             onClick={() => dispatch(setCurrentView(view))}
           >
-            <DIcon icon={icon} size="var(--bs-ref-spacer-4)" />
+            <DIcon
+              icon={icon}
+              size="var(--bs-ref-spacer-4)"
+            />
             {t(view)}
           </button>
         </li>

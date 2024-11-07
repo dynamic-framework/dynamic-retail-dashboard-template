@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getAccounts } from '../../store/selectors';
-import { setAccounts, setDepositAccounts, setTransferFrom } from '../../store/slice';
+import {
+  setAccounts,
+  setDepositAccounts,
+  setTransferFrom,
+} from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
 import { AccountBaseType } from '../config';
 import { AccountRepository } from '../repositories';

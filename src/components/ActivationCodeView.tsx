@@ -25,7 +25,10 @@ export default function ActivationCodeView(
       <h4 className="mb-4">{t('cardStatus.activationCode')}</h4>
       <p className="text-gray-500">{t('cardStatus.activationCodeDescription')}</p>
       <div className="d-flex justify-content-center my-8">
-        <AccountCard className="activate-card-section me-0" account={account} />
+        <AccountCard
+          className="activate-card-section me-0"
+          account={account}
+        />
       </div>
 
       <div className="d-flex justify-content-center">

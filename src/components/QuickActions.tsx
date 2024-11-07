@@ -1,4 +1,8 @@
-import { DCard, DCardBody, DIcon } from '@dynamic-framework/ui-react';
+import {
+  DCard,
+  DCardBody,
+  DIcon,
+} from '@dynamic-framework/ui-react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 

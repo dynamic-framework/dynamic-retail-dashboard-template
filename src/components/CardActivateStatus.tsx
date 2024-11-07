@@ -1,4 +1,8 @@
-import { DAlert, DButton, useDPortalContext } from '@dynamic-framework/ui-react';
+import {
+  DAlert,
+  DButton,
+  useDPortalContext,
+} from '@dynamic-framework/ui-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 

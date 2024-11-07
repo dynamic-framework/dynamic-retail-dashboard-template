@@ -50,7 +50,10 @@ export default function ActivationStart(
           options={options}
           vertical
         />
-        <AccountCard className="activate-card-section rotate position-absolute" account={account} />
+        <AccountCard
+          className="activate-card-section rotate position-absolute"
+          account={account}
+        />
       </div>
       <div>
         <DButton

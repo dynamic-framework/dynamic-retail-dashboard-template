@@ -15,9 +15,15 @@ export default function QuickTransferContactSelectOption(props: Props) {
   const { data } = props;
 
   return (
-    <Option {...props} className="py-2">
+    <Option
+      {...props}
+      className="py-2"
+    >
       <div className="d-flex gap-2 align-items-center">
-        <DAvatar name={data.name} size="sm" />
+        <DAvatar
+          name={data.name}
+          size="sm"
+        />
         <p className="m-0 flex-grow-1">
           <span className="d-block m-0">
             {data.name}
