@@ -1,5 +1,11 @@
-import { DButton, DInputPin, DAlert } from '@dynamic-framework/ui-react';
-import { useState } from 'react';
+import {
+  DAlert,
+  DButton,
+  DInputPin,
+  useDPortalContext,
+  useDToast,
+} from '@dynamic-framework/ui-react';
+import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useAppSelector } from '../store/hooks';
@@ -8,8 +14,25 @@ import { getPinActivateAccount } from '../store/selectors';
 export default function ConfirmPin() {
   const { t } = useTranslation();
   const [pin, setPin] = useState<string>('');
+  const { closePortal } = useDPortalContext();
 
   const pinBase = useAppSelector(getPinActivateAccount);
+
+  const { toast } = useDToast();
+
+  const successToast = useCallback(() => {
+    toast(
+      {
+        title: t('cardStatus.success'),
+        theme: 'success',
+        soft: true,
+      },
+      {
+        duration: 3000,
+      },
+    );
+    closePortal();
+  }, [closePortal, toast, t]);
 
   return (
     <div className="p-4 pt-0">
@@ -28,7 +51,9 @@ export default function ConfirmPin() {
       </div>
 
       {Number(pin.length) === 4 && pinBase !== pin && (
-        <DAlert showIcon soft type="primary">
+        <DAlert
+          theme="danger"
+        >
           {t('cardStatus.errorPin')}
         </DAlert>
       )}
@@ -38,6 +63,7 @@ export default function ConfirmPin() {
           text={t('activate')}
           disabled={Number(pin.length) < 4 || pinBase !== pin}
           className="w-100 d-block"
+          onClick={successToast}
           pill
         />
       </div>

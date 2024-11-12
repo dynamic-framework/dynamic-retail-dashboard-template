@@ -1,40 +1,36 @@
-import { DButton, useDPortalContext } from '@dynamic-framework/ui-react';
+import {
+  DAlert,
+  DButton,
+  useDPortalContext,
+} from '@dynamic-framework/ui-react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Account } from '../services/interface';
-
-import AccountCard from './AccountCard';
-import Stepper from './Stepper';
-
-type Props = {
-  account: Account
-};
-
-export default function CardActivateStatus(
-  {
-    account,
-  }: Props,
-) {
+export default function CardActivateStatus() {
   const { openPortal } = useDPortalContext();
   const { t } = useTranslation();
+  const [showAlert, setShowAlert] = useState(true);
+
+  if (!showAlert) {
+    return null;
+  }
+
   return (
-    <div className="gradient-card-activate p-8 text-white rounded mb-8 overflow-hidden relative">
-      <div className="d-flex align-items-start gap-10">
-        <div className="flex-1">
-          <Stepper width="200" />
-          <h4>{t('cardStatus.activateTitle')}</h4>
-          <p>{t('cardStatus.activateDescription')}</p>
-          <DButton
-            className="bg-white border-0 text-gray-900"
-            text="More info"
-            iconEnd="chevron-right"
-            onClick={() => openPortal('modalActivate', {})}
-          />
-        </div>
-        <div>
-          <AccountCard className="activate-card-section" account={account} />
-        </div>
-      </div>
-    </div>
+    <DAlert
+      showClose
+      theme="info"
+      onClose={() => setShowAlert(false)}
+      className="mb-6"
+    >
+      <h5>{t('cardStatus.activateTitle')}</h5>
+      <p className="m-0 mt-1">{t('cardStatus.activateDescription')}</p>
+      <DButton
+        className="p-0"
+        text={t('actions.moreInfo')}
+        iconEnd="arrow-right"
+        onClick={() => openPortal('modalActivate', {})}
+        variant="link"
+      />
+    </DAlert>
   );
 }

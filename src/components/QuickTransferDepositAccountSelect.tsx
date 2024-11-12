@@ -1,4 +1,4 @@
-import { DInputSelect } from '@dynamic-framework/ui-react';
+import { DSelect } from '@dynamic-framework/ui-react';
 import { useTranslation } from 'react-i18next';
 
 import type { Account } from '../services/interface';
@@ -13,14 +13,15 @@ export default function QuickTransferDepositAccountSelect() {
   const dispatch = useAppDispatch();
 
   return (
-    <DInputSelect<Account>
+    <DSelect
       id="selectAccountFrom"
       label={t('transfer.from')}
-      valueExtractor={({ accountNumber }: Account) => accountNumber}
-      labelExtractor={({ name, accountNumber }: Account) => `${name} ••• ${accountNumber}`}
+      getOptionValue={({ accountNumber }: Account) => accountNumber}
+      getOptionLabel={({ name, accountNumber }: Account) => `${name} *** ${accountNumber}`}
       options={depositAccounts}
-      value={transferFromAccount?.accountNumber}
-      onChange={(account) => dispatch(setTransferFrom(account))}
+      value={transferFromAccount}
+      onChange={(account) => dispatch(setTransferFrom(account as Account))}
+      classNames={{ menu: () => 'mt-2' }}
     />
   );
 }

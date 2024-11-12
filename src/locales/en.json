@@ -19,7 +19,8 @@
     "createPin": "Create PIN",
     "createPinDescription": "Assign a key of 4 digits to your card for ATM withdrawals.",
     "confirmPin": "Confirm PIN",
-    "errorPin": "Incorrect PIN, try again!"
+    "errorPin": "Incorrect PIN, try again!",
+    "success": "The card has been successfully activated"
   },
   "myAccounts": "My products",
   "total": "Total",
@@ -39,7 +40,6 @@
     "noAmount": "Enter an amount to pay",
     "withAmount": "{amount} remaining after transfer"
   },
-  "transactions": "Transactions",
   "details": "Details",
   "frequent": {
     "date": "Date",
@@ -49,5 +49,16 @@
     "actions": "Actions"
   },
   "list": "List",
-  "slides": "Slides"
+  "slides": "Slides",
+  "greeting": "Hi {name}, Welcome!",
+  "actions": {
+    "moreInfo": "More Info",
+    "knowMore": "Know More"
+  },
+  "quickActions": {
+    "title": "What would you like to do today?",
+    "transfer": "Transfer",
+    "payService": "Pay Service",
+    "invest": "Invest"
+  }
 }

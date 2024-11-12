@@ -1,4 +1,4 @@
-import { DContextProvider } from '@dynamic-framework/ui-react';
+import { DContextProvider, DToastContainer } from '@dynamic-framework/ui-react';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
@@ -24,6 +24,7 @@ root.render(
         }}
       >
         <App />
+        <DToastContainer position="top-right" />
       </DContextProvider>
     </Provider>
   </StrictMode>,
