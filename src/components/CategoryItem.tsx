@@ -48,7 +48,7 @@ export default function CategoryItem(
       <div className="d-flex gap-4 align-items-center justify-content-between">
         <div className="d-flex flex-column text-start">
           <p className="fw-bold h3 m-0">{value}</p>
-          <p className="m-0">{label}</p>
+          <p className="m-0 text-lg-end">{label}</p>
         </div>
       </div>
       <span className="d-inline-flex d-lg-none link-primary  align-items-center gap-1">
