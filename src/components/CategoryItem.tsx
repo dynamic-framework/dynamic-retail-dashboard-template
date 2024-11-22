@@ -41,7 +41,7 @@ export default function CategoryItem(
           hasCircle
         />
         <div className="flex-grow-1">
-          <p className="h5 fw-bold m-0">{account.alias}</p>
+          <p className="h5 fw-bold m-0">{account.name}</p>
           <p className="mb-0">{account.accountNumber}</p>
         </div>
       </div>
