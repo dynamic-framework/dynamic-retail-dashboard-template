@@ -1,12 +1,12 @@
 import type { GenericAbortSignal } from 'axios';
 
-import type { ApiAccount } from '../api-interface';
+import type { ApiAccount, ApiResponsePaginatedWrapped } from '../api-interface';
 import apiClient from '../clients/apiClient';
-import { ApiAccountTypeConfig } from '../config';
 import accountMapper from '../mappers/accountMapper';
+import metadataMapper from '../mappers/metadataMapper';
 
 export async function list(config: { abortSignal: GenericAbortSignal }) {
-  const { data } = await apiClient.request<Array<ApiAccount>>({
+  const { data } = await apiClient.request<ApiResponsePaginatedWrapped<ApiAccount>>({
     url: 'accounts',
     method: 'GET',
     signal: config.abortSignal,
@@ -15,11 +15,11 @@ export async function list(config: { abortSignal: GenericAbortSignal }) {
     },
   });
 
-  return data
-    // we make sure to only use accounts we can handle
-    .filter((apiAccount: ApiAccount) => (
-      Object.keys(ApiAccountTypeConfig).includes(apiAccount.accountType)
-    ))
-    // and we transform the account into the type of account that the widget uses
-    .map((apiAccount: ApiAccount) => accountMapper(apiAccount));
+  const { metadata, content } = data;
+
+  // We transform the account into the type of account that the widget uses
+  return {
+    content: content.map(accountMapper),
+    metadata: metadataMapper(metadata),
+  };
 }
