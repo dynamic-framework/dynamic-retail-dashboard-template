@@ -10,9 +10,6 @@ export async function list(config: { abortSignal: GenericAbortSignal }) {
     url: 'accounts',
     method: 'GET',
     signal: config.abortSignal,
-    headers: {
-      Prefer: 'code=200, example=All',
-    },
   });
 
   const { metadata, content } = data;

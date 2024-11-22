@@ -9,9 +9,6 @@ export async function list(config: { abortSignal: GenericAbortSignal }) {
     url: '/account-holder/contacts/deposit-accounts',
     method: 'GET',
     signal: config.abortSignal,
-    headers: {
-      Prefer: 'code=200, example=All',
-    },
   });
 
   return data.content.map(contactMapper);
