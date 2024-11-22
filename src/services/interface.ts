@@ -5,7 +5,6 @@ export type Contact = {
   name: string;
   accountNumber: string;
   bank: string;
-  image: string;
 };
 
 export type Category = {

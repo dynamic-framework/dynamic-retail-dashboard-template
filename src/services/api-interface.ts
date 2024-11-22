@@ -175,8 +175,11 @@ export type ApiLoanDetails = {
 
 export type ApiContact = {
   id: string;
-  name: string;
+  account_holder_name: string;
+  alias: string;
+  account_type: ApiAccountAccountType;
   account_number: string;
+  masked_account_number: string;
   bank: string;
-  image: string;
+  phone: string;
 };
