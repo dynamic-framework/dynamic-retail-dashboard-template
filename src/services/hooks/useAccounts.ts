@@ -23,7 +23,11 @@ export default function useAccounts() {
     (async () => {
       setLoading(true);
       try {
-        const { content } = await AccountRepository.list({ abortSignal: abortController.signal });
+        const { content } = await AccountRepository.list({
+          config: {
+            abortSignal: abortController.signal,
+          },
+        });
         setLoading(false);
         dispatch(setAccounts(content));
         const depositAccounts = content.filter(
