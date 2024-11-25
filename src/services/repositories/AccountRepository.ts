@@ -1,15 +1,15 @@
-import type { GenericAbortSignal } from 'axios';
-
 import type { ApiAccount, ApiResponsePaginatedWrapped } from '../api-interface';
 import apiClient from '../clients/apiClient';
 import accountMapper from '../mappers/accountMapper';
 import metadataMapper from '../mappers/metadataMapper';
 
-export async function list(config: { abortSignal: GenericAbortSignal }) {
+import { RepositoryParams } from './repository';
+
+export async function list(params: RepositoryParams) {
   const { data } = await apiClient.request<ApiResponsePaginatedWrapped<ApiAccount>>({
     url: 'accounts',
     method: 'GET',
-    signal: config.abortSignal,
+    signal: params.config?.abortSignal,
   });
 
   const { metadata, content } = data;
