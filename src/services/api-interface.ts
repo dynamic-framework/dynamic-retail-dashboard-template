@@ -17,10 +17,10 @@ export type ApiMetadata = {
   total_rows: number;
 };
 
-export type ApiResponsePaginatedWrapped<T> = {
+export type ApiResponseWrapped<T> = {
+  metadata?: ApiMetadata;
+  content: T;
   timestamp: string;
-  content: T[];
-  metadata: ApiMetadata;
 };
 
 export type ApiAccount = {
