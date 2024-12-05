@@ -12,7 +12,7 @@ import { AccountBaseType } from '../config';
 import { AccountRepository } from '../repositories';
 import ApiError from '../utils/ApiError';
 
-export default function useAccounts() {
+export default function useAccountsEffect() {
   const [loading, setLoading] = useState(false);
   const data = useAppSelector(getAccounts);
   const dispatch = useAppDispatch();

@@ -7,7 +7,7 @@ import errorHandler from '../../utils/errorHandler';
 import { ContactRepository } from '../repositories';
 import ApiError from '../utils/ApiError';
 
-export default function useContacts() {
+export default function useContactsEffect() {
   const [loading, setLoading] = useState(false);
   const data = useAppSelector(getContacts);
   const dispatch = useAppDispatch();

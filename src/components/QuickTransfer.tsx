@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { TRANSFER_URL } from '../config/widgetConfig';
-import useContacts from '../services/hooks/useContacts';
+import useContactsEffect from '../services/hooks/useContactsEffect';
 import { useAppSelector } from '../store/hooks';
 import { getTransferFromAccount, getSelectedContact } from '../store/selectors';
 
@@ -14,7 +14,7 @@ import QuickTransferDepositAccountSelect from './QuickTransferDepositAccountSele
 
 export default function QuickTransfer() {
   const { t } = useTranslation();
-  const { loading } = useContacts();
+  const { loading } = useContactsEffect();
 
   const transferFromAccount = useAppSelector(getTransferFromAccount);
   const selectedContact = useAppSelector(getSelectedContact);

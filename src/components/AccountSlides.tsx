@@ -3,7 +3,7 @@ import {
   DCarouselSlide,
 } from '@dynamic-framework/ui-react';
 
-import useAccounts from '../services/hooks/useAccounts';
+import useAccountsEffect from '../services/hooks/useAccountsEffect';
 import { useAppSelector } from '../store/hooks';
 import { getAccounts } from '../store/selectors';
 
@@ -11,7 +11,7 @@ import AccountSlide from './AccountSlide';
 import AccountSlidesLoader from './loaders/AccountSlidesLoader';
 
 export default function CategorySlides() {
-  const { loading } = useAccounts();
+  const { loading } = useAccountsEffect();
   const accounts = useAppSelector(getAccounts);
 
   return (
