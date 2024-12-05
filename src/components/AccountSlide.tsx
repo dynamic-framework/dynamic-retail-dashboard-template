@@ -33,7 +33,7 @@ export default function AccountSlide({ account }: Props) {
           />
           <div className="d-block flex-grow-1">
             <p className="h5 mb-0">
-              {account.alias || account.name}
+              {account.name}
             </p>
             <p className="mb-0">
               {account.accountNumber}

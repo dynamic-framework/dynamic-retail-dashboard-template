@@ -1,4 +1,4 @@
-import useAccounts from '../services/hooks/useAccounts';
+import useAccountsEffect from '../services/hooks/useAccountsEffect';
 import { useAppSelector } from '../store/hooks';
 import { getAccountsByCategory } from '../store/selectors';
 
@@ -6,7 +6,7 @@ import Category from './Category';
 import CategoryListLoader from './loaders/CategoryListLoader';
 
 export default function CategoryList() {
-  const { loading } = useAccounts();
+  const { loading } = useAccountsEffect();
   const categories = useAppSelector(getAccountsByCategory);
 
   return (

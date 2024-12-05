@@ -7,7 +7,7 @@ import errorHandler from '../../utils/errorHandler';
 import { ContactRepository } from '../repositories';
 import ApiError from '../utils/ApiError';
 
-export default function useContacts() {
+export default function useContactsEffect() {
   const [loading, setLoading] = useState(false);
   const data = useAppSelector(getContacts);
   const dispatch = useAppDispatch();
@@ -18,7 +18,11 @@ export default function useContacts() {
     (async () => {
       setLoading(true);
       try {
-        const response = await ContactRepository.list({ abortSignal: abortController.signal });
+        const response = await ContactRepository.list({
+          config: {
+            abortSignal: abortController.signal,
+          },
+        });
         setLoading(false);
         dispatch(setContacts(response));
         dispatch(setSelectedContact(response[0]));
