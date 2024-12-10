@@ -5,7 +5,6 @@ export type Contact = {
   name: string;
   accountNumber: string;
   bank: string;
-  image: string;
 };
 
 export type Category = {
@@ -15,10 +14,16 @@ export type Category = {
   accounts: Array<Account>;
 };
 
+export type Metadata = {
+  page: number;
+  rows: number;
+  totalPages: number;
+  totalRows: number;
+};
+
 export type BaseAccount<T extends AccountBaseType> = {
   id: string;
   name: string;
-  alias?: string;
   accountNumber: string;
   type: AccountType;
   baseType: T;

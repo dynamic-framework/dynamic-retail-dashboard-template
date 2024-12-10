@@ -47,7 +47,7 @@ export default function AccountCard(
 
       <div className="account-card-details mt-auto d-none d-sm-flex">
         <div className="flex-1">
-          <span className="name">{account?.alias}</span>
+          <span className="name">{account?.name}</span>
           <div className="account-card-number font-monospace d-none d-sm-block">
             <small>{account?.accountNumber}</small>
           </div>

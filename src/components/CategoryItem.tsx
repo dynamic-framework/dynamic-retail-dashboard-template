@@ -41,14 +41,14 @@ export default function CategoryItem(
           hasCircle
         />
         <div className="flex-grow-1">
-          <p className="h5 fw-bold m-0">{account.alias}</p>
+          <p className="h5 fw-bold m-0">{account.name}</p>
           <p className="mb-0">{account.accountNumber}</p>
         </div>
       </div>
       <div className="d-flex gap-4 align-items-center justify-content-between">
         <div className="d-flex flex-column text-start">
           <p className="fw-bold h3 m-0">{value}</p>
-          <p className="m-0">{label}</p>
+          <p className="m-0 text-lg-end">{label}</p>
         </div>
       </div>
       <span className="d-inline-flex d-lg-none link-primary  align-items-center gap-1">

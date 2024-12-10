@@ -1,25 +1,20 @@
-import type { GenericAbortSignal } from 'axios';
-
-import type { ApiAccount } from '../api-interface';
+import type { ApiAccount, ApiResponseWrapped } from '../api-interface';
 import apiClient from '../clients/apiClient';
-import { ApiAccountTypeConfig } from '../config';
 import accountMapper from '../mappers/accountMapper';
+import metadataMapper from '../mappers/metadataMapper';
 
-export async function list(config: { abortSignal: GenericAbortSignal }) {
-  const { data } = await apiClient.request<Array<ApiAccount>>({
+import { RepositoryParams } from './repository';
+
+export async function list(params: RepositoryParams) {
+  const { data } = await apiClient.request<ApiResponseWrapped<ApiAccount[]>>({
     url: 'accounts',
     method: 'GET',
-    signal: config.abortSignal,
-    headers: {
-      Prefer: 'code=200, example=All',
-    },
+    signal: params.config?.abortSignal,
   });
 
-  return data
-    // we make sure to only use accounts we can handle
-    .filter((apiAccount: ApiAccount) => (
-      Object.keys(ApiAccountTypeConfig).includes(apiAccount.accountType)
-    ))
-    // and we transform the account into the type of account that the widget uses
-    .map((apiAccount: ApiAccount) => accountMapper(apiAccount));
+  // We transform the account into the type of account that the widget uses
+  return {
+    content: data.content.map(accountMapper),
+    metadata: metadataMapper(data.metadata!),
+  };
 }

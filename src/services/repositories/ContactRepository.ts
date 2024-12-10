@@ -1,18 +1,15 @@
-import type { GenericAbortSignal } from 'axios';
-
+import { ApiContact, ApiResponseWrapped } from '../api-interface';
 import apiClient from '../clients/apiClient';
-import type { Contact } from '../interface';
 import contactMapper from '../mappers/contactMapper';
 
-export async function list(config: { abortSignal: GenericAbortSignal }) {
-  const { data } = await apiClient.request<Array<Contact>>({
-    url: 'contacts',
+import { RepositoryParams } from './repository';
+
+export async function list(params: RepositoryParams) {
+  const { data } = await apiClient.request<ApiResponseWrapped<ApiContact[]>>({
+    url: '/account-holder/contacts/deposit-accounts',
     method: 'GET',
-    signal: config.abortSignal,
-    headers: {
-      Prefer: 'code=200, example=All',
-    },
+    signal: params.config?.abortSignal,
   });
 
-  return data.map((apiContact) => contactMapper(apiContact));
+  return data.content.map(contactMapper);
 }

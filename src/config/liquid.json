@@ -11,17 +11,14 @@
     "currency-precision": 2,
     "currency-separator": ".",
     "currency-decimal": ",",
-
     "account-path-saving": "savings",
     "account-path-checking": "checkings",
     "account-path-credit-card": "credit-cards",
     "account-list-filter": "credit-card",
     "account-path-loan": "loans",
-
     "transfers-path": "transfers",
     "payments-path": "payments",
     "investment-path": "investment",
-
-    "api-path": "https://stoplight.io/mocks/modyo/dynamic/204091081"
+    "api-path": "https://dynamic-integration.modyo.be/mocks/online-banking"
   }
 }

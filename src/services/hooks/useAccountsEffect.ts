@@ -12,7 +12,7 @@ import { AccountBaseType } from '../config';
 import { AccountRepository } from '../repositories';
 import ApiError from '../utils/ApiError';
 
-export default function useAccounts() {
+export default function useAccountsEffect() {
   const [loading, setLoading] = useState(false);
   const data = useAppSelector(getAccounts);
   const dispatch = useAppDispatch();
@@ -23,10 +23,14 @@ export default function useAccounts() {
     (async () => {
       setLoading(true);
       try {
-        const response = await AccountRepository.list({ abortSignal: abortController.signal });
+        const { content } = await AccountRepository.list({
+          config: {
+            abortSignal: abortController.signal,
+          },
+        });
         setLoading(false);
-        dispatch(setAccounts(response));
-        const depositAccounts = response.filter(
+        dispatch(setAccounts(content));
+        const depositAccounts = content.filter(
           (account) => account.baseType === AccountBaseType.Deposit,
         );
         dispatch(setDepositAccounts(depositAccounts));
