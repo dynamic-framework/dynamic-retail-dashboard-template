@@ -22,7 +22,7 @@ export default function QuickTransferContactSelect() {
   return (
     <DSelect
       id="selectAccountFrom"
-      label={t('transfer.target')}
+      label={t('transfer.to')}
       getOptionLabel={({ name }) => name}
       getOptionValue={({ id }) => id}
       options={contacts}

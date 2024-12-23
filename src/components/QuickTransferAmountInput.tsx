@@ -38,7 +38,7 @@ export default function QuickTransferAmountInput({ value, onChange, invalid }: P
       hint={hintCurrency.message}
       onChange={(newValue) => onChange(newValue)}
       value={value}
-      placeholder="0,00"
+      placeholder="0.00"
       invalid={invalid && (value === undefined || value < 1)}
     />
   );

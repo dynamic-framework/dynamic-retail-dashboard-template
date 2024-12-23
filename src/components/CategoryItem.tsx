@@ -52,7 +52,7 @@ export default function CategoryItem(
         </div>
       </div>
       <span className="d-inline-flex d-lg-none link-primary  align-items-center gap-1">
-        {t('actions.knowMore')}
+        {t('actions.seeMore')}
         <DIcon
           icon="arrow-right"
           size="var(--bs-fs-body-small)"
