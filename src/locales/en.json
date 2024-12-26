@@ -15,10 +15,10 @@
     },
     "activationStartDescription": "It should be with you by",
     "activationCode": "Enter your activation code",
-    "activationCodeDescription": "Enter the last 4 digits of the number on your credit card.",
-    "createPin": "Create PIN",
-    "createPinDescription": "Assign a key of 4 digits to your card for ATM withdrawals.",
-    "confirmPin": "Confirm PIN",
+    "activationCodeDescription": "Enter the last 4 digits of your credit card number.",
+    "createPin": "Create a PIN",
+    "createPinDescription": "Assign a 4-digit PIN to your card for purchases and ATM withdrawals.",
+    "confirmPin": "Confirm your PIN",
     "errorPin": "Incorrect PIN, try again!",
     "success": "The card has been successfully activated"
   },
@@ -32,7 +32,7 @@
     "change": "Change",
     "from": "From",
     "total": "Amount",
-    "target": "Target",
+    "To": "To",
     "actionWithAmount": "Transfer {amount}",
     "actionSingle": "Transfer"
   },
@@ -53,7 +53,7 @@
   "greeting": "Hi {name}, Welcome!",
   "actions": {
     "moreInfo": "More Info",
-    "knowMore": "Know More"
+    "seeMore": "See More"
   },
   "quickActions": {
     "title": "What would you like to do today?",
