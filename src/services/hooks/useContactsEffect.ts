@@ -23,9 +23,9 @@ export default function useContactsEffect() {
             abortSignal: abortController.signal,
           },
         });
-        setLoading(false);
         dispatch(setContacts(response));
         dispatch(setSelectedContact(response[0]));
+        setLoading(false);
       } catch (error) {
         if ((error as ApiError).name === 'CanceledError') return;
 

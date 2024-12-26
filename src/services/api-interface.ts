@@ -177,9 +177,15 @@ export type ApiContact = {
   id: string;
   account_holder_name: string;
   alias: string;
-  account_type: ApiAccountAccountType;
-  account_number: string;
-  masked_account_number: string;
-  bank: string;
+  account: {
+    account_number: {
+      number: string;
+      masked_number: string;
+    },
+    type: string;
+    bank: string;
+  },
+  email: string;
+  is_favorite: boolean;
   phone: string;
 };
