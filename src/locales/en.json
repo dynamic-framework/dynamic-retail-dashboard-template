@@ -32,7 +32,7 @@
     "change": "Change",
     "from": "From",
     "total": "Amount",
-    "To": "To",
+    "to": "To",
     "actionWithAmount": "Transfer {amount}",
     "actionSingle": "Transfer"
   },
