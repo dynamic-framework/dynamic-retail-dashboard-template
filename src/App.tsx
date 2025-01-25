@@ -31,7 +31,7 @@ export default function App() {
   }, [setContext]);
 
   return (
-    <div className="container py-6">
+    <div className="container">
       <div className="row row-gap-6">
         <div className="col-12">
           <CardActivateStatus />
