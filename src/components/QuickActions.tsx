@@ -34,7 +34,7 @@ export default function QuickActions() {
   const { t } = useTranslation();
 
   return (
-    <DCard className="d-none d-xl-block text-bg-secondary-600">
+    <DCard className="d-none d-xl-block text-bg-secondary-50">
       <DCardBody className="d-flex flex-column gap-8">
         <p className="fs-5 m-0">{t('quickActions.title')}</p>
         <div className="d-flex gap-4">
@@ -44,13 +44,13 @@ export default function QuickActions() {
               href={path}
               className={classNames(
                 'd-inline-flex align-items-center',
-                'text-decoration-none text-white',
+                'text-decoration-none text-dark',
                 'border rounded-1 p-4 gap-2 col fw-bold',
-                'quick-action-item',
+                'quick-action-item bg-white',
               )}
             >
               <DIcon
-                className="bg-white bg-opacity-75 text-secondary"
+                className="bg-secondary bg-opacity-25 text-secondary"
                 icon={icon}
                 size="var(--bs-ref-spacer-3)"
                 circleSize="var(--bs-ref-spacer-5)"
