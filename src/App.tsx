@@ -5,7 +5,7 @@ import AccountSlides from './components/AccountSlides';
 import CardActivateStatus from './components/CardActivateStatus';
 import CategoryList from './components/CategoryList';
 import Greeting from './components/Greeting';
-import Navs from './components/Navs';
+import HideAndNavs from './components/HideAndNavs';
 import QuickActions from './components/QuickActions';
 import QuickTransfer from './components/QuickTransfer';
 import { CONTEXT_CONFIG } from './config/widgetConfig';
@@ -40,7 +40,7 @@ export default function App() {
         <div className="col-12 col-xl-8">
           <div className="d-flex flex-column gap-6">
             <QuickActions />
-            <Navs />
+            <HideAndNavs />
             <CurrentViewCmp />
           </div>
         </div>
