@@ -1,12 +1,14 @@
-import { DButton, DInputPin } from '@dynamic-framework/ui-react';
+import {
+  DButton,
+  DInputPin,
+  DCreditCard,
+} from '@dynamic-framework/ui-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { SCREENS } from '../config/widgetConfig';
 import useWidgetUtils from '../hooks/useWidgetUtils';
 import { Account } from '../services/interface';
-
-import AccountCard from './AccountCard';
 
 type Props = {
   account: Account
@@ -25,9 +27,9 @@ export default function ActivationCodeView(
       <h4 className="mb-4">{t('cardStatus.activationCode')}</h4>
       <p className="text-gray-500">{t('cardStatus.activationCodeDescription')}</p>
       <div className="d-flex justify-content-center my-8">
-        <AccountCard
-          className="activate-card-section me-0"
-          account={account}
+        <DCreditCard
+          nameOnCard={account.name}
+          cardNumber={account.accountNumber}
         />
       </div>
 

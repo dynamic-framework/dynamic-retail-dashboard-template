@@ -36,13 +36,7 @@ export default function HideAndNavs() {
   }
 
   return (
-    <div className="d-flex justify-content-end gap-1">
-      <DButton
-        iconStart={data.icon}
-        text={data.label}
-        variant="link"
-        onClick={callback}
-      />
+    <div className="d-flex justify-content-between gap-1">
       <ul className="nav nav-pills gap-1 p-0">
         {OPTIONS.map(({ icon, view }) => (
           <li
@@ -68,6 +62,12 @@ export default function HideAndNavs() {
           </li>
         ))}
       </ul>
+      <DButton
+        iconStart={data.icon}
+        text={data.label}
+        variant="link"
+        onClick={callback}
+      />
     </div>
   );
 }

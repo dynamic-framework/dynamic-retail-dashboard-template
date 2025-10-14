@@ -9,9 +9,12 @@ export default function Greeting() {
   const { t } = useTranslation();
 
   return (
-    <h3 className="d-inline-flex align-items-center gap-4">
+    <div className="d-inline-flex gap-4">
       <DAvatar name={NAME} />
-      {t('greeting', { name: NAME })}
-    </h3>
+      <div>
+        <h3 className="mb-0 h4">{t('quickActions.title')}</h3>
+        <p>{t('greeting', { name: NAME })}</p>
+      </div>
+    </div>
   );
 }

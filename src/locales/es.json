@@ -1,6 +1,7 @@
 {
   "activate": "Activate",
   "continue": "Continue",
+  "cardHolder": "Card holder",
   "balance": {
     "show": "Show amounts",
     "hide": "Hide amounts"

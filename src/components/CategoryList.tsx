@@ -10,7 +10,7 @@ export default function CategoryList() {
   const categories = useAppSelector(getAccountsByCategory);
 
   return (
-    <div className="d-flex flex-column gap-8">
+    <div className="d-flex flex-column gap-2">
       {loading && <CategoryListLoader />}
 
       {!loading && Object.keys(categories).length === 0 && <>No accounts</>}

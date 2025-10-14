@@ -37,7 +37,7 @@ export default function QuickTransfer() {
   }
 
   return (
-    <DCard className="quick-transfer bg-surface-secondary">
+    <DCard className="quick-transfer">
       <DCard.Body className="d-flex flex-column gap-4">
         <h4>
           {t('transfer.title')}
@@ -51,6 +51,7 @@ export default function QuickTransfer() {
         <QuickTransferContactSelect />
         {!amount && (
           <DButton
+            size="lg"
             text={t('transfer.actionSingle')}
             theme="primary"
             onClick={() => setInvalid(true)}
@@ -58,7 +59,7 @@ export default function QuickTransfer() {
         )}
         {amount && (
           <a
-            className="btn btn-primary"
+            className="btn btn-primary btn-lg"
             href={transferWithParamsUrl}
           >
             {t('transfer.actionSingle')}

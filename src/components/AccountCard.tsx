@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { API_ACCOUNT_LIST_FILTER } from '../config/widgetConfig';
 import { Account } from '../services/interface';
@@ -19,46 +20,45 @@ export default function AccountCard(
     className,
   }: Props,
 ) {
+  const { t } = useTranslation();
   const typeCard = useMemo(() => type || API_ACCOUNT_LIST_FILTER, [type]);
 
   return (
     <div
       className={classNames(
-        'account-card overflow-hidden bg-gray text-white',
-        'position-relative rounded-1 flex-column',
+        'account-card overflow-hidden text-white',
+        'position-relative rounded-3 flex-column',
         'd-none d-lg-flex',
         size === 'sm' ? 'p-2 card-sm' : 'p-8',
         typeCard,
         className,
       )}
     >
-      <div className="d-flex justify-content-between align-items-start">
+      <div className="account-card-icons justify-content-between">
         <img
-          src="https://cdn.modyo.cloud/uploads/f92a0da8-c987-4033-8faa-ab84db5f6214/original/Logotype_Dynamic.png"
-          alt="Dynamic Bank"
-          width={size === 'sm' ? 20 : 80}
-        />
-        <img
-          src="https://cdn.modyo.cloud/uploads/2c76d77c-824c-470e-b03a-c7067febbe57/original/Chip.png"
+          src="https://modyo.modyo.me:3000/uploads/ded84d0e-4895-4465-9dcb-06d8b50fdaa9/original/Visa_Logo.png"
           alt="Chip"
-          width={size === 'sm' ? 10 : 38}
+          className="logo-visa"
+          width={100}
+          style={{
+            width: '25%',
+          }}
         />
+        <div className="chip p-2 rounded-2">
+          <img
+            src="https://modyo.modyo.me:3000/uploads/f72098b8-750e-46e3-bce5-96464483e74e/original/chip-debit-svgrepo-com.png"
+            alt="chip"
+            width={30}
+          />
+        </div>
       </div>
 
-      <div className="account-card-details mt-auto d-none d-sm-flex">
-        <div className="flex-1">
-          <span className="name">{account?.name}</span>
-          <div className="account-card-number font-monospace d-none d-sm-block">
-            <small>{account?.accountNumber}</small>
-          </div>
+      <div className="account-card-details mt-auto d-none d-sm-block">
+        <div className="account-card-number font-monospace d-none d-sm-block mb-4">
+          {account?.accountNumber}
         </div>
-
-        <img
-          src="https://cloud.modyocdn.com/uploads/b3f99e99-8322-4f1f-aefc-c6c5de86b764/original/Mastercard.png"
-          alt="Mastercard"
-          className="master-card"
-          width={40}
-        />
+        <small className="d-block opacity-50">{t('cardHolder')}</small>
+        <span className="name">{account?.name}</span>
       </div>
     </div>
   );

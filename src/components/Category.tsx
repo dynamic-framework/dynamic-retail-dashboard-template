@@ -1,6 +1,11 @@
-import { DCollapse } from '@dynamic-framework/ui-react';
+import {
+  DCollapse,
+  DIcon,
+  useFormatCurrency,
+} from '@dynamic-framework/ui-react';
 import { useMemo } from 'react';
 
+import { AccountTypeConfig } from '../services/config';
 import type { Account } from '../services/interface';
 import getAccountValue from '../services/utils/getAccountValue';
 
@@ -17,6 +22,7 @@ export default function Category(
     accounts,
   }: Props,
 ) {
+  const { format } = useFormatCurrency();
   const total = useMemo(() => accounts.reduce<number>(
     (sum, account: Account) => (sum + getAccountValue(account)),
     0,
@@ -29,9 +35,21 @@ export default function Category(
   return (
     <DCollapse
       defaultCollapsed
-      className="rounded-1 shadow-none"
+      className="rounded-1 card-hover"
       Component={(
-        <h5 className="flex-fill text-truncate">{name}</h5>
+        <div className="d-flex align-items-center gap-2">
+          <DIcon
+            icon="piggy-bank"
+            theme={AccountTypeConfig[accounts[0].type].theme}
+            hasCircle
+          />
+          <div>
+            <h5 className="flex-fill text-truncate fs-5">{name}</h5>
+            <span className="flex-shrink-0 text-muted">
+              {`Total: ${format(total)}`}
+            </span>
+          </div>
+        </div>
       )}
     >
       <div className="d-flex flex-column gap-4">

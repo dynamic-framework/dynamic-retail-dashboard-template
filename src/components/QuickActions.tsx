@@ -1,8 +1,4 @@
-import {
-  DCard,
-  DCardBody,
-  DIcon,
-} from '@dynamic-framework/ui-react';
+import { DIcon } from '@dynamic-framework/ui-react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
@@ -34,9 +30,8 @@ export default function QuickActions() {
   const { t } = useTranslation();
 
   return (
-    <DCard className="d-none d-xl-block text-bg-secondary-50">
-      <DCardBody className="d-flex flex-column gap-8">
-        <p className="fs-5 m-0">{t('quickActions.title')}</p>
+    <div className="d-none d-xl-block mb-8">
+      <div className="d-flex flex-column gap-8">
         <div className="d-flex gap-4">
           {ACTIONS.map(({ path, text, icon }) => (
             <a
@@ -45,27 +40,32 @@ export default function QuickActions() {
               className={classNames(
                 'd-inline-flex align-items-center',
                 'text-decoration-none text-dark',
-                'border rounded-1 p-4 gap-2 col fw-bold',
-                'quick-action-item bg-white',
+                'rounded-1 p-4 gap-2 col',
+                'card-hover',
               )}
             >
               <DIcon
-                className="bg-secondary bg-opacity-25 text-secondary"
+                className="bg-secondary-100"
                 icon={icon}
                 size="var(--bs-ref-spacer-3)"
                 circleSize="var(--bs-ref-spacer-5)"
                 hasCircle
               />
-              <p className="m-0">{t(`quickActions.${text}`)}</p>
-              <DIcon
-                className="ms-auto"
-                icon="chevron-right"
-                size="var(--bs-ref-spacer-4)"
-              />
+              <div className="d-flex flex-grow-1 align-items-center">
+                <div className="flex-grow-1">
+                  <h5 className="m-0 fw-bold">{t(`quickActions.${text}`)}</h5>
+                  <small className="text-muted">Transfiere a terceos</small>
+                </div>
+                <DIcon
+                  className="ms-auto"
+                  icon="chevron-right"
+                  size="var(--bs-ref-spacer-4)"
+                />
+              </div>
             </a>
           ))}
         </div>
-      </DCardBody>
-    </DCard>
+      </div>
+    </div>
   );
 }

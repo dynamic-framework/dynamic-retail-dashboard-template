@@ -46,6 +46,7 @@ export default function ActivationStart(
       </p>
       <div className="mb-8">
         <DStepperDesktop
+          className="position-relative"
           currentStep={2}
           options={options}
           vertical
@@ -55,7 +56,7 @@ export default function ActivationStart(
           account={account}
         />
       </div>
-      <div>
+      <div className="position-relative">
         <DButton
           onClick={() => navigateTo(SCREENS.activation)}
           text={t('activate')}
