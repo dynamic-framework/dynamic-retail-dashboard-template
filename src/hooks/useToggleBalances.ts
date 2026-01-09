@@ -15,12 +15,12 @@ export default function useToggleBalances() {
     if (showBalances) {
       return {
         label: t('balance.hide'),
-        icon: 'eye-slash',
+        icon: 'EyeOff',
       };
     }
     return {
       label: t('balance.show'),
-      icon: 'eye',
+      icon: 'Eye',
     };
   }, [showBalances, t]);
 

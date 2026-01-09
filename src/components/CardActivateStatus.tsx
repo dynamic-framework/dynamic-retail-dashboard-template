@@ -18,18 +18,17 @@ export default function CardActivateStatus() {
   return (
     <DAlert
       showClose
-      theme="info"
+      color="info"
       onClose={() => setShowAlert(false)}
       className="mb-6"
     >
       <h5>{t('cardStatus.activateTitle')}</h5>
-      <p className="m-0 mt-1">{t('cardStatus.activateDescription')}</p>
+      <p className="m-0 mt-1 mb-4">{t('cardStatus.activateDescription')}</p>
       <DButton
-        className="p-0"
         text={t('actions.moreInfo')}
-        iconEnd="arrow-right"
+        iconEnd="ArrowRight"
         onClick={() => openPortal('modalActivate', {})}
-        variant="link"
+        variant="outline"
       />
     </DAlert>
   );

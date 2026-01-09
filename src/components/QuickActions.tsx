@@ -16,17 +16,17 @@ const ACTIONS = [
   {
     text: 'transfer',
     path: TRANSFER_URL,
-    icon: 'arrow-left-right',
+    icon: 'MoveHorizontal',
   },
   {
     text: 'payService',
     path: PAYMENTS_URL,
-    icon: 'cash-stack',
+    icon: 'CircleDollarSign',
   },
   {
     text: 'invest',
     path: INVESTMENT_URL,
-    icon: 'bank2',
+    icon: 'Landmark',
   },
 ];
 
@@ -34,7 +34,7 @@ export default function QuickActions() {
   const { t } = useTranslation();
 
   return (
-    <DCard className="d-none d-xl-block text-bg-secondary-50">
+    <DCard className="d-none d-xl-block">
       <DCardBody className="d-flex flex-column gap-8">
         <p className="fs-5 m-0">{t('quickActions.title')}</p>
         <div className="d-flex gap-4">
@@ -44,22 +44,22 @@ export default function QuickActions() {
               href={path}
               className={classNames(
                 'd-inline-flex align-items-center',
+                'hover:shadow-sm',
                 'text-decoration-none text-dark',
                 'border rounded-1 p-4 gap-2 col fw-bold',
-                'quick-action-item bg-white',
+                'bg-white',
               )}
             >
               <DIcon
-                className="bg-secondary bg-opacity-25 text-secondary"
+                color="primary"
                 icon={icon}
-                size="var(--bs-ref-spacer-3)"
-                circleSize="var(--bs-ref-spacer-5)"
+                size="1.5rem"
                 hasCircle
               />
               <p className="m-0">{t(`quickActions.${text}`)}</p>
               <DIcon
                 className="ms-auto"
-                icon="chevron-right"
+                icon="chevronRight"
                 size="var(--bs-ref-spacer-4)"
               />
             </a>

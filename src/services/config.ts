@@ -14,22 +14,22 @@ export const AccountTypeConfig = {
   [AccountType.Checking]: {
     name: 'Checking',
     theme: 'danger',
-    icon: 'cash-coin',
+    icon: 'DollarSign',
   },
   [AccountType.Saving]: {
     name: 'Savings',
     theme: 'info',
-    icon: 'piggy-bank',
+    icon: 'PiggyBank',
   },
   [AccountType.CreditCard]: {
     name: 'Credit Cards',
     theme: 'secondary',
-    icon: 'credit-card',
+    icon: 'CreditCard',
   },
   [AccountType.Loan]: {
     name: 'Loans',
     theme: 'warning',
-    icon: 'cash-stack',
+    icon: 'DollarSign',
   },
 };
 

@@ -43,7 +43,7 @@ export default function HideAndNavs() {
         variant="link"
         onClick={callback}
       />
-      <ul className="nav nav-pills gap-1 p-0">
+      <ul className="nav nav-pills gap-1 p-1">
         {OPTIONS.map(({ icon, view }) => (
           <li
             className="nav-item"
