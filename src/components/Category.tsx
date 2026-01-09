@@ -28,7 +28,7 @@ export default function Category(
 
   return (
     <DCollapse
-      defaultCollapsed
+      defaultCollapsed={false}
       className="rounded-1 shadow-none"
       Component={(
         <h5 className="flex-fill text-truncate">{name}</h5>

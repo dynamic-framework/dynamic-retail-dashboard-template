@@ -47,7 +47,7 @@ export default function QuickActions() {
                 'hover:shadow-sm',
                 'text-decoration-none text-dark',
                 'border rounded-1 p-4 gap-2 col fw-bold',
-                'bg-white',
+                'bg-white transition-all',
               )}
             >
               <DIcon
