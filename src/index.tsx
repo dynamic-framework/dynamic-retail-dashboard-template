@@ -10,6 +10,7 @@ import App from './App';
 import ModalActivate from './components/modals/ModalActivate';
 import store from './store/store';
 
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
 import './styles/base.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('dashboard') as Element);
