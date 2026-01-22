@@ -27,7 +27,7 @@ export default function AccountSlide({ account }: Props) {
         <div className="d-flex gap-4 align-items-start">
           <DIcon
             icon={AccountTypeConfig[account.type].icon}
-            theme={AccountTypeConfig[account.type].theme}
+            color={AccountTypeConfig[account.type].theme}
             hasCircle
             size="var(--bs-ref-spacer-6)"
           />

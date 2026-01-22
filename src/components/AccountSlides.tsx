@@ -30,7 +30,7 @@ export default function CategorySlides() {
             gap: 8,
             trimSpace: false,
             mediaQuery: 'min',
-            arrows: false,
+            arrows: true,
             focus: 0,
             breakpoints: {
               992: {
