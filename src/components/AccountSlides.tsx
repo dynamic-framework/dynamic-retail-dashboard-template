@@ -15,7 +15,7 @@ export default function CategorySlides() {
   const accounts = useAppSelector(getAccounts);
 
   return (
-    <div className="pt-6 pb-10 px-6 bg-white rounded">
+    <div className="pt-6 pb-10 px-6 bg-white rounded account-slides">
       {!Object.keys(accounts).length && <>No accounts</>}
 
       {loading && <AccountSlidesLoader />}
@@ -45,7 +45,7 @@ export default function CategorySlides() {
           {accounts.map((account) => (
             <DCarouselSlide
               key={account.id}
-              className="d-flex align-items-stretch py-4"
+              className="d-flex align-items-stretch py-4 account-slide"
             >
               <AccountSlide account={account} />
             </DCarouselSlide>

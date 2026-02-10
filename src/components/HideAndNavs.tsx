@@ -36,7 +36,7 @@ export default function HideAndNavs() {
   }
 
   return (
-    <div className="d-flex justify-content-end gap-1">
+    <div className="d-flex justify-content-end gap-1 hide-and-navs">
       <DButton
         iconStart={data.icon}
         text={data.label}
