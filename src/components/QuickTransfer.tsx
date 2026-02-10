@@ -1,4 +1,4 @@
-import { DButton, DCard } from '@dynamic-framework/ui-react';
+import { DButton, DBox } from '@dynamic-framework/ui-react';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -37,34 +37,32 @@ export default function QuickTransfer() {
   }
 
   return (
-    <DCard className="bg-surface-secondary quick-transfer">
-      <DCard.Body className="d-flex flex-column gap-4">
-        <h4>
-          {t('transfer.title')}
-        </h4>
-        <QuickTransferDepositAccountSelect />
-        <QuickTransferAmountInput
-          value={amount}
-          onChange={setAmount}
-          invalid={invalid}
+    <DBox className="quick-transfer">
+      <h4>
+        {t('transfer.title')}
+      </h4>
+      <QuickTransferDepositAccountSelect />
+      <QuickTransferAmountInput
+        value={amount}
+        onChange={setAmount}
+        invalid={invalid}
+      />
+      <QuickTransferContactSelect />
+      {!amount && (
+        <DButton
+          text={t('transfer.actionSingle')}
+          color="primary"
+          onClick={() => setInvalid(true)}
         />
-        <QuickTransferContactSelect />
-        {!amount && (
-          <DButton
-            text={t('transfer.actionSingle')}
-            theme="primary"
-            onClick={() => setInvalid(true)}
-          />
-        )}
-        {amount && (
-          <a
-            className="btn btn-primary"
-            href={transferWithParamsUrl}
-          >
-            {t('transfer.actionSingle')}
-          </a>
-        )}
-      </DCard.Body>
-    </DCard>
+      )}
+      {amount && (
+        <a
+          className="btn btn-primary"
+          href={transferWithParamsUrl}
+        >
+          {t('transfer.actionSingle')}
+        </a>
+      )}
+    </DBox>
   );
 }
