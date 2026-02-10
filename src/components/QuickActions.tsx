@@ -30,7 +30,7 @@ export default function QuickActions() {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="quick-actions">
       <p className="fs-5 m-4">{t('quickActions.title')}</p>
       <div className="d-flex gap-4">
         {ACTIONS.map(({ path, text, icon }) => (
