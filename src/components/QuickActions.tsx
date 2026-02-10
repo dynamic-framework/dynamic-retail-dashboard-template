@@ -32,7 +32,7 @@ export default function QuickActions() {
   return (
     <div className="quick-actions">
       <p className="fs-5 m-4">{t('quickActions.title')}</p>
-      <div className="d-flex gap-4">
+      <div className="d-flex gap-4 quick-actions-container">
         {ACTIONS.map(({ path, text, icon }) => (
           <a
             key={text}
@@ -42,7 +42,7 @@ export default function QuickActions() {
               'hover:shadow-sm',
               'text-decoration-none text-dark',
               'border rounded-1 p-4 gap-2 col fw-bold',
-              'bg-white transition-all',
+              'bg-white transition-all quick-action-item',
             )}
           >
             <DIcon
