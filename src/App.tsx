@@ -38,7 +38,7 @@ export default function App() {
           <Greeting />
         </div>
         <div className="col-12 col-xl-8">
-          <div className="d-flex flex-column gap-6">
+          <div className="d-flex flex-column gap-6 container-main">
             <QuickActions />
             <HideAndNavs />
             <CurrentViewCmp />

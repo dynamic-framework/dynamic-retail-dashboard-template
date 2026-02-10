@@ -54,8 +54,7 @@ export default function QuickActions() {
             <p className="m-0">{t(`quickActions.${text}`)}</p>
             <DIcon
               className="ms-auto"
-              icon="chevronRight"
-              size="var(--bs-ref-spacer-4)"
+              icon="ChevronRight"
             />
           </a>
         ))}
