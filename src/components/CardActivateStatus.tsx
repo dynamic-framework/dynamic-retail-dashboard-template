@@ -27,6 +27,7 @@ export default function CardActivateStatus() {
       <DButton
         text={t('actions.moreInfo')}
         iconEnd="ArrowRight"
+        color="info"
         onClick={() => openPortal('modalActivate', {})}
         variant="outline"
       />
