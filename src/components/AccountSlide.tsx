@@ -29,7 +29,6 @@ export default function AccountSlide({ account }: Props) {
             icon={AccountTypeConfig[account.type].icon}
             color={AccountTypeConfig[account.type].theme}
             hasCircle
-            size="var(--bs-ref-spacer-6)"
           />
           <div className="d-block flex-grow-1">
             <p className="h5 mb-0">
@@ -54,10 +53,7 @@ export default function AccountSlide({ account }: Props) {
             href={accountPath}
           >
             {t('actions.seeMore')}
-            <DIcon
-              icon="arrow-right"
-              size="var(--bs-fs-body-small)"
-            />
+            <DIcon icon="ArrowRight" />
           </a>
         </div>
       </DCard.Body>

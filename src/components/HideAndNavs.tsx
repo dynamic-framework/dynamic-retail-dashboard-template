@@ -59,10 +59,7 @@ export default function HideAndNavs() {
               onClick={() => dispatch(setCurrentView(view))}
               aria-label={t(view)}
             >
-              <DIcon
-                icon={icon}
-                size="var(--bs-ref-spacer-4)"
-              />
+              <DIcon icon={icon} />
               {sm ? t(view) : undefined}
             </button>
           </li>

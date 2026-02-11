@@ -53,10 +53,7 @@ export default function CategoryItem(
       </div>
       <span className="d-inline-flex d-lg-none link-primary  align-items-center gap-1">
         {t('actions.seeMore')}
-        <DIcon
-          icon="arrow-right"
-          size="var(--bs-fs-body-small)"
-        />
+        <DIcon icon="ArrowRight" />
       </span>
     </a>
   );
