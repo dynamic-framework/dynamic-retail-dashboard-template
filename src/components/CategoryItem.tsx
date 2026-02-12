@@ -32,6 +32,7 @@ export default function CategoryItem(
         'py-6 px-8 border rounded-1',
         'd-flex flex-column flex-lg-row gap-4 justify-content-between',
         'hover:shadow-sm transition-all category-item',
+        account.type,
       )}
     >
       <div className="d-flex gap-4 align-items-center">
