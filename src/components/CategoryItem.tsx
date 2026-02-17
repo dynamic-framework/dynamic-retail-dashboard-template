@@ -37,13 +37,14 @@ export default function CategoryItem(
     >
       <div className="d-flex gap-4 align-items-center">
         <DIcon
+          className="icon-category-item"
           icon={AccountTypeConfig[account.type].icon}
           color={AccountTypeConfig[account.type].theme}
           hasCircle
         />
         <div className="flex-grow-1">
-          <p className="h5 fw-semibold m-0">{account.name}</p>
-          <p className="mb-0 text-muted">{account.accountNumber}</p>
+          <p className="h5 fw-semibold m-0 account-name">{account.name}</p>
+          <p className="mb-0 text-muted account-number">{account.accountNumber}</p>
         </div>
       </div>
       <div className="d-flex gap-4 align-items-center justify-content-between">
@@ -53,7 +54,7 @@ export default function CategoryItem(
         </div>
       </div>
       <span className="d-inline-flex d-lg-none link-primary  align-items-center gap-1">
-        {t('actions.seeMore')}
+        <span className="text-see-more">{t('actions.seeMore')}</span>
         <DIcon icon="ArrowRight" />
       </span>
     </a>
