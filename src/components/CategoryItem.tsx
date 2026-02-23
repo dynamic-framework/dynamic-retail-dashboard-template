@@ -29,7 +29,7 @@ export default function CategoryItem(
       href={accountPath}
       className={classnames(
         'cursor-pointer text-decoration-none text-body',
-        'py-6 px-8 border rounded-1',
+        'p-4 border rounded-1',
         'd-flex flex-column flex-lg-row gap-4 justify-content-between',
         'hover:shadow-sm transition-all category-item',
         account.type,

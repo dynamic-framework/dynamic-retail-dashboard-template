@@ -1,4 +1,4 @@
-import { useDContext } from '@dynamic-framework/ui-react';
+import { useDContext, DLayout } from '@dynamic-framework/ui-react';
 import { useEffect, useMemo } from 'react';
 
 import AccountSlides from './components/AccountSlides';
@@ -32,22 +32,28 @@ export default function App() {
 
   return (
     <div className="container">
-      <div className="row row-gap-6">
-        <div className="col-12">
+      <DLayout>
+        <DLayout.Pane cols={12}>
           <CardActivateStatus />
           <Greeting />
-        </div>
-        <div className="col-12 col-xl-8">
+        </DLayout.Pane>
+        <DLayout.Pane
+          colsXs={12}
+          colsMd={8}
+        >
           <div className="d-flex flex-column gap-6 container-main">
             <QuickActions />
             <HideAndNavs />
             <CurrentViewCmp />
           </div>
-        </div>
-        <div className="col-12 col-xl-4">
+        </DLayout.Pane>
+        <DLayout.Pane
+          colsXs={12}
+          colsMd={4}
+        >
           <QuickTransfer />
-        </div>
-      </div>
+        </DLayout.Pane>
+      </DLayout>
     </div>
   );
 }
