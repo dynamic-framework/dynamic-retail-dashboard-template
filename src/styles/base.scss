@@ -20,29 +20,4 @@
     height: auto;
   }
 
-  .activate-card-section {
-    &.account-card {
-      width: 300px;
-      aspect-ratio: 16/9;
-      padding: 1rem !important; /* stylelint-disable declaration-no-important */
-      margin-right: -5rem;
-      zoom: .8;
-      background: linear-gradient(90deg, rgba(205, 18, 37, 1) 0%, rgba(136, 93, 245, 1) 100%);
-    }
-
-    &.rotate {
-      top: 20%;
-      right: -20px;
-      transform: rotate(-45deg);
-    }
-  }
-
-  .nav-pills {
-    background-color: var(--#{$prefix}white);
-    border-radius: var(--#{$prefix}border-radius-pill);
-    --bs-nav-pills-link-active-bg: var(--#{$prefix}primary-500);
-    --bs-nav-pills-link-active-color: var(--#{$prefix}white);
-    --bs-nav-pills-border-radius: var(--#{$prefix}border-radius-pill);
-  }
-
 }

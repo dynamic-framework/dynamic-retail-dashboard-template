@@ -41,7 +41,7 @@ export default function QuickActions() {
               'd-inline-flex align-items-center',
               'hover:shadow-sm',
               'text-decoration-none text-dark',
-              'border rounded-1 p-4 gap-2 col fw-bold',
+              'border rounded-2 p-4 gap-2 col fw-bold',
               'bg-white transition-all quick-action-item',
             )}
           >
