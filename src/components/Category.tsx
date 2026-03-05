@@ -34,7 +34,7 @@ export default function Category(
         <h5 className="flex-fill text-truncate">{name}</h5>
       )}
     >
-      <div className="d-flex flex-column gap-4 category-accounts">
+      <div className="d-flex flex-column gap-2 category-accounts">
         {accounts.map((account) => (
           <CategoryItem
             key={account.id}

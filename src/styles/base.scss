@@ -20,4 +20,10 @@
     height: auto;
   }
 
+  @media (width < 768px) {
+    .category-item {
+      border-bottom: 1px solid var(--#{$prefix}border-color);
+    }
+  }
+
 }

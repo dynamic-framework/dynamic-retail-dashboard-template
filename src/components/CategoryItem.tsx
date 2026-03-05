@@ -29,34 +29,40 @@ export default function CategoryItem(
       href={accountPath}
       className={classnames(
         'cursor-pointer text-decoration-none text-body',
-        'p-4 border rounded-1',
-        'd-flex flex-column flex-lg-row gap-4 justify-content-between',
-        'hover:shadow-sm transition-all category-item',
+        'p-4 rounded-2',
+        'd-flex flex-column flex-lg-row gap-2 gap-lg-4 justify-content-between',
+        'hover:bg-primary-25 transition-all category-item',
         account.type,
       )}
     >
       <div className="d-flex gap-4 align-items-center">
         <DIcon
-          className="icon-category-item"
+          className="icon-category-item d-none d-lg-inline-flex"
           icon={AccountTypeConfig[account.type].icon}
-          color={AccountTypeConfig[account.type].theme}
+          color="primary"
           hasCircle
         />
         <div className="flex-grow-1">
-          <p className="h5 fw-semibold m-0 account-name">{account.name}</p>
+          <p className="fs-body fs-lg-5 fw-semibold m-0 account-name">{account.name}</p>
           <p className="mb-0 text-muted account-number">{account.accountNumber}</p>
         </div>
       </div>
-      <div className="d-flex gap-4 align-items-center justify-content-between">
-        <div className="d-flex flex-column text-start">
-          <p className="fw-semibold h4 m-0">{value}</p>
-          <p className="m-0 text-lg-end text-muted">{label}</p>
+      <div className="d-flex gap-4 align-items-center justify-content-between ms-lg-auto">
+        <div className="d-flex flex-column text-start w-100">
+          <div className="d-flex gap-2">
+            <p className="fw-semibold fs-body fs-lg-5 m-0 flex-1">{value}</p>
+            <span className="d-inline-flex d-lg-none link-primary align-items-center gap-1 ms-auto">
+              <span className="text-see-more small">{t('actions.seeMore')}</span>
+              <DIcon icon="ArrowRight" />
+            </span>
+          </div>
+          <p className="m-0 text-lg-end text-muted d-none d-lg-block">{label}</p>
         </div>
       </div>
-      <span className="d-inline-flex d-lg-none link-primary  align-items-center gap-1">
-        <span className="text-see-more">{t('actions.seeMore')}</span>
-        <DIcon icon="ArrowRight" />
-      </span>
+      <DIcon
+        icon="ChevronRight"
+        className="d-none d-lg-inline-flex"
+      />
     </a>
   );
 }
