@@ -1,4 +1,4 @@
-import { DCard, DIcon } from '@dynamic-framework/ui-react';
+import { DBox, DIcon } from '@dynamic-framework/ui-react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -22,41 +22,39 @@ export default function AccountSlide({ account }: Props) {
   const { label, value } = useAccountValue(account);
 
   return (
-    <DCard className="d-card-account flex-grow-1 border shadow-none">
-      <DCard.Body>
-        <div className="d-flex gap-4 align-items-start">
-          <DIcon
-            icon={AccountTypeConfig[account.type].icon}
-            color={AccountTypeConfig[account.type].theme}
-            hasCircle
-          />
-          <div className="d-block flex-grow-1">
-            <p className="h5 mb-0">
-              {account.name}
-            </p>
-            <p className="mb-0">
-              {account.accountNumber}
-            </p>
-          </div>
-        </div>
-        <div className="d-block">
-          <p className="fw-bold h3 mb-0">
-            {value}
+    <DBox className="flex-grow-1border shadow-none">
+      <div className="mb-4 d-flex gap-4 align-items-start">
+        <DIcon
+          icon={AccountTypeConfig[account.type].icon}
+          color="primary"
+          hasCircle
+        />
+        <div className="d-block flex-grow-1">
+          <p className="h5 mb-0">
+            {account.name}
           </p>
           <p className="mb-0">
-            {label}
+            {account.accountNumber}
           </p>
         </div>
-        <div>
-          <a
-            className="d-inline-flex align-items-center gap-1 text-nowrap"
-            href={accountPath}
-          >
-            {t('actions.seeMore')}
-            <DIcon icon="ArrowRight" />
-          </a>
-        </div>
-      </DCard.Body>
-    </DCard>
+      </div>
+      <div className="d-block mb-4">
+        <p className="fw-bold h3 mb-0">
+          {value}
+        </p>
+        <p className="mb-0">
+          {label}
+        </p>
+      </div>
+      <div>
+        <a
+          className="d-inline-flex align-items-center gap-1 text-nowrap"
+          href={accountPath}
+        >
+          {t('actions.seeMore')}
+          <DIcon icon="ArrowRight" />
+        </a>
+      </div>
+    </DBox>
   );
 }
