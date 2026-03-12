@@ -1,6 +1,8 @@
-import { DCollapse } from '@dynamic-framework/ui-react';
-import { useMemo } from 'react';
+import { DCollapse, DIcon } from '@dynamic-framework/ui-react';
+import classNames from 'classnames';
+import { useMemo, useState } from 'react';
 
+import { AccountTypeConfig } from '../services/config';
 import type { Account } from '../services/interface';
 import getAccountValue from '../services/utils/getAccountValue';
 
@@ -17,6 +19,7 @@ export default function Category(
     accounts,
   }: Props,
 ) {
+  const [collapsed, setCollapsed] = useState(false);
   const total = useMemo(() => accounts.reduce<number>(
     (sum, account: Account) => (sum + getAccountValue(account)),
     0,
@@ -28,13 +31,24 @@ export default function Category(
 
   return (
     <DCollapse
-      defaultCollapsed={false}
-      className="rounded-2 shadow-none category-collapse"
+      defaultCollapsed={collapsed}
+      className={classNames(
+        'rounded-2 shadow-none category-collapse',
+        collapsed ? 'collapsed' : 'expanded',
+      )}
+      onChange={setCollapsed}
       Component={(
-        <h5 className="flex-fill text-truncate">{name}</h5>
+        <div className="d-flex gap-2 align-items-center category-header">
+          <DIcon
+            hasCircle
+            color="primary"
+            icon={AccountTypeConfig[accounts[0].type].icon}
+          />
+          <h5 className="flex-fill text-truncate fw-normal">{name}</h5>
+        </div>
       )}
     >
-      <div className="d-flex flex-column gap-2 category-accounts">
+      <div className="d-flex flex-column category-accounts">
         {accounts.map((account) => (
           <CategoryItem
             key={account.id}

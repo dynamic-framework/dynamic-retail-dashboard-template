@@ -24,9 +24,7 @@
   },
   "myAccounts": "My products",
   "total": "Total",
-  "availableQuota": "Available balance",
   "totalDue": "Total Due",
-  "amountAvailable": "Total available funds",
   "transfer": {
     "title": "Quick Transfer",
     "change": "Change",

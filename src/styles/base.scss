@@ -20,6 +20,15 @@
     height: auto;
   }
 
+  .expanded {
+    .collapse-button {
+      border-bottom: 1px solid var(--#{$prefix}border-color);
+    }
+  }
+  .category-item-container:not(:last-child) {
+    border-bottom: 1px solid var(--#{$prefix}border-color);
+  }
+
   @media (width < 768px) {
     .category-item {
       border-bottom: 1px solid var(--#{$prefix}border-color);
