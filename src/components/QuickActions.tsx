@@ -38,10 +38,10 @@ export default function QuickActions() {
             key={text}
             href={path}
             className={classNames(
-              'd-inline-flex align-items-center',
-              'hover:shadow-sm',
+              'd-inline-flex align-items-center border border-white',
+              'hover:border-primary',
               'text-decoration-none text-dark',
-              'shadow-lg rounded-2 p-4 gap-2 col fw-bold',
+              'shadow-lg rounded-2 p-4 gap-2 col',
               'bg-white transition-all quick-action-item',
             )}
           >
@@ -51,7 +51,7 @@ export default function QuickActions() {
               size="1.5rem"
               hasCircle
             />
-            <p className="m-0">{t(`quickActions.${text}`)}</p>
+            <p className="m-0 text-primary">{t(`quickActions.${text}`)}</p>
             <DIcon
               className="ms-auto"
               icon="ChevronRight"

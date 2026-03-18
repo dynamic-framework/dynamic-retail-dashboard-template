@@ -36,6 +36,8 @@ export default function Category(
         'rounded-2 shadow-none category-collapse',
         collapsed ? 'collapsed' : 'expanded',
       )}
+      iconOpen="Plus"
+      iconClose="Minus"
       onChange={setCollapsed}
       Component={(
         <div className="d-flex gap-2 align-items-center category-header">
