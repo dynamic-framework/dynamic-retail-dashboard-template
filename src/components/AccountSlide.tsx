@@ -22,7 +22,7 @@ export default function AccountSlide({ account }: Props) {
   const { label, value } = useAccountValue(account);
 
   return (
-    <DBox className="flex-grow-1border shadow-none">
+    <DBox className="flex-grow-1 border shadow-none">
       <div className="mb-4 d-flex gap-4 align-items-start">
         <DIcon
           icon={AccountTypeConfig[account.type].icon}
