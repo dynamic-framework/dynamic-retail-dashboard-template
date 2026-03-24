@@ -1,4 +1,6 @@
-import { DBox, DIcon } from '@dynamic-framework/ui-react';
+import {
+  DBox, DButton, DIcon,
+} from '@dynamic-framework/ui-react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -33,7 +35,7 @@ export default function AccountSlide({ account }: Props) {
           <p className="h5 mb-0">
             {account.name}
           </p>
-          <p className="mb-0">
+          <p className="mb-0 text-muted">
             {account.accountNumber}
           </p>
         </div>
@@ -47,13 +49,12 @@ export default function AccountSlide({ account }: Props) {
         </p>
       </div>
       <div>
-        <a
-          className="d-inline-flex align-items-center gap-1 text-nowrap"
+        <DButton
+          iconEnd="ArrowRight"
           href={accountPath}
-        >
-          {t('actions.seeMore')}
-          <DIcon icon="ArrowRight" />
-        </a>
+          variant="link"
+          text={t('actions.seeMore')}
+        />
       </div>
     </DBox>
   );
