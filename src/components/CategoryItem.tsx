@@ -24,7 +24,7 @@ export default function CategoryItem(
   ), [account.id, account.type]);
 
   return (
-    <div className="category-item-container py-2">
+    <div className="category-item-container">
       <a
         href={accountPath}
         className={classnames(
