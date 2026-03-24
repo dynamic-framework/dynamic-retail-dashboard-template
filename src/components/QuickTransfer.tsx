@@ -37,32 +37,34 @@ export default function QuickTransfer() {
   }
 
   return (
-    <DBox className="d-flex flex-column gap-4 quick-transfer ">
-      <h4>
+    <DBox className="gap-4 quick-transfer">
+      <h4 className="mb-4">
         {t('transfer.title')}
       </h4>
-      <QuickTransferDepositAccountSelect />
-      <QuickTransferAmountInput
-        value={amount}
-        onChange={setAmount}
-        invalid={invalid}
-      />
-      <QuickTransferContactSelect />
-      {!amount && (
-        <DButton
-          text={t('transfer.actionSingle')}
-          color="primary"
-          onClick={() => setInvalid(true)}
+      <div className="gap-4 d-flex flex-column quick-transfer-form">
+        <QuickTransferDepositAccountSelect />
+        <QuickTransferAmountInput
+          value={amount}
+          onChange={setAmount}
+          invalid={invalid}
         />
-      )}
-      {amount && (
-        <a
-          className="btn btn-primary"
-          href={transferWithParamsUrl}
-        >
-          {t('transfer.actionSingle')}
-        </a>
-      )}
+        <QuickTransferContactSelect />
+        {!amount && (
+          <DButton
+            text={t('transfer.actionSingle')}
+            color="primary"
+            onClick={() => setInvalid(true)}
+          />
+        )}
+        {amount && (
+          <a
+            className="btn btn-primary"
+            href={transferWithParamsUrl}
+          >
+            {t('transfer.actionSingle')}
+          </a>
+        )}
+      </div>
     </DBox>
   );
 }
