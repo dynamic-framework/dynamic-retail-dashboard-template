@@ -6,6 +6,10 @@
     height: 100%;
   }
 
+  .collapse-container .collapse-body {
+    padding-top: var(--bs-collapse-body-padding-y);
+  }
+
   .quick-transfer {
     position: sticky;
     top: var(--#{$prefix}ref-spacer-3);
