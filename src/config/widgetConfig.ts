@@ -43,7 +43,7 @@ export const SCREENS = {
   confirmPin: 'confirmPin',
 };
 
-export type View = 'list' | 'slides';
+export type View = 'list' | 'grid';
 
 export const CONTEXT_CONFIG = {
   language: SITE_LANG,

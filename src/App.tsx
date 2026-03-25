@@ -1,7 +1,7 @@
 import { useDContext, DLayout } from '@dynamic-framework/ui-react';
 import { useEffect, useMemo } from 'react';
 
-import AccountSlides from './components/AccountSlides';
+import AccountsGrid from './components/AccountsGrid';
 import CardActivateStatus from './components/CardActivateStatus';
 import CategoryList from './components/CategoryList';
 import Greeting from './components/Greeting';
@@ -14,7 +14,7 @@ import { getCurrentView } from './store/selectors';
 
 const VIEWS = {
   list: CategoryList,
-  slides: AccountSlides,
+  grid: AccountsGrid,
 };
 
 export default function App() {

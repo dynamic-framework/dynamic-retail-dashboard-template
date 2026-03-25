@@ -19,7 +19,7 @@ const OPTIONS: Array<{ icon: string, view: View }> = [
   },
   {
     icon: 'layout-three-columns',
-    view: 'slides',
+    view: 'grid',
   },
 ];
 

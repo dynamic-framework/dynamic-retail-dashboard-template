@@ -43,12 +43,12 @@ export default function QuickTransfer() {
       </h4>
       <div className="gap-4 d-flex flex-column quick-transfer-form">
         <QuickTransferDepositAccountSelect />
+        <QuickTransferContactSelect />
         <QuickTransferAmountInput
           value={amount}
           onChange={setAmount}
           invalid={invalid}
         />
-        <QuickTransferContactSelect />
         {!amount && (
           <DButton
             text={t('transfer.actionSingle')}

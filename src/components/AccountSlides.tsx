@@ -7,7 +7,7 @@ import useAccountsEffect from '../services/hooks/useAccountsEffect';
 import { useAppSelector } from '../store/hooks';
 import { getAccounts } from '../store/selectors';
 
-import AccountSlide from './AccountSlide';
+import AccountSlide from './AccountItemGrid';
 import AccountSlidesLoader from './loaders/AccountSlidesLoader';
 
 export default function CategorySlides() {

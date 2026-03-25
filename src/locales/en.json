@@ -47,6 +47,7 @@
     "actions": "Actions"
   },
   "list": "List",
+  "grid": "Grid",
   "slides": "Slides",
   "greeting": "Hi {name}, Welcome!",
   "actions": {
