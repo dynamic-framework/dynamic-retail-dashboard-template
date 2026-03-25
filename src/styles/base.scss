@@ -2,6 +2,9 @@
 
 .dashboard-template,
 .d-portal {
+  [class*="link-"] {
+    text-decoration: underline;
+  }
   .d-card-account .card-body > :first-child {
     height: 100%;
   }

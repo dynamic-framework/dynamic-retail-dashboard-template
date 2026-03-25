@@ -14,11 +14,11 @@ import { setCurrentView } from '../store/slice';
 
 const OPTIONS: Array<{ icon: string, view: View }> = [
   {
-    icon: 'list-check',
+    icon: 'ListCheck',
     view: 'list',
   },
   {
-    icon: 'layout-three-columns',
+    icon: 'LayoutGrid',
     view: 'grid',
   },
 ];

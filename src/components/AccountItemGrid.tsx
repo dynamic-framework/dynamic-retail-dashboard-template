@@ -46,7 +46,7 @@ export default function AccountItemGrid({ account }: Props) {
       <div>
         <a
           href={accountPath}
-          className="stretched-link d-flex gap-2 align-items-center"
+          className="d-flex gap-2 align-items-center link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
         >
           {t('actions.seeMore')}
           <DIcon
