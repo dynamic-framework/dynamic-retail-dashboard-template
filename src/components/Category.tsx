@@ -33,7 +33,7 @@ export default function Category(
     <DCollapse
       defaultCollapsed={collapsed}
       className={classNames(
-        'rounded-2 category-collapse',
+        'rounded-2 category-collapse fade-in',
         collapsed ? 'collapsed' : 'expanded',
       )}
       iconOpen="Plus"

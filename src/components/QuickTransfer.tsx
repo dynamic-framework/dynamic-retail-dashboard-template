@@ -37,7 +37,7 @@ export default function QuickTransfer() {
   }
 
   return (
-    <DBox className="gap-4 quick-transfer">
+    <DBox className="gap-4 quick-transfer fade-in">
       <h4 className="mb-4">
         {t('transfer.title')}
       </h4>

@@ -31,7 +31,6 @@ export default function QuickActions() {
 
   return (
     <div className="quick-actions">
-      {/* <p className="fs-5 my-4">{t('quickActions.title')}</p> */}
       <div className="d-flex gap-4 quick-actions-container small fs-md-body">
         {ACTIONS.map(({ path, text, icon }) => (
           <a
