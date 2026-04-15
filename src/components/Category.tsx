@@ -33,7 +33,7 @@ export default function Category(
     <DCollapse
       defaultCollapsed={collapsed}
       className={classNames(
-        'rounded-2 shadow-none category-collapse',
+        'rounded-2 category-collapse',
         collapsed ? 'collapsed' : 'expanded',
       )}
       iconOpen="Plus"
@@ -46,7 +46,7 @@ export default function Category(
             color="primary"
             icon={AccountTypeConfig[accounts[0].type].icon}
           />
-          <h5 className="flex-fill text-truncate fw-normal">{name}</h5>
+          <div className="flex-fill text-truncate fw-normal fs-5">{name}</div>
         </div>
       )}
     >

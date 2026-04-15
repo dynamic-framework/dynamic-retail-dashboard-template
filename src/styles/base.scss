@@ -2,9 +2,6 @@
 
 .dashboard-template,
 .d-portal {
-  [class*="link-"] {
-    text-decoration: underline;
-  }
   .d-card-account .card-body > :first-child {
     height: 100%;
   }
@@ -34,12 +31,6 @@
   }
   .category-item-container:not(:last-child) {
     border-bottom: 1px solid var(--#{$prefix}border-color);
-  }
-
-  @media (width < 768px) {
-    .category-item {
-      border-bottom: 1px solid var(--#{$prefix}border-color);
-    }
   }
 
   .nav-pills {

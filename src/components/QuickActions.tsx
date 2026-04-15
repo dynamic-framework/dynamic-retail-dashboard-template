@@ -32,16 +32,17 @@ export default function QuickActions() {
   return (
     <div className="quick-actions">
       {/* <p className="fs-5 my-4">{t('quickActions.title')}</p> */}
-      <div className="d-flex gap-4 flex-column flex-md-row quick-actions-container">
+      <div className="d-flex gap-4 quick-actions-container small fs-md-body">
         {ACTIONS.map(({ path, text, icon }) => (
           <a
             key={text}
             href={path}
             className={classNames(
-              'd-inline-flex align-items-center border border-white',
+              'd-inline-flex align-items-center flex-column flex-md-row',
+              'border border-white',
               'hover:border-primary',
               'text-decoration-none text-dark',
-              'shadow-lg rounded-2 p-4 gap-2 col',
+              'shadow-lg rounded-2 p-2 p-md-4 gap-2 col',
               'bg-white transition-all quick-action-item',
             )}
           >
@@ -53,7 +54,7 @@ export default function QuickActions() {
             />
             <p className="m-0 text-primary">{t(`quickActions.${text}`)}</p>
             <DIcon
-              className="ms-auto"
+              className="ms-auto d-none d-md-block"
               icon="ChevronRight"
             />
           </a>
