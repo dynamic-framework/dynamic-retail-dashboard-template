@@ -17,7 +17,7 @@ export default function CardActivateStatus() {
 
   return (
     <div
-      className="mb-6 d-flex bg-primary-50 position-relative banner-activate"
+      className="mb-6 d-flex bg-primary-50 position-relative overflow-hidden rounded banner-activate"
     >
       <div className="cover-img" />
       <div className="py-6 pe-8 content-activate">
