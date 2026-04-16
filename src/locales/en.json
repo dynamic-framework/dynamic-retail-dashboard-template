@@ -6,8 +6,8 @@
     "hide": "Hide amounts"
   },
   "cardStatus": {
-    "activateTitle": "Your card is on the way!",
-    "activateDescription": "Good news, Mathew! Your credit card is in the process of being shipped and will arrive at your destination within 5 business days.",
+    "activateTitle": "Good news! You have a card waiting for you.",
+    "activateDescription": "You have a pre-approved credit card.",
     "steps": {
       "order": "Order",
       "shipped": "Shipped",
@@ -51,7 +51,7 @@
   "slides": "Slides",
   "greeting": "Hi {name}, Welcome!",
   "actions": {
-    "moreInfo": "More Info",
+    "moreInfo": "Claim card",
     "seeMore": "See More"
   },
   "quickActions": {

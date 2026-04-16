@@ -10,7 +10,7 @@
     padding-top: var(--bs-collapse-body-padding-y);
   }
 
-  .quick-transfer {
+  .sidebar-container {
     position: sticky;
     top: var(--#{$prefix}ref-spacer-3);
   }
@@ -35,6 +35,14 @@
 
   .nav-pills {
     --bs-nav-pills-link-active-bg: var(--#{$prefix}primary-50);
+  }
+
+  .cover-img {
+    flex-shrink: 0;
+    width: 35%;
+    object-fit: cover;
+    background: url("https://cdn.modyo.cloud/uploads/e69b953a-3b20-430e-ae94-0e6d170e7f65/original/ccard-woman.png") no-repeat top right;
+    background-size: cover;
   }
 
 }

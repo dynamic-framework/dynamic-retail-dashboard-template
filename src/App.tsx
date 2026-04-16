@@ -34,7 +34,6 @@ export default function App() {
     <div className="container">
       <DLayout>
         <DLayout.Pane cols={12}>
-          <CardActivateStatus />
           <Greeting />
         </DLayout.Pane>
         <DLayout.Pane
@@ -51,7 +50,10 @@ export default function App() {
           colsXs={12}
           colsMd={4}
         >
-          <QuickTransfer />
+          <div className="d-flex flex-column gap-6 sidebar-container">
+            <QuickTransfer />
+            <CardActivateStatus />
+          </div>
         </DLayout.Pane>
       </DLayout>
     </div>
